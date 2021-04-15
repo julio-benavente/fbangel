@@ -80,9 +80,7 @@ export const Container = styled.div`
   max-width: 960px;
   max-width: ${(props) => props.fluid && "none"};
   margin: auto;
-  padding-left: 32px;
-  padding-right: 32px;
-
+  padding: clamp(70px, 15vw, 100px) 32px;
   grid-template-columns: ${(props) => props.grid12 && "repeat(12, 1fr)"};
 `;
 
@@ -91,12 +89,15 @@ export const H1 = styled.h1`
 `;
 export const H2 = styled.h2`
   font-size: 2rem;
+  color: ${(props) => props.theme.color.primary};
 `;
 export const H3 = styled.h3`
   font-size: 1.5rem;
+  color: ${(props) => props.theme.color.primary};
 `;
 export const H4 = styled.h1`
   font-size: 1rem;
+  color: ${(props) => props.theme.color.primary};
 `;
 
 export const RoundedBtn = css`
