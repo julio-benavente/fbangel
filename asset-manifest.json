@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/julio-benavente/fbangel/static/js/main.ce70ce69.chunk.js",
-    "main.js.map": "/julio-benavente/fbangel/static/js/main.ce70ce69.chunk.js.map",
-    "runtime-main.js": "/julio-benavente/fbangel/static/js/runtime-main.4dd1830d.js",
-    "runtime-main.js.map": "/julio-benavente/fbangel/static/js/runtime-main.4dd1830d.js.map",
-    "static/js/2.fe535490.chunk.js": "/julio-benavente/fbangel/static/js/2.fe535490.chunk.js",
-    "static/js/2.fe535490.chunk.js.map": "/julio-benavente/fbangel/static/js/2.fe535490.chunk.js.map",
-    "static/js/3.a9aaa7dd.chunk.js": "/julio-benavente/fbangel/static/js/3.a9aaa7dd.chunk.js",
-    "static/js/3.a9aaa7dd.chunk.js.map": "/julio-benavente/fbangel/static/js/3.a9aaa7dd.chunk.js.map",
-    "index.html": "/julio-benavente/fbangel/index.html",
-    "static/js/2.fe535490.chunk.js.LICENSE.txt": "/julio-benavente/fbangel/static/js/2.fe535490.chunk.js.LICENSE.txt",
-    "static/media/cellphone-in-hand.eee818db.svg": "/julio-benavente/fbangel/static/media/cellphone-in-hand.eee818db.svg",
-    "static/media/friends-chatting.72018c7d.svg": "/julio-benavente/fbangel/static/media/friends-chatting.72018c7d.svg",
-    "static/media/money.6517d11b.png": "/julio-benavente/fbangel/static/media/money.6517d11b.png",
-    "static/media/tasks-list.16b32df3.png": "/julio-benavente/fbangel/static/media/tasks-list.16b32df3.png"
+    "main.js": "/fbangel/static/js/main.ce70ce69.chunk.js",
+    "main.js.map": "/fbangel/static/js/main.ce70ce69.chunk.js.map",
+    "runtime-main.js": "/fbangel/static/js/runtime-main.62ac45bc.js",
+    "runtime-main.js.map": "/fbangel/static/js/runtime-main.62ac45bc.js.map",
+    "static/js/2.0897d72b.chunk.js": "/fbangel/static/js/2.0897d72b.chunk.js",
+    "static/js/2.0897d72b.chunk.js.map": "/fbangel/static/js/2.0897d72b.chunk.js.map",
+    "static/js/3.a9aaa7dd.chunk.js": "/fbangel/static/js/3.a9aaa7dd.chunk.js",
+    "static/js/3.a9aaa7dd.chunk.js.map": "/fbangel/static/js/3.a9aaa7dd.chunk.js.map",
+    "index.html": "/fbangel/index.html",
+    "static/js/2.0897d72b.chunk.js.LICENSE.txt": "/fbangel/static/js/2.0897d72b.chunk.js.LICENSE.txt",
+    "static/media/cellphone-in-hand.eee818db.svg": "/fbangel/static/media/cellphone-in-hand.eee818db.svg",
+    "static/media/friends-chatting.72018c7d.svg": "/fbangel/static/media/friends-chatting.72018c7d.svg",
+    "static/media/money.6517d11b.png": "/fbangel/static/media/money.6517d11b.png",
+    "static/media/tasks-list.16b32df3.png": "/fbangel/static/media/tasks-list.16b32df3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.4dd1830d.js",
-    "static/js/2.fe535490.chunk.js",
+    "static/js/runtime-main.62ac45bc.js",
+    "static/js/2.0897d72b.chunk.js",
     "static/js/main.ce70ce69.chunk.js"
   ]
 }
