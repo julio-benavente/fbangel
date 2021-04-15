@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 export default createGlobalStyle`
     /* Box sizing rules */
@@ -37,7 +37,8 @@ export default createGlobalStyle`
       min-height: 100vh;
       scroll-behavior: smooth;
       text-rendering: optimizeSpeed;
-      line-height: 1.5;
+      /* line-height: 1.5; */
+      font-weight: 300;
       font-family: Roboto ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     }
 
@@ -71,4 +72,41 @@ export default createGlobalStyle`
       font: inherit;
     }
   
+`;
+
+export const Container = styled.div`
+  display: grid;
+  width: 100%;
+  max-width: 960px;
+  max-width: ${(props) => props.fluid && "none"};
+  margin: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  grid-template-columns: ${(props) => props.grid12 && "repeat(12, 1fr)"};
+`;
+
+export const H1 = styled.h1`
+  font-size: clamp(2rem, 3vw, 2.5rem);
+`;
+export const H2 = styled.h2`
+  font-size: 2rem;
+`;
+export const H3 = styled.h3`
+  font-size: 1.5rem;
+`;
+export const H4 = styled.h1`
+  font-size: 1rem;
+`;
+
+export const RoundedBtn = css`
+  border: none;
+  outline: none;
+  text-decoration: none;
+  border-radius: 1000px;
+  padding: 7px 20px;
+  font-weight: 400;
+  background-color: ${(props) => props.theme.color.secondary};
+  color: ${(props) => props.theme.color.white};
+  cursor: pointer;
 `;

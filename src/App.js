@@ -1,12 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { Route, Switch } from "react-router-dom";
-import Normalize from "react-normalize";
 
 //Components
 import Home from "./components/Home/HomePage";
 import Navbar from "./components/Global/Navbar";
-import Footer from "./components/Global/Footer";
+// import Footer from "./components/Global/Footer";
 
 // Styles
 import GlobalStyle from "./styles/GlobalStyles";
@@ -18,7 +17,9 @@ const App = () => {
       <ThemeProvider theme={Theme}>
         <GlobalStyle />
         <Navbar />
-        <Switch>{/* <Route to="/" component={Home} /> */}</Switch>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
         {/* <Footer /> */}
       </ThemeProvider>
     </div>
