@@ -39,6 +39,7 @@ export default createGlobalStyle`
       text-rendering: optimizeSpeed;
       font-family: Roboto ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
+      min-width: 100vw;
     }
 
     /* Remove list styles on ul, ol elements with a class attribute */
@@ -113,4 +114,30 @@ export const RoundedBtn = css`
   background-color: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.white};
   cursor: pointer;
+  justify-self: start;
+`;
+
+export const Tiny = styled.p`
+  font-weight: 200;
+  font-size: 0.875rem;
+  font-style: italic;
+  max-width: 500px;
+  span {
+    color: ${(props) => props.theme.color.secondary};
+  }
+`;
+
+export const Parragraph = styled.div`
+  max-width: 500px;
+  margin-bottom: 30px;
+  p {
+    span {
+      font-weight: 700;
+      color: ${(props) => props.theme.color.green};
+    }
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
 `;
