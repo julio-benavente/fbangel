@@ -187,7 +187,6 @@ export const TestimoniesCardWraper = styled.div`
   grid-auto-columns: 400px;
   grid-auto-flow: column;
   gap: 50px;
-  /* position: relative; */
 `;
 export const TestimonyCard = styled.div`
   padding: 24px;
