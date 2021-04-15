@@ -17,11 +17,22 @@ import {
   CardTitle,
   CardInfo,
   Disclaimer,
+  // Requirements Section
+  RequirementsSection,
+  MoneyImage,
+  TaskListImage,
+  RequirementsSectionWraper,
+  SectionTitle,
+  Info,
+  HowItWorksBtn,
+  RequirementsSubtitle,
+  RequirementsList,
 } from "../../styles/HomePageStyles";
 
 // Assets
 import phone from "../../assets/svgs/cellphone-in-hand.svg";
-
+import money from "../../assets/images/money.png";
+import task_list from "../../assets/images/tasks-list.png";
 const cards = [
   {
     number: "01",
@@ -77,6 +88,37 @@ const HomePage = () => {
           </Card>
         ))}
       </ProcessSection>
+
+      <RequirementsSection>
+        <MoneyImage src={money} />
+        <TaskListImage src={task_list} />
+        <RequirementsSectionWraper>
+          <SectionTitle>¿Cuánto ganarás?</SectionTitle>
+          <Info>
+            <span>! Gana 30 dólares cada mes !</span> Confirma que cumples los y
+            prepara tu perfil, haz clic en el botón y aprende cómo.
+          </Info>
+          <HowItWorksBtn to="/como-funciona">¿Cómo funciona?</HowItWorksBtn>
+          <RequirementsSubtitle>
+            Requisitos para que el perfil sea válido
+          </RequirementsSubtitle>
+          <RequirementsList>
+            <li>Real, activo, con foto y nombre real</li>
+            <li>Con al menos 100 amigos</li>
+            <li>Al menos un año de edad</li>
+            <li>Contenido apropiado</li>
+            <li>Ser mayor de edad</li>
+            <li>
+              No debe haber sido previamente utilizado o alquilado a otras
+              empresas para el uso de publicidad
+            </li>
+            <li>Tener un email asociado a tu perfil</li>
+            <li>Administrador Comercial (BM) creado​</li>
+            <li>ID verificado​</li>
+            <li>2FA App Activado​</li>
+          </RequirementsList>
+        </RequirementsSectionWraper>
+      </RequirementsSection>
 
       {/*  */}
     </Home>

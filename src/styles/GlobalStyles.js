@@ -37,9 +37,8 @@ export default createGlobalStyle`
       min-height: 100vh;
       scroll-behavior: smooth;
       text-rendering: optimizeSpeed;
-      /* line-height: 1.5; */
-      font-weight: 300;
-      font-family: Roboto ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+      font-family: Roboto ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
     }
 
     /* Remove list styles on ul, ol elements with a class attribute */
@@ -86,18 +85,22 @@ export const Container = styled.div`
 
 export const H1 = styled.h1`
   font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 40px;
 `;
 export const H2 = styled.h2`
   font-size: 2rem;
   color: ${(props) => props.theme.color.primary};
+  margin-bottom: 30px;
 `;
 export const H3 = styled.h3`
   font-size: 1.5rem;
   color: ${(props) => props.theme.color.primary};
+  margin-bottom: 25px;
 `;
 export const H4 = styled.h1`
   font-size: 1rem;
   color: ${(props) => props.theme.color.primary};
+  margin-bottom: 20px;
 `;
 
 export const RoundedBtn = css`
