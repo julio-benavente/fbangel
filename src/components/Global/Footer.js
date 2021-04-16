@@ -6,16 +6,19 @@ import {
   UseConditions,
   Copyright,
   Detach,
+  FooterLinks,
 } from "../../styles/FooterStyles";
 
 const Footer = () => {
   return (
     <FooterSection>
-      <FooterSectionWrapper>
-        <Contact to="/contacto">Contacto</Contact>
-        <UseConditions to="/terminos-condiciones">
-          Condiciones de uso
-        </UseConditions>
+      <FooterSectionWrapper fluid>
+        <FooterLinks>
+          <Contact to="/contacto">Contacto</Contact>
+          <UseConditions to="/terminos-condiciones">
+            Condiciones de uso
+          </UseConditions>
+        </FooterLinks>
         <Copyright>
           &copy; Copyright {new Date().getFullYear()}. All rights reserved
           fbangel

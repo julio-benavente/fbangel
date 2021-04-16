@@ -9,8 +9,8 @@ export default createGlobalStyle`
     }
 
     /* Remove default padding */
-    ul[class],
-    ol[class] {
+    ul,
+    ol {
       padding: 0;
     }
 
@@ -21,8 +21,8 @@ export default createGlobalStyle`
     h3,
     h4,
     p,
-    ul[class],
-    ol[class],
+    ul,
+    ol,
     li,
     figure,
     figcaption,
@@ -40,12 +40,6 @@ export default createGlobalStyle`
       font-family: Roboto ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
       min-width: 100vw;
-    }
-
-    /* Remove list styles on ul, ol elements with a class attribute */
-    ul[class],
-    ol[class] {
-      list-style: none;
     }
 
     /* A elements that don't have a class get default styles */
