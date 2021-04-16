@@ -95,7 +95,7 @@ export const TaskListImage = styled.img`
   transform: translate(30%, 0%);
 `;
 
-export const RequirementsSectionWraper = styled(Container)`
+export const RequirementsSectionWrapper = styled(Container)`
   grid-template-columns: 1fr 1fr;
 `;
 export const SectionTitle = styled(H2)`
@@ -148,7 +148,7 @@ export const RequirementsList = styled.ul`
 // Referral section
 export const ReferralSection = styled.div``;
 
-export const ReferralSectionWraper = styled(Container)`
+export const ReferralSectionWrapper = styled(Container)`
   grid-template-columns: 1fr 1fr;
 
   > * {
@@ -179,13 +179,13 @@ export const TestimoniesSection = styled.div`
   position: relative;
 `;
 
-export const TestimoniesSectionWraper = styled(Container)``;
+export const TestimoniesSectionWrapper = styled(Container)``;
 
 export const TestimoniesSectionTitle = styled(H2)``;
 
 export const TestimoniesInfo = styled(Parragraph)``;
 
-export const TestimoniesCardWraper = styled.div`
+export const TestimoniesCardWrapper = styled.div`
   width: calc(100vw - 64px);
   max-width: 960px;
   display: grid;

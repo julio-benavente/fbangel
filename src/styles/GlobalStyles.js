@@ -141,3 +141,8 @@ export const Parragraph = styled.div`
     margin-bottom: 10px;
   }
 `;
+
+export const PLink = css`
+  color: ${(props) => props.theme.color.link};
+  text-decoration: none;
+`;

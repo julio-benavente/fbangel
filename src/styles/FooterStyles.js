@@ -12,7 +12,7 @@ export const FooterSection = styled.div`
     color: ${(props) => props.theme.color.white};
   }
 `;
-export const FooterSectionWraper = styled(Container)`
+export const FooterSectionWrapper = styled(Container)`
   grid-auto-rows: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;

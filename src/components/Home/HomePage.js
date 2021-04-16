@@ -19,7 +19,7 @@ import {
   Disclaimer,
   // Requirements Section
   RequirementsSection,
-  RequirementsSectionWraper,
+  RequirementsSectionWrapper,
   MoneyImage,
   TaskListImage,
   SectionTitle,
@@ -29,7 +29,7 @@ import {
   RequirementsList,
   // Referral Section
   ReferralSection,
-  ReferralSectionWraper,
+  ReferralSectionWrapper,
   ReferralSectionTitle,
   ReferralInfo,
   ReferrealTiny,
@@ -37,10 +37,10 @@ import {
   RegisterBtn,
   // Testimonies section
   TestimoniesSection,
-  TestimoniesSectionWraper,
+  TestimoniesSectionWrapper,
   TestimoniesSectionTitle,
   TestimoniesInfo,
-  TestimoniesCardWraper,
+  TestimoniesCardWrapper,
   TestimonyCard,
   Testimony,
   Author,
@@ -145,7 +145,7 @@ const HomePage = () => {
       <RequirementsSection>
         <MoneyImage src={money} />
         <TaskListImage src={task_list} />
-        <RequirementsSectionWraper>
+        <RequirementsSectionWrapper>
           <SectionTitle>¿Cuánto ganarás?</SectionTitle>
           <RequirementsInfo>
             <p>
@@ -172,11 +172,11 @@ const HomePage = () => {
             <li>ID verificado​</li>
             <li>2FA App Activado​</li>
           </RequirementsList>
-        </RequirementsSectionWraper>
+        </RequirementsSectionWrapper>
       </RequirementsSection>
 
       <ReferralSection>
-        <ReferralSectionWraper>
+        <ReferralSectionWrapper>
           <ReferralSectionTitle>Programa de referidos</ReferralSectionTitle>
           <ReferralInfo>
             <p>
@@ -202,18 +202,18 @@ const HomePage = () => {
             </p>
           </ReferrealTiny>
           <FriendsImage src={friends_chatting} />
-        </ReferralSectionWraper>
+        </ReferralSectionWrapper>
       </ReferralSection>
 
       <TestimoniesSection>
-        <TestimoniesSectionWraper>
+        <TestimoniesSectionWrapper>
           <TestimoniesSectionTitle>
             ¿Qué es lo que dice la gente?
           </TestimoniesSectionTitle>
           <TestimoniesInfo>
             ¡Gente que se unió a nosotros y ya está ganando dinero!
           </TestimoniesInfo>
-          <TestimoniesCardWraper>
+          <TestimoniesCardWrapper>
             {testimonies.map(({ testimony, author, country, membership }) => (
               <TestimonyCard>
                 <Testimony>{testimony}</Testimony>
@@ -222,13 +222,13 @@ const HomePage = () => {
                 <Membership>{`Miembro desde ${membership}`}</Membership>
               </TestimonyCard>
             ))}
-          </TestimoniesCardWraper>
+          </TestimoniesCardWrapper>
           <TestimoniesNav>
             {testimonies.map((testimony) => (
               <TestimoniesNavLink />
             ))}
           </TestimoniesNav>
-        </TestimoniesSectionWraper>
+        </TestimoniesSectionWrapper>
       </TestimoniesSection>
 
       {/*  */}
