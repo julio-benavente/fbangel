@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 //Components
 import Home from "./components/Home/HomePage";
 import Navbar from "./components/Global/Navbar";
-// import Footer from "./components/Global/Footer";
+import Footer from "./components/Global/Footer";
 
 // Styles
 import GlobalStyle from "./styles/GlobalStyles";
@@ -20,7 +20,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </ThemeProvider>
     </div>
   );

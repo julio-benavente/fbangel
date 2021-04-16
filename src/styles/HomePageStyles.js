@@ -176,17 +176,23 @@ export const FriendsImage = styled.img`
 export const TestimoniesSection = styled.div`
   background-color: ${(props) => props.theme.color.gray100};
   overflow-x: hidden;
-`;
-export const TestimoniesSectionWraper = styled(Container)`
   position: relative;
 `;
+
+export const TestimoniesSectionWraper = styled(Container)``;
+
 export const TestimoniesSectionTitle = styled(H2)``;
+
 export const TestimoniesInfo = styled(Parragraph)``;
+
 export const TestimoniesCardWraper = styled.div`
+  width: calc(100vw - 64px);
+  max-width: 960px;
   display: grid;
   grid-auto-columns: 400px;
   grid-auto-flow: column;
   gap: 50px;
+  margin-bottom: 50px;
 `;
 export const TestimonyCard = styled.div`
   padding: 24px;
@@ -228,5 +234,10 @@ export const TestimoniesNav = styled.div`
 export const TestimoniesNavLink = styled.div`
   height: 10px;
   width: 30px;
-  background-color: ${(props) => props.theme.color.secondary};
+  background-color: ${(props) =>
+    transparentize(0.6, props.theme.color.secondary)};
+
+  &.active {
+    background-color: ${(props) => props.theme.color.secondary};
+  }
 `;
