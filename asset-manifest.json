@@ -1,23 +1,33 @@
 {
   "files": {
-    "main.js": "/fbangel/static/js/main.ce70ce69.chunk.js",
-    "main.js.map": "/fbangel/static/js/main.ce70ce69.chunk.js.map",
+    "main.js": "/fbangel/static/js/main.52ce8e10.chunk.js",
+    "main.js.map": "/fbangel/static/js/main.52ce8e10.chunk.js.map",
     "runtime-main.js": "/fbangel/static/js/runtime-main.62ac45bc.js",
     "runtime-main.js.map": "/fbangel/static/js/runtime-main.62ac45bc.js.map",
-    "static/js/2.0897d72b.chunk.js": "/fbangel/static/js/2.0897d72b.chunk.js",
-    "static/js/2.0897d72b.chunk.js.map": "/fbangel/static/js/2.0897d72b.chunk.js.map",
+    "static/js/2.71c77fe9.chunk.js": "/fbangel/static/js/2.71c77fe9.chunk.js",
+    "static/js/2.71c77fe9.chunk.js.map": "/fbangel/static/js/2.71c77fe9.chunk.js.map",
     "static/js/3.a9aaa7dd.chunk.js": "/fbangel/static/js/3.a9aaa7dd.chunk.js",
     "static/js/3.a9aaa7dd.chunk.js.map": "/fbangel/static/js/3.a9aaa7dd.chunk.js.map",
     "index.html": "/fbangel/index.html",
-    "static/js/2.0897d72b.chunk.js.LICENSE.txt": "/fbangel/static/js/2.0897d72b.chunk.js.LICENSE.txt",
+    "static/js/2.71c77fe9.chunk.js.LICENSE.txt": "/fbangel/static/js/2.71c77fe9.chunk.js.LICENSE.txt",
+    "static/media/browser-girl.f778d263.svg": "/fbangel/static/media/browser-girl.f778d263.svg",
     "static/media/cellphone-in-hand.eee818db.svg": "/fbangel/static/media/cellphone-in-hand.eee818db.svg",
+    "static/media/drinking-coffe.637c6ede.svg": "/fbangel/static/media/drinking-coffe.637c6ede.svg",
     "static/media/friends-chatting.72018c7d.svg": "/fbangel/static/media/friends-chatting.72018c7d.svg",
+    "static/media/girl-getting-off.e5f50cb6.svg": "/fbangel/static/media/girl-getting-off.e5f50cb6.svg",
     "static/media/money.6517d11b.png": "/fbangel/static/media/money.6517d11b.png",
-    "static/media/tasks-list.16b32df3.png": "/fbangel/static/media/tasks-list.16b32df3.png"
+    "static/media/option-one-img-one.43faa2c2.jpg": "/fbangel/static/media/option-one-img-one.43faa2c2.jpg",
+    "static/media/option-one-img-two.ea6cc965.jpg": "/fbangel/static/media/option-one-img-two.ea6cc965.jpg",
+    "static/media/option-two-img-one.e66c9a8a.jpg": "/fbangel/static/media/option-two-img-one.e66c9a8a.jpg",
+    "static/media/option-two-img-two.e1117a03.jpg": "/fbangel/static/media/option-two-img-two.e1117a03.jpg",
+    "static/media/sending-email.eb36c6e4.svg": "/fbangel/static/media/sending-email.eb36c6e4.svg",
+    "static/media/tasks-list.16b32df3.png": "/fbangel/static/media/tasks-list.16b32df3.png",
+    "static/media/todo-list.c8e35342.svg": "/fbangel/static/media/todo-list.c8e35342.svg",
+    "static/media/watching-laptop.b1c67f7c.svg": "/fbangel/static/media/watching-laptop.b1c67f7c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.62ac45bc.js",
-    "static/js/2.0897d72b.chunk.js",
-    "static/js/main.ce70ce69.chunk.js"
+    "static/js/2.71c77fe9.chunk.js",
+    "static/js/main.52ce8e10.chunk.js"
   ]
 }
