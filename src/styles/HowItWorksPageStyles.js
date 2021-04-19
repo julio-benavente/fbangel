@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 // Styles
 import {
   Container,
-  H4,
   H2,
-  Tiny,
   Parragraph,
   PLink,
 } from "../styles/GlobalStyles";
@@ -196,7 +194,9 @@ export const RegistrationSection = styled.div`
   background-color: ${(props) => props.theme.color.gray100};
 `;
 
-export const RegistrationSectionWrapper = styled(Container)``;
+export const RegistrationSectionWrapper = styled(Container)`
+  grid-template-columns: 1fr 1fr;
+`;
 
 export const RegistrationSectionTitle = styled(H2)``;
 

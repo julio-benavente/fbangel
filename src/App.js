@@ -3,10 +3,11 @@ import { ThemeProvider } from "styled-components";
 import { Route, Switch } from "react-router-dom";
 
 //Components
-import Home from "./components/Home/HomePage";
-import HowItWorks from "./components/HowItWorks/HowItWorksPage";
 import Navbar from "./components/Global/Navbar";
 import Footer from "./components/Global/Footer";
+import Home from "./components/Home/HomePage";
+import HowItWorks from "./components/HowItWorks/HowItWorksPage";
+import JoinUs from "./components/JoinUs/JoinUsPage";
 
 // Styles
 import GlobalStyle from "./styles/GlobalStyles";
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/como-funciona" component={HowItWorks} />
+          <Route path="/unete-ahora" component={JoinUs} />
         </Switch>
         <Footer />
       </ThemeProvider>
