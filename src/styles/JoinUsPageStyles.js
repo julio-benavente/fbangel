@@ -96,7 +96,7 @@ export const Option = styled.label`
     }
 
     &.checkbox {
-      border-radius: 3px;
+      border-radius: 2px;
     }
   }
 
@@ -117,19 +117,29 @@ export const Option = styled.label`
     }
 
     &.checkbox::after {
-      border-radius: 3px;
+      border-radius: 1px;
     }
   }
 `;
 
-export const FormOne = styled.div``;
+export const FormOne = styled.div`
+  display: ${(props) => (props.step == 1 ? "block" : "none")};
+`;
 
-export const FormTwo = styled.div``;
+export const FormTwo = styled.div`
+  display: ${(props) => (props.step == 2 ? "block" : "none")};
+`;
 
-export const FormThree = styled.div``;
+export const FormThree = styled.div`
+  display: ${(props) => (props.step == 3 ? "block" : "none")};
+`;
 
-export const FormFour = styled.div``;
+export const FormFour = styled.div`
+  display: ${(props) => (props.step == 4 ? "block" : "none")};
+`;
 
-export const FormFive = styled.div``;
+export const FormFive = styled.div`
+  display: ${(props) => (props.step == 5 ? "block" : "none")};
+`;
 
 export const JoinUsImage = styled.div``;
