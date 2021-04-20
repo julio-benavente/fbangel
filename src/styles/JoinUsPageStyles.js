@@ -117,7 +117,6 @@ export const Options = styled.div`
   ${(props) =>
     props.width == "short" &&
     css`
-      grid-template-columns: none;
       grid-auto-columns: auto;
       grid-auto-flow: column;
     `}

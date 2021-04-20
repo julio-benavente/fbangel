@@ -27,7 +27,7 @@ import {
 } from "../../styles/JoinUsPageStyles";
 
 const JoinUsPage = () => {
-  const [formStep, setFormStep] = useState(4);
+  const [formStep, setFormStep] = useState(1);
   const {
     register,
     handleSubmit,
@@ -41,6 +41,7 @@ const JoinUsPage = () => {
 
   const onSubmit = (data) => {
     console.log("datos", data);
+    completeFormStep();
   };
 
   const onClickSubmit = (e) => {
@@ -50,9 +51,6 @@ const JoinUsPage = () => {
 
   const completeFormStep = async () => {
     const res = await trigger();
-    errors.form1 && console.log(errors.form1);
-
-    console.log(res);
     setFormStep(formStep + 1);
   };
 
@@ -112,7 +110,7 @@ const JoinUsPage = () => {
               </Location>
               <Location className={`${formStep == 4 && "active"}`}>
                 <p className="number">4</p>
-                <p className="location">Confirmación</p>
+                <p className="location">Método de pago y Confirmación</p>
               </Location>
               {formStep == 5 && (
                 <Location className={`${formStep == 5 && "active"}`}>
@@ -125,7 +123,7 @@ const JoinUsPage = () => {
               {formStep == 1 && (
                 <FormOne step={formStep}>
                   <OptionInput
-                    short="short"
+                    width="short"
                     className="isAdult"
                     type="radio"
                     options={[
@@ -139,7 +137,7 @@ const JoinUsPage = () => {
                     })}
                   />
                   <OptionInput
-                    short="short"
+                    width="short"
                     className="accountIsReal"
                     type="radio"
                     options={[
@@ -154,7 +152,7 @@ const JoinUsPage = () => {
                   />
 
                   <OptionInput
-                    short="short"
+                    width="short"
                     className="isFirstTime"
                     type="radio"
                     options={[
@@ -168,7 +166,7 @@ const JoinUsPage = () => {
                     })}
                   />
                   <OptionInput
-                    short="short"
+                    width="short"
                     className="isOneYear"
                     type="radio"
                     options={[
@@ -182,7 +180,7 @@ const JoinUsPage = () => {
                     })}
                   />
                   <OptionInput
-                    short="short"
+                    width="short"
                     className="haveFriends"
                     type="radio"
                     options={[
@@ -396,7 +394,12 @@ const JoinUsPage = () => {
                   />
                 </FormFour>
               )}
-              {formStep == 5 && <FormFive step={formStep}></FormFive>}
+              {formStep == 5 && (
+                <FormFive step={formStep}>
+                  <p>El procese de registro esta finalizado.</p>
+                  <p>Nos estaremos poniendo en contacto contigo pronto.</p>
+                </FormFive>
+              )}
               {renderButton()}
 
               {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
