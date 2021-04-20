@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { transparentize, darken } from "polished";
+import { transparentize } from "polished";
 
 // Styles
 import { H2, Container, Parragraph } from "./GlobalStyles";
@@ -52,21 +52,58 @@ export const Location = styled.div`
     margin-right: 1rem;
   }
 
-  p.location {
+  &.active {
+    .number {
+      color: ${(props) => props.theme.color.primary};
+      background: ${(props) => props.theme.color.white};
+    }
+
+    .location {
+      color: ${(props) => props.theme.color.white};
+    }
   }
 `;
 
-const baseForm = css``;
+export const Button = styled.button`
+  background: ${(props) => props.theme.color.secondary};
+  border: none;
+  color: ${(props) => props.theme.color.white};
+  padding: 5px 25px 7px;
+  font-weight: 600;
+  border-radius: 5px;
+  justify-self: end;
+  align-self: end;
+  cursor: pointer;
+  outline: none;
+
+  &:disabled {
+    background: ${(props) => props.theme.color.gray300};
+    cursor: not-allowed;
+  }
+`;
 
 export const Forms = styled.div`
   padding: 20px;
+  display: grid;
 `;
 
-export const InputWraper = styled.div``;
+export const InputWraper = styled.div`
+  input[type="text"],
+  input[type="password"] {
+    padding: 0 10px;
+    border: 2px solid ${(props) => props.theme.color.gray300};
+    border-radius: 2px;
+    outline: none;
+    width: 100%;
+    &:focus {
+      border: 2px solid ${(props) => props.theme.color.secondary};
+    }
+  }
+`;
 
 export const Question = styled.div`
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   span {
     color: ${(props) => props.theme.color.secondary};
   }
@@ -74,8 +111,28 @@ export const Question = styled.div`
 export const Options = styled.div`
   display: grid;
   justify-content: start;
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
+  align-content: start;
+  gap: 0 20px;
+
+  ${(props) =>
+    props.width == "short" &&
+    css`
+      grid-template-columns: none;
+      grid-auto-columns: auto;
+      grid-auto-flow: column;
+    `}
+
+  ${(props) =>
+    props.width == "wide" &&
+    css`
+      grid-template-columns: 1fr 1fr;
+    `}
+  
+  ${(props) =>
+    props.width == "full" &&
+    css`
+      grid-template-columns: 1fr;
+    `}
 `;
 
 export const Option = styled.label`
@@ -87,7 +144,7 @@ export const Option = styled.label`
     width: 14px;
     height: 14px;
     border: 1px solid ${(props) => props.theme.color.gray300};
-    top: 50%;
+    top: 12px;
     transform: translateY(-50%);
     left: 0;
 
@@ -122,24 +179,45 @@ export const Option = styled.label`
   }
 `;
 
+const baseForm = css`
+  gap: 20px;
+  align-content: start;
+`;
+
 export const FormOne = styled.div`
-  display: ${(props) => (props.step == 1 ? "block" : "none")};
+  ${baseForm}
+  display: ${(props) => (props.step == 1 ? "grid" : "none")};
 `;
 
 export const FormTwo = styled.div`
-  display: ${(props) => (props.step == 2 ? "block" : "none")};
+  ${baseForm}
+  display: ${(props) => (props.step == 2 ? "grid" : "none")};
+  grid-template-columns: 1fr 1fr;
 `;
 
 export const FormThree = styled.div`
-  display: ${(props) => (props.step == 3 ? "block" : "none")};
+  ${baseForm}
+  display: ${(props) => (props.step == 3 ? "grid" : "none")};
+  grid-template-columns: 1fr 1fr;
+
+  .frecuency,
+  .devices,
+  .os,
+  .fbEmailIsConfirmed,
+  .bmIdIsConfirmed,
+  .code2FA {
+    grid-column: 1/-1;
+  }
 `;
 
 export const FormFour = styled.div`
-  display: ${(props) => (props.step == 4 ? "block" : "none")};
+  ${baseForm}
+  display: ${(props) => (props.step == 4 ? "grid" : "none")};
 `;
 
 export const FormFive = styled.div`
-  display: ${(props) => (props.step == 5 ? "block" : "none")};
+  ${baseForm}
+  display: ${(props) => (props.step == 5 ? "grid" : "none")};
 `;
 
 export const JoinUsImage = styled.div``;
