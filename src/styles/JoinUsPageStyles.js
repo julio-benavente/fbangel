@@ -64,6 +64,13 @@ export const Location = styled.div`
   }
 `;
 
+export const Buttons = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: ${(props) => (props.one ? "end" : "space-between")};
+  width: 100%;
+`;
+
 export const Button = styled.button`
   background: ${(props) => props.theme.color.secondary};
   border: none;
@@ -71,10 +78,10 @@ export const Button = styled.button`
   padding: 5px 25px 7px;
   font-weight: 600;
   border-radius: 5px;
-  justify-self: end;
   align-self: end;
   cursor: pointer;
   outline: none;
+  justify-items: end;
 
   &:disabled {
     background: ${(props) => props.theme.color.gray300};
@@ -88,15 +95,52 @@ export const Forms = styled.div`
 `;
 
 export const InputWraper = styled.div`
+  position: relative;
   input[type="text"],
-  input[type="password"] {
+  input[type="password"],
+  select[name="rcrs-country"],
+  select[name="rcrs-region"],
+  input.form-control[type="tel"] {
     padding: 0 10px;
     border: 2px solid ${(props) => props.theme.color.gray300};
     border-radius: 2px;
     outline: none;
     width: 100%;
+    max-width: 250px;
     &:focus {
       border: 2px solid ${(props) => props.theme.color.secondary};
+    }
+  }
+
+  .error {
+    position: absolute;
+    font-size: 0.75rem;
+    color: ${(props) => props.theme.color.secondary};
+    max-width: 100%;
+  }
+
+  // Country and Region selectors
+  select[name="rcrs-country"] {
+    width: 100%;
+  }
+
+  select[name="rcrs-region"] {
+    width: 100%;
+  }
+
+  // Phone input
+  input.form-control[type="tel"] {
+    max-height: 25.6px;
+    width: 100%;
+    padding-left: 48px;
+  }
+
+  // React datepicker
+  .react-datepicker-wrapper {
+    width: 100%;
+
+    input {
+      text-align: center;
     }
   }
 `;
@@ -181,6 +225,7 @@ export const Option = styled.label`
 const baseForm = css`
   gap: 20px;
   align-content: start;
+  margin-bottom: 30px;
 `;
 
 export const FormOne = styled.div`
@@ -191,7 +236,7 @@ export const FormOne = styled.div`
 export const FormTwo = styled.div`
   ${baseForm}
   display: ${(props) => (props.step == 2 ? "grid" : "none")};
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, calc(((100% - 20px - 20px) / 2) + 10px));
 `;
 
 export const FormThree = styled.div`

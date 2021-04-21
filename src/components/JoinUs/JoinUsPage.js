@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 // Styles
 import {
@@ -23,35 +30,47 @@ import {
   Question,
   Options,
   Option,
+  Buttons,
   Button,
 } from "../../styles/JoinUsPageStyles";
 
 const JoinUsPage = () => {
+  const [country, setCountry] = useState("");
+  const [region, setRegion] = useState("");
+  const [phone, setPhone] = useState(null);
+  const [date, setDate] = useState(null);
+
   const [formStep, setFormStep] = useState(1);
   const {
     register,
     handleSubmit,
     watch,
     getValues,
+    control,
     trigger,
+    clearErrors,
+
     formState: { errors, isValid },
-  } = useForm({ mode: "all" });
+  } = useForm({ mode: "onChange" });
 
   const values = getValues();
 
   const onSubmit = (data) => {
     console.log("datos", data);
-    completeFormStep();
+    handleFormStep();
   };
 
   const onClickSubmit = (e) => {
     console.log(values);
-    // console.log(watch);
   };
 
-  const completeFormStep = async () => {
-    const res = await trigger();
-    setFormStep(formStep + 1);
+  useEffect(() => {
+    console.log("clear");
+    clearErrors();
+  }, [formStep]);
+
+  const handleFormStep = (value) => {
+    setFormStep(formStep + value);
   };
 
   const renderButton = () => {
@@ -59,28 +78,53 @@ const JoinUsPage = () => {
     switch (true) {
       case formStep > submitPage:
         return null;
-      case formStep == submitPage:
+      case formStep === submitPage:
         return (
-          <Button disabled={!isValid} type="submit">
-            Enviar
-          </Button>
+          <Buttons one>
+            <Button disabled={!isValid} type="submit">
+              Enviar
+            </Button>
+          </Buttons>
         );
-      case formStep < submitPage:
+      case formStep < submitPage && 1 < formStep:
         return (
-          <Button
-            //
-            disabled={!isValid}
-            //
-            type="submit"
-            onClick={completeFormStep}
-          >
-            Siguiente
-          </Button>
+          <Buttons>
+            <Button type="submit" onClick={() => handleFormStep(-1)}>
+              Anterior
+            </Button>
+
+            <Button
+              //
+              disabled={!isValid}
+              //
+              type="submit"
+              onClick={() => handleFormStep(1)}
+            >
+              Siguiente
+            </Button>
+          </Buttons>
+        );
+
+      case formStep === 1:
+        return (
+          <Buttons one>
+            <Button
+              //
+              disabled={!isValid}
+              //
+              type="submit"
+              onClick={() => handleFormStep(1)}
+            >
+              Siguiente
+            </Button>
+          </Buttons>
         );
       default:
         return null;
     }
   };
+
+  // console.log(errors);
 
   return (
     <JoinUs>
@@ -96,31 +140,31 @@ const JoinUsPage = () => {
           <FormsWrapper onSubmit={handleSubmit(onSubmit)}>
             <FormLocation>
               <FormLocationTitle>Formulario de registro</FormLocationTitle>
-              <Location className={`${formStep == 1 && "active"}`}>
+              <Location className={`${formStep === 1 && "active"}`}>
                 <p className="number">1</p>
                 <p className="location">Cuestionario de calificación</p>
               </Location>
-              <Location className={`${formStep == 2 && "active"}`}>
+              <Location className={`${formStep === 2 && "active"}`}>
                 <p className="number">2</p>
                 <p className="location">Datos personales</p>
               </Location>
-              <Location className={`${formStep == 3 && "active"}`}>
+              <Location className={`${formStep === 3 && "active"}`}>
                 <p className="number">3</p>
                 <p className="location">Datos de cuenta de Facebook</p>
               </Location>
-              <Location className={`${formStep == 4 && "active"}`}>
+              <Location className={`${formStep === 4 && "active"}`}>
                 <p className="number">4</p>
                 <p className="location">Método de pago y Confirmación</p>
               </Location>
-              {formStep == 5 && (
-                <Location className={`${formStep == 5 && "active"}`}>
+              {formStep === 5 && (
+                <Location className={`${formStep === 5 && "active"}`}>
                   <p className="number">5</p>
                   <p className="location">Felicitaciones</p>
                 </Location>
               )}
             </FormLocation>
             <Forms>
-              {formStep == 1 && (
+              {formStep === 1 && (
                 <FormOne step={formStep}>
                   <OptionInput
                     width="short"
@@ -132,8 +176,10 @@ const JoinUsPage = () => {
                     ]}
                     question="¿Eres mayor de edad?"
                     register={register("isAdult", {
-                      required: true,
-                      message: "Este campo es obligatorio",
+                      required: {
+                        value: true,
+                        message: "Este campo es obligatorio",
+                      },
                     })}
                   />
                   <OptionInput
@@ -146,8 +192,10 @@ const JoinUsPage = () => {
                     ]}
                     question="¿Estás creando la solicitud con tu perfil real de Facebook?"
                     register={register("accountIsReal", {
-                      required: true,
-                      message: "Este campo es obligatorio",
+                      required: {
+                        value: true,
+                        message: "Este campo es obligatorio",
+                      },
                     })}
                   />
 
@@ -161,8 +209,10 @@ const JoinUsPage = () => {
                     ]}
                     question="¿Tú o alguien más ha utilizado tu cuenta antes para crear publicidad?"
                     register={register("isFirstTime", {
-                      required: true,
-                      message: "Este campo es obligatorio",
+                      required: {
+                        value: true,
+                        message: "Este campo es obligatorio",
+                      },
                     })}
                   />
                   <OptionInput
@@ -175,8 +225,10 @@ const JoinUsPage = () => {
                     ]}
                     question="¿Tu cuenta tiene más de un año?"
                     register={register("isOneYear", {
-                      required: true,
-                      message: "Este campo es obligatorio",
+                      required: {
+                        value: true,
+                        message: "Este campo es obligatorio",
+                      },
                     })}
                   />
                   <OptionInput
@@ -189,78 +241,221 @@ const JoinUsPage = () => {
                     ]}
                     question="¿Tienes más de 100 amigos en Facebook?"
                     register={register("haveFriends", {
-                      required: true,
-                      message: "Este campo es obligatorio",
+                      required: {
+                        value: true,
+                        message: "Este campo es obligatorio",
+                      },
                     })}
                   />
                 </FormOne>
               )}
-              {formStep == 2 && (
+              {formStep === 2 && (
                 <FormTwo step={formStep}>
                   <TextInput
                     className="name"
                     question="Tu nombre"
                     register={register("name", {
-                      required: true,
-                      message: "Por favor, ingrese su nombre",
+                      required: {
+                        value: true,
+                        message: "Por favor, registre su nombre",
+                      },
+                      pattern: {
+                        value: /^[ a-zA-Z\-\’]+$/,
+                        message: "El nombre contiene caracteres no permitidos",
+                      },
                     })}
+                    error={errors.name && errors.name.message}
                   />
 
                   <TextInput
                     className="lastname"
                     question="Tus apellidos"
                     register={register("lastname", {
-                      required: true,
-                      message: "Por favor, ingrese sus apellidos",
+                      required: {
+                        value: true,
+                        message: "Por favor, registre su apellido",
+                      },
+                      pattern: {
+                        value: /^[ a-zA-Z\-\’]+$/,
+                        message:
+                          "El apellido contiene caracteres no permitidos",
+                      },
                     })}
+                    error={errors.lastname && errors.lastname.message}
                   />
 
                   <TextInput
-                    className="country"
-                    question="País de residencia"
-                    register={register("country", {
-                      required: true,
-                      message: "Por favor, ingrese su país de residencia",
-                    })}
+                    className="countryDropdown"
+                    question="Tu país de residencia"
+                    error={errors.country && errors.country.message}
+                    component={
+                      <Controller
+                        name="country"
+                        defaultValue={null}
+                        control={control}
+                        rules={{
+                          required: {
+                            value: true,
+                            message: "Este campo es obligatorio",
+                          },
+                        }}
+                        render={({ name, field: { onChange, onBlur } }) => {
+                          return (
+                            <CountryDropdown
+                              name={name}
+                              value={country}
+                              onChange={(countryName) => {
+                                setCountry(countryName);
+                                onChange(countryName);
+                              }}
+                              onBlur={() => trigger("country")}
+                            />
+                          );
+                        }}
+                      />
+                    }
                   />
 
                   <TextInput
-                    className="city"
-                    question="Su ciudad de residencia"
-                    register={register("city", {
-                      required: true,
-                      message: "Por favor, ingrese su ciudad de residencia ",
-                    })}
+                    question="Tu ciudad de residencia"
+                    className="regionDropdown"
+                    error={errors.city && errors.city.message}
+                    component={
+                      <Controller
+                        control={control}
+                        name="city"
+                        rules={{
+                          required: {
+                            value: true,
+                            message: "Este campo es obligatorio",
+                          },
+                        }}
+                        defaultValue=""
+                        render={({ name, field: { onChange, onBlur } }) => {
+                          return (
+                            <RegionDropdown
+                              name={name}
+                              country={country}
+                              value={region}
+                              onChange={(regionName) => {
+                                setRegion(regionName);
+                                onChange(regionName);
+                              }}
+                              onBlur={() => trigger("city")}
+                            />
+                          );
+                        }}
+                      />
+                    }
                   />
 
                   <TextInput
                     className="birthday"
                     question="Fecha de nacimiento"
-                    register={register("birthday", {
-                      required: true,
-                      message: "Por favor, ingrese la fecha de su nacimiento",
-                    })}
+                    error={errors.birthday && errors.birthday.message}
+                    component={
+                      <Controller
+                        control={control}
+                        name="birthday"
+                        defaultValue=""
+                        rules={{
+                          required: {
+                            value: true,
+                            message:
+                              "Por favor, ingrese la fecha de su nacimiento",
+                          },
+                          validate: {
+                            isNotOldEnough: (v) => {
+                              function getAge(dob) {
+                                var diff_ms = Date.now() - dob.getTime();
+                                var age_dt = new Date(diff_ms);
+
+                                return Math.abs(age_dt.getUTCFullYear() - 1970);
+                              }
+
+                              const age = getAge(v);
+                              console.log(age);
+                              if (!(age >= 18)) {
+                                return "Debes ser mayor de 18 años";
+                              }
+                              return true;
+                            },
+                          },
+                        }}
+                        render={({ name, field: { onChange, onBlur } }) => {
+                          return (
+                            <DatePicker
+                              name={name}
+                              selected={date}
+                              onChange={(date) => {
+                                setDate(date);
+                                onChange(date);
+                              }}
+                              onBlur={() => trigger("birthday")}
+                            />
+                          );
+                        }}
+                      />
+                    }
                   />
 
                   <TextInput
                     className="phone"
                     question="Tu celular"
-                    register={register("phone", {
-                      required: true,
-                      message: "Por favor, ingrese el número de su celular",
-                    })}
+                    error={errors.phone && errors.phone.message}
+                    component={
+                      <Controller
+                        name="phone"
+                        control={control}
+                        defaultValue=""
+                        rules={{
+                          required: {
+                            value: true,
+                            message: "Este campo es obligatorio",
+                          },
+                          pattern: {
+                            // value: /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/,
+                            value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+                            message: "Ingrese un numero de celular válido",
+                          },
+                        }}
+                        render={({ name, field: { onChange, onBlur } }) => {
+                          return (
+                            <PhoneInput
+                              name={name}
+                              country={"pe"}
+                              value={phone}
+                              countryCodeEditable={false}
+                              onChange={(phone) => {
+                                setPhone(phone);
+                                onChange(phone);
+                              }}
+                              onBlur={() => trigger("phone")}
+                            />
+                          );
+                        }}
+                      />
+                    }
                   />
+
                   <TextInput
                     className="email"
                     question="Email"
+                    error={errors.email && errors.email.message}
                     register={register("email", {
-                      required: true,
-                      message: "Por favor, ingrese su email",
+                      required: {
+                        value: true,
+                        message: "Por favor, ingrese su email",
+                      },
+                      pattern: {
+                        value: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
+                        message: "Ingrese un email valido",
+                      },
                     })}
                   />
                 </FormTwo>
               )}
-              {formStep == 3 && (
+              {formStep === 3 && (
                 <FormThree step={formStep}>
                   <OptionInput
                     width="wide"
@@ -358,7 +553,7 @@ const JoinUsPage = () => {
                   />
                 </FormThree>
               )}
-              {formStep == 4 && (
+              {formStep === 4 && (
                 <FormFour step={formStep}>
                   <TextInput
                     className="referreal"
@@ -394,7 +589,7 @@ const JoinUsPage = () => {
                   />
                 </FormFour>
               )}
-              {formStep == 5 && (
+              {formStep === 5 && (
                 <FormFive step={formStep}>
                   <p>El procese de registro esta finalizado.</p>
                   <p>Nos estaremos poniendo en contacto contigo pronto.</p>
@@ -402,7 +597,7 @@ const JoinUsPage = () => {
               )}
               {renderButton()}
 
-              {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
+              <pre>{JSON.stringify(watch(), null, 2)}</pre>
             </Forms>
           </FormsWrapper>
           <JoinUsImage />
@@ -455,13 +650,25 @@ const OptionInput = ({
   );
 };
 
-const TextInput = ({ type, className, register, question }) => {
+const TextInput = ({
+  type,
+  className,
+  register,
+  question,
+  error,
+  component,
+}) => {
   return (
     <InputWraper className={className}>
       <Question>
         {question} <span>*</span>
       </Question>
-      <input type={type ? type : "text"} {...register} />
+      {!component ? (
+        <input type={type ? type : "text"} {...register} />
+      ) : (
+        component
+      )}
+      <p className="error">{error}</p>
     </InputWraper>
   );
 };
