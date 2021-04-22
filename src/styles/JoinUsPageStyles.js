@@ -12,7 +12,7 @@ export const JoinUsSectionWrapper = styled(Container)``;
 export const JoinUsSectionTitle = styled(H2)``;
 export const JoinUsSectionInfo = styled(Parragraph)``;
 
-export const FormsWrapper = styled.form`
+export const FormsWrapper = styled.div`
   width: 100%;
   min-height: 400px;
   box-shadow: 4px 4px 10px ${(props) => props.theme.color.gray300};
@@ -89,7 +89,7 @@ export const Button = styled.button`
   }
 `;
 
-export const Forms = styled.div`
+export const Forms = styled.form`
   padding: 20px;
   display: grid;
 `;
@@ -223,6 +223,7 @@ export const Option = styled.label`
 `;
 
 const baseForm = css`
+  display: grid;
   gap: 20px;
   align-content: start;
   margin-bottom: 30px;
@@ -230,18 +231,15 @@ const baseForm = css`
 
 export const FormOne = styled.div`
   ${baseForm}
-  display: ${(props) => (props.step == 1 ? "grid" : "none")};
 `;
 
 export const FormTwo = styled.div`
   ${baseForm}
-  display: ${(props) => (props.step == 2 ? "grid" : "none")};
   grid-template-columns: repeat(2, calc(((100% - 20px - 20px) / 2) + 10px));
 `;
 
 export const FormThree = styled.div`
   ${baseForm}
-  display: ${(props) => (props.step == 3 ? "grid" : "none")};
   grid-template-columns: 1fr 1fr;
 
   .frecuency,
@@ -256,12 +254,10 @@ export const FormThree = styled.div`
 
 export const FormFour = styled.div`
   ${baseForm}
-  display: ${(props) => (props.step == 4 ? "grid" : "none")};
 `;
 
 export const FormFive = styled.div`
   ${baseForm}
-  display: ${(props) => (props.step == 5 ? "grid" : "none")};
 `;
 
 export const JoinUsImage = styled.div``;
