@@ -31,7 +31,7 @@ const StepTwo = () => {
       <TextInput
         className="name"
         question="Tu nombre"
-        register={register("step2.name", {
+        register={register("stepTwo.name", {
           required: {
             value: true,
             message: "Por favor, registre su nombre",
@@ -41,13 +41,15 @@ const StepTwo = () => {
             message: "El nombre contiene caracteres no permitidos",
           },
         })}
-        error={errors.step2 && errors.step2.name && errors.step2.name.message}
+        error={
+          errors.stepTwo && errors.stepTwo.name && errors.stepTwo.name.message
+        }
       />
 
       <TextInput
         className="lastname"
         question="Tus apellidos"
-        register={register("step2.lastname", {
+        register={register("stepTwo.lastname", {
           required: {
             value: true,
             message: "Por favor, registre su apellido",
@@ -58,7 +60,9 @@ const StepTwo = () => {
           },
         })}
         error={
-          errors.step2 && errors.step2.lastname && errors.step2.lastname.message
+          errors.stepTwo &&
+          errors.stepTwo.lastname &&
+          errors.stepTwo.lastname.message
         }
       />
 
@@ -66,11 +70,13 @@ const StepTwo = () => {
         className="countryDropdown"
         question="Tu país de residencia"
         error={
-          errors.step2 && errors.step2.country && errors.step2.country.message
+          errors.stepTwo &&
+          errors.stepTwo.country &&
+          errors.stepTwo.country.message
         }
         component={
           <Controller
-            name="step2.country"
+            name="stepTwo.country"
             defaultValue=""
             control={control}
             rules={{
@@ -88,7 +94,7 @@ const StepTwo = () => {
                     setCountry(countryName);
                     onChange(countryName);
                   }}
-                  onBlur={() => trigger("step2.country")}
+                  onBlur={() => trigger("stepTwo.country")}
                 />
               );
             }}
@@ -99,11 +105,13 @@ const StepTwo = () => {
       <TextInput
         question="Tu ciudad de residencia"
         className="regionDropdown"
-        error={errors.step2 && errors.step2.city && errors.step2.city.message}
+        error={
+          errors.stepTwo && errors.stepTwo.city && errors.stepTwo.city.message
+        }
         component={
           <Controller
             control={control}
-            name="step2.city"
+            name="stepTwo.city"
             rules={{
               required: {
                 value: true,
@@ -121,7 +129,7 @@ const StepTwo = () => {
                     setRegion(regionName);
                     onChange(regionName);
                   }}
-                  onBlur={() => trigger("step2.city")}
+                  onBlur={() => trigger("stepTwo.city")}
                 />
               );
             }}
@@ -133,12 +141,14 @@ const StepTwo = () => {
         className="birthday"
         question="Fecha de nacimiento"
         error={
-          errors.step2 && errors.step2.birthday && errors.step2.birthday.message
+          errors.stepTwo &&
+          errors.stepTwo.birthday &&
+          errors.stepTwo.birthday.message
         }
         component={
           <Controller
             control={control}
-            name="step2.birthday"
+            name="stepTwo.birthday"
             defaultValue=""
             rules={{
               required: {
@@ -172,7 +182,7 @@ const StepTwo = () => {
                     setDate(date);
                     onChange(date);
                   }}
-                  onBlur={() => trigger("step2.birthday")}
+                  onBlur={() => trigger("stepTwo.birthday")}
                 />
               );
             }}
@@ -183,10 +193,12 @@ const StepTwo = () => {
       <TextInput
         className="phone"
         question="Tu celular"
-        error={errors.step2 && errors.step2.phone && errors.step2.phone.message}
+        error={
+          errors.stepTwo && errors.stepTwo.phone && errors.stepTwo.phone.message
+        }
         component={
           <Controller
-            name="step2.phone"
+            name="stepTwo.phone"
             control={control}
             defaultValue=""
             rules={{
@@ -210,7 +222,7 @@ const StepTwo = () => {
                     setPhone(phone);
                     onChange(phone);
                   }}
-                  onBlur={() => trigger("step2.phone")}
+                  onBlur={() => trigger("stepTwo.phone")}
                 />
               );
             }}
@@ -221,8 +233,10 @@ const StepTwo = () => {
       <TextInput
         className="email"
         question="Email"
-        error={errors.step2 && errors.step2.email && errors.step2.email.message}
-        register={register("step2.email", {
+        error={
+          errors.stepTwo && errors.stepTwo.email && errors.stepTwo.email.message
+        }
+        register={register("stepTwo.email", {
           required: {
             value: true,
             message: "Por favor, ingrese su email",

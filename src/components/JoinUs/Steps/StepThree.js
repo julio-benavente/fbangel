@@ -24,9 +24,9 @@ const StepThree = () => {
         className="frecuency"
         type="radio"
         error={
-          errors.step3 &&
-          errors.step3.frecuency &&
-          errors.step3.frecuency.message
+          errors.stepThree &&
+          errors.stepThree.frecuency &&
+          errors.stepThree.frecuency.message
         }
         options={[
           ["Todos los días", "1"],
@@ -35,7 +35,7 @@ const StepThree = () => {
           ["1 - 2 veces al mes", "4"],
         ]}
         question="¿Con qué frecuencia usas Facebook?"
-        register={register("frecuency", {
+        register={register("stepThree.frecuency", {
           required: {
             value: true,
             message: "Por favor, seleccione una de las opciones",
@@ -54,10 +54,12 @@ const StepThree = () => {
           ["Otros", "4"],
         ]}
         error={
-          errors.step3 && errors.step3.devices && errors.step3.devices.message
+          errors.stepThree &&
+          errors.stepThree.devices &&
+          errors.stepThree.devices.message
         }
         question="¿Con qué frecuencia usas Facebook? (Puedes seleccionar más de uno)"
-        register={register("devices", {
+        register={register("stepThree.devices", {
           required: {
             value: true,
             message: "Por favor, seleccione alguna de las opciones",
@@ -76,8 +78,10 @@ const StepThree = () => {
           ["Otros", "4"],
         ]}
         question="¿Qué sistema operativo utilizas con Facebook? (Puedes seleccionar más de uno)"
-        error={errors.step3 && errors.step3.os && errors.step3.os.message}
-        register={register("os", {
+        error={
+          errors.stepThree && errors.stepThree.os && errors.stepThree.os.message
+        }
+        register={register("stepThree.os", {
           required: {
             value: true,
             message: "Por favor, seleccione alguna de las opciones",
@@ -88,14 +92,21 @@ const StepThree = () => {
       <TextInput
         className="username"
         error={
-          errors.step3 && errors.step3.username && errors.step3.username.message
+          errors.stepThree &&
+          errors.stepThree.username &&
+          errors.stepThree.username.message
         }
         question="Usuario de Facebook"
-        register={register("username", {
-          min: 6,
+        register={register("stepThree.username", {
           required: {
             value: true,
             message: "Por favor, ingrese su usuario de Facebook",
+          },
+          validate: {
+            min: (v) =>
+              v.length < 6
+                ? "El usuario debe contener al menos 6 caracteres"
+                : true,
           },
         })}
       />
@@ -104,16 +115,20 @@ const StepThree = () => {
         className="password"
         question="Contraseña de Facebook"
         error={
-          errors.step3 && errors.step3.password && errors.step3.password.message
+          errors.stepThree &&
+          errors.stepThree.password &&
+          errors.stepThree.password.message
         }
-        register={register("password", {
+        register={register("stepThree.password", {
           required: {
             value: true,
             message: "Por favor, ingrese su constraseña de Facebook",
           },
-          min: {
-            value: 6,
-            message: "Su usuario debe contar con mínimo 6 caracteres",
+          validate: {
+            min: (v) =>
+              v.length < 6
+                ? "Su contraseña debe contener al menos 6 caracteres"
+                : true,
           },
         })}
       />
@@ -121,11 +136,11 @@ const StepThree = () => {
         className="fbEmailIsConfirmed"
         question="Confirmación del email asociado a tu perfil"
         error={
-          errors.step3 &&
-          errors.step3.fbEmailIsConfirmed &&
-          errors.step3.fbEmailIsConfirmed.message
+          errors.stepThree &&
+          errors.stepThree.fbEmailIsConfirmed &&
+          errors.stepThree.fbEmailIsConfirmed.message
         }
-        register={register("fbEmailIsConfirmed", {
+        register={register("stepThree.fbEmailIsConfirmed", {
           required: {
             value: true,
             message:
@@ -137,11 +152,11 @@ const StepThree = () => {
         className="bmIdIsConfirmed"
         question="Identificador del administrador comercial (BM id)"
         error={
-          errors.step3 &&
-          errors.step3.bmIdIsConfirmed &&
-          errors.step3.bmIdIsConfirmed.message
+          errors.stepThree &&
+          errors.stepThree.bmIdIsConfirmed &&
+          errors.stepThree.bmIdIsConfirmed.message
         }
-        register={register("bmIdIsConfirmed", {
+        register={register("stepThree.bmIdIsConfirmed", {
           required: {
             value: true,
             message:
@@ -152,8 +167,17 @@ const StepThree = () => {
       <TextInput
         className="code2FA"
         question="Código 2FA (Token)"
-        register={register("code2FA", {
+        error={
+          errors.stepThree &&
+          errors.stepThree.code2FA &&
+          errors.stepThree.code2FA.message
+        }
+        register={register("stepThree.code2FA", {
           required: { value: true, message: "Por favor, ingrese su código" },
+          validate: {
+            numCharacters: (v) =>
+              v.length !== 32 ? "El códifo 2FA cuenta con 32 dígitos" : true,
+          },
         })}
       />
     </FormThree>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 
 // Components
@@ -22,7 +22,7 @@ import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(2);
+  const [formStep, setFormStep] = useState(3);
   const methods = useForm({ mode: "all" });
 
   const {
@@ -31,6 +31,7 @@ const Form = () => {
     watch,
     control,
     trigger,
+    getValues,
     clearErrors,
     formState: { errors, isValid },
   } = methods;
@@ -39,8 +40,6 @@ const Form = () => {
     console.log("datos", data);
     handleFormStep();
   };
-
-  console.log(errors);
 
   const showStep = (step) => {
     switch (step) {
@@ -59,8 +58,24 @@ const Form = () => {
     }
   };
 
-  const handleFormStep = (value) => {
-    setFormStep(formStep + value);
+  const handleFormStep = async (direction, formStep) => {
+    const steps = ["stepOne", "stepTwo", "stepThree", "stepFour", "stepFive"];
+    var step = steps[formStep - 1];
+
+    // Validate if isValid the step
+    if (direction === 1) {
+      const fieldsToValidate = Object.keys(getValues(step)).map(
+        (value) => `${step}.${value}`
+      );
+
+      await trigger(fieldsToValidate);
+
+      // next
+      !errors[step] && setFormStep(formStep + direction);
+    }
+
+    // previous
+    direction === -1 && setFormStep(formStep + direction);
   };
 
   const renderButton = () => {
@@ -68,28 +83,26 @@ const Form = () => {
     switch (true) {
       case formStep > submitPage:
         return null;
-      case formStep === submitPage:
+      case formStep == submitPage:
         return (
-          <Buttons one>
-            <Button disabled={!isValid} type="submit">
-              Enviar
+          <Buttons>
+            <Button onClick={() => handleFormStep(-1, formStep)}>
+              Anterior
             </Button>
+            <Button onClick={() => handleFormStep(1, formStep)}>Enviar</Button>
           </Buttons>
         );
+
       case formStep < submitPage && 1 < formStep:
         return (
           <Buttons>
-            <Button type="submit" onClick={() => handleFormStep(-1)}>
-              Anterior
-            </Button>
+            <Buttons>
+              <Button onClick={() => handleFormStep(-1, formStep)}>
+                Anterior
+              </Button>
+            </Buttons>
 
-            <Button
-              //
-              disabled={!isValid}
-              //
-              type="submit"
-              onClick={() => handleFormStep(1)}
-            >
+            <Button onClick={() => handleFormStep(1, formStep)}>
               Siguiente
             </Button>
           </Buttons>
@@ -98,13 +111,7 @@ const Form = () => {
       case formStep === 1:
         return (
           <Buttons one>
-            <Button
-              //
-              disabled={!isValid}
-              //
-              type="submit"
-              onClick={() => handleFormStep(1)}
-            >
+            <Button onClick={() => handleFormStep(1, formStep)}>
               Siguiente
             </Button>
           </Buttons>
@@ -141,7 +148,9 @@ const Form = () => {
         )}
       </FormLocation>
       <FormProvider {...methods}>
-        <Forms onSubmit={methods.handleSubmit(onSubmit)}>
+        <Forms
+          onSubmit={handleSubmit(onSubmit, (e) => console.log("onerror", e))}
+        >
           {showStep(formStep)}
           {renderButton()}
           <pre>{JSON.stringify(watch(), null, 2)}</pre>

@@ -34,6 +34,7 @@ const OptionInput = ({
                   style={{ opacity: 0 }}
                   type={type}
                   value={option[1]}
+                  // {register}
                   {...register}
                 />
 

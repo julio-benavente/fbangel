@@ -71,7 +71,7 @@ export const Buttons = styled.div`
   width: 100%;
 `;
 
-export const Button = styled.button`
+export const Button = styled.div`
   background: ${(props) => props.theme.color.secondary};
   border: none;
   color: ${(props) => props.theme.color.white};

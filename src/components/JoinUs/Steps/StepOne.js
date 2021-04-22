@@ -1,37 +1,44 @@
-import React from "react";
-import { useFormContext } from "react-hook-form";
+import React, { useEffect, memo } from "react";
+import { useFormContext, useController } from "react-hook-form";
 
 // Components
 import OptionInput from "../OptionInput";
-import TextInput from "../TextInput";
 
 // Styles
 import { FormOne } from "../../../styles/JoinUsPageStyles";
 
 const StepOne = () => {
   const methods = useFormContext();
+
   const {
     register,
     formState: { errors },
   } = methods;
+
   return (
     <FormOne>
       <OptionInput
-        width="short"
         className="isAdult"
         type="radio"
+        width="short"
         options={[
           ["Sí", "si"],
           ["No", "no"],
         ]}
         question="¿Eres mayor de edad?"
-        register={register("isAdult", {
+        error={
+          errors.stepOne &&
+          errors.stepOne.isAdult &&
+          errors.stepOne.isAdult.message
+        }
+        register={register("stepOne.isAdult", {
           required: {
             value: true,
             message: "Este campo es obligatorio",
           },
         })}
       />
+
       <OptionInput
         width="short"
         className="accountIsReal"
@@ -41,14 +48,13 @@ const StepOne = () => {
           ["No", "no"],
         ]}
         question="¿Estás creando la solicitud con tu perfil real de Facebook?"
-        register={register("accountIsReal", {
+        register={register("stepOne.accountIsReal", {
           required: {
             value: true,
             message: "Este campo es obligatorio",
           },
         })}
       />
-
       <OptionInput
         width="short"
         className="isFirstTime"
@@ -58,14 +64,13 @@ const StepOne = () => {
           ["No", "no"],
         ]}
         question="¿Tú o alguien más ha utilizado tu cuenta antes para crear publicidad?"
-        register={register("isFirstTime", {
+        register={register("stepOne.isFirstTime", {
           required: {
             value: true,
             message: "Este campo es obligatorio",
           },
         })}
       />
-
       <OptionInput
         width="short"
         className="isOneYear"
@@ -75,14 +80,13 @@ const StepOne = () => {
           ["No", "no"],
         ]}
         question="¿Tu cuenta tiene más de un año?"
-        register={register("isOneYear", {
+        register={register("stepOne.isOneYear", {
           required: {
             value: true,
             message: "Este campo es obligatorio",
           },
         })}
       />
-
       <OptionInput
         width="short"
         className="haveFriends"
@@ -92,7 +96,7 @@ const StepOne = () => {
           ["No", "no"],
         ]}
         question="¿Tienes más de 100 amigos en Facebook?"
-        register={register("haveFriends", {
+        register={register("stepOne.haveFriends", {
           required: {
             value: true,
             message: "Este campo es obligatorio",
