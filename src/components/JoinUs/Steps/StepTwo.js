@@ -165,7 +165,6 @@ const StepTwo = () => {
                   }
 
                   const age = getAge(v);
-                  console.log(age);
                   if (!(age >= 18)) {
                     return "Debes ser mayor de 18 años";
                   }

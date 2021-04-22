@@ -22,7 +22,7 @@ import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(3);
+  const [formStep, setFormStep] = useState(4);
   const methods = useForm({ mode: "all" });
 
   const {
@@ -33,12 +33,13 @@ const Form = () => {
     trigger,
     getValues,
     clearErrors,
+    unregister,
     formState: { errors, isValid },
   } = methods;
 
   const onSubmit = (data) => {
     console.log("datos", data);
-    handleFormStep();
+    handleFormStep(1, formStep);
   };
 
   const showStep = (step) => {

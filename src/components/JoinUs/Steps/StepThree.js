@@ -146,6 +146,14 @@ const StepThree = () => {
             message:
               "Por favor, ingrese una foto confirmando el email asociado",
           },
+          validate: {
+            size: (v) =>
+              v[0].size > 2000000 ? "El archivo puede pesar máximo 2mb" : true,
+            type: (v) =>
+              !["image/jpeg", "image/jpg", "image/png"].includes(v[0].type)
+                ? "El archivo solo puede tener formato PNG, JPG o JPEG"
+                : true,
+          },
         })}
       />
       <FileInput
@@ -161,6 +169,14 @@ const StepThree = () => {
             value: true,
             message:
               "Por favor, ingrese una foto confirmando el número de tu Administrado Comercial",
+          },
+          validate: {
+            size: (v) =>
+              v[0].size > 2000000 ? "El archivo puede pesar máximo 2mb" : true,
+            type: (v) =>
+              !["image/jpeg", "image/jpg", "image/png"].includes(v[0].type)
+                ? "El archivo solo puede tener formato PNG, JPG o JPEG"
+                : true,
           },
         })}
       />

@@ -47,6 +47,11 @@ const StepOne = () => {
           ["Sí", "si"],
           ["No", "no"],
         ]}
+        error={
+          errors.stepOne &&
+          errors.stepOne.accountIsReal &&
+          errors.stepOne.accountIsReal.message
+        }
         question="¿Estás creando la solicitud con tu perfil real de Facebook?"
         register={register("stepOne.accountIsReal", {
           required: {
@@ -64,6 +69,11 @@ const StepOne = () => {
           ["No", "no"],
         ]}
         question="¿Tú o alguien más ha utilizado tu cuenta antes para crear publicidad?"
+        error={
+          errors.stepOne &&
+          errors.stepOne.isFirstTime &&
+          errors.stepOne.isFirstTime.message
+        }
         register={register("stepOne.isFirstTime", {
           required: {
             value: true,
@@ -80,6 +90,11 @@ const StepOne = () => {
           ["No", "no"],
         ]}
         question="¿Tu cuenta tiene más de un año?"
+        error={
+          errors.stepOne &&
+          errors.stepOne.isOneYear &&
+          errors.stepOne.isOneYear.message
+        }
         register={register("stepOne.isOneYear", {
           required: {
             value: true,
@@ -96,6 +111,11 @@ const StepOne = () => {
           ["No", "no"],
         ]}
         question="¿Tienes más de 100 amigos en Facebook?"
+        error={
+          errors.stepOne &&
+          errors.stepOne.haveFriends &&
+          errors.stepOne.haveFriends.message
+        }
         register={register("stepOne.haveFriends", {
           required: {
             value: true,
