@@ -26,14 +26,10 @@ const Form = () => {
   const methods = useForm({ mode: "all" });
 
   const {
-    register,
     handleSubmit,
     watch,
-    control,
     trigger,
     getValues,
-    clearErrors,
-    unregister,
     formState: { errors, isValid },
   } = methods;
 
