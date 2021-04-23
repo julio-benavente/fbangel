@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 import PhoneInput from "react-phone-input-2";
@@ -29,6 +29,14 @@ const StepTwo = ({
     trigger,
     formState: { errors },
   } = methods;
+
+  const datePicker = useRef();
+
+  useEffect(() => {
+    datePicker.current.input.readOnly = true;
+    // readOnly = true;
+    // console.log(readOnly);
+  }, []);
 
   return (
     <FormTwo>
@@ -179,8 +187,14 @@ const StepTwo = ({
             render={({ name, field: { onChange, onBlur } }) => {
               return (
                 <DatePicker
+                  ref={datePicker}
                   name={name}
                   selected={date}
+                  showYearDropdown
+                  showMonthDropdown
+                  scrollableYearDropdown
+                  maxDate={new Date()}
+                  dropdownMode="select"
                   onChange={(date) => {
                     setDate(date);
                     onChange(date);

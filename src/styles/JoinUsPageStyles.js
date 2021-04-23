@@ -293,6 +293,23 @@ export const FormFour = styled.div`
       max-width: none;
     }
   }
+
+  // terms and conditions
+  .message.terms {
+    max-height: 100px;
+    overflow-y: auto;
+    border: 2px solid ${(props) => props.theme.color.gray300};
+    padding: 10px;
+    h2 {
+      color: ${(props) => props.theme.color.primary};
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+    p {
+      word-break: normal;
+      margin-bottom: 5px;
+    }
+  }
 `;
 
 export const FormFive = styled.div`

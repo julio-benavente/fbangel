@@ -7,6 +7,12 @@ import FileInput from "../FileInput";
 import OptionInput from "../OptionInput";
 import TextInput from "../TextInput";
 
+// Assets
+import businessManagerImageOne from "../../../assets/images/businessManagerImageOne.jpg";
+import businessManagerImageTwo from "../../../assets/images/businessManagerImageTwo.jpg";
+import facebookEmailConfirmationImageOne from "../../../assets/images/facebookEmailConfirmationImageOne.jpg";
+import facebookEmailConfirmationImageTwo from "../../../assets/images/facebookEmailConfirmationImageTwo.jpg";
+
 // Styles
 import { FormThree } from "../../../styles/JoinUsPageStyles";
 
@@ -160,8 +166,12 @@ const StepThree = () => {
       <div className="message">
         <p>
           Envía una foto para confirmar el email asociado.{" "}
-          <a href="#">Ejemplo 1 desde ordenador</a>{" "}
-          <a href="#">Ejemplo 2 desde móvil</a>
+          <a href={facebookEmailConfirmationImageOne} target="_blank">
+            Ejemplo 1 desde ordenador
+          </a>{" "}
+          <a href={facebookEmailConfirmationImageTwo} target="_blank">
+            Ejemplo 2 desde móvil
+          </a>
         </p>
         <p>
           <b>Móvil:</b> Configuración > Configuración de la cuenta > Información
@@ -173,7 +183,7 @@ const StepThree = () => {
         </p>
         <p>
           O ve a :{" "}
-          <a href="https://www.facebook.com/settings">
+          <a href="https://www.facebook.com/settings" target="_blank">
             https://www.facebook.com/settings
           </a>
         </p>
@@ -206,8 +216,12 @@ const StepThree = () => {
       <div className="message">
         <p>
           Envía una foto del número de tu Administrador Comercial.{" "}
-          <a href="#">Ejemplo 1 desde ordenador</a>{" "}
-          <a href="#">Ejemplo 2 desde móvil</a>
+          <a href={businessManagerImageOne} target="_blank">
+            Ejemplo 1 desde ordenador
+          </a>{" "}
+          <a href={businessManagerImageTwo} target="_blank">
+            Ejemplo 2 desde móvil
+          </a>
         </p>
       </div>
 
@@ -230,13 +244,19 @@ const StepThree = () => {
       <div className="message">
         <p>
           Si no sabes tu código usa esta dirección{" "}
-          <a href="https://www.facebook.com/security/2fac/setup/intro">
+          <a
+            href="https://www.facebook.com/security/2fac/setup/intro"
+            target="_blank"
+          >
             https://www.facebook.com/security/2fac/setup/intro
           </a>{" "}
           y haz clic en el botón azul que dice "Usar app de autenticación" copia
           el código de 32 caracteres y pegalo aquí. O ve al Paso 2 de nuestra
-          sección <Link to="/como-funciona">Como funciona</Link> y consulta los
-          videos.
+          sección{" "}
+          <Link to="/como-funciona" target="_blank">
+            Como funciona
+          </Link>{" "}
+          y consulta los videos.
         </p>
       </div>
     </FormThree>
