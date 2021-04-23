@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/fbangel/static/js/main.77342f32.chunk.js",
-    "main.js.map": "/fbangel/static/js/main.77342f32.chunk.js.map",
+    "main.js": "/fbangel/static/js/main.a51a6c77.chunk.js",
+    "main.js.map": "/fbangel/static/js/main.a51a6c77.chunk.js.map",
     "runtime-main.js": "/fbangel/static/js/runtime-main.33fa6fd9.js",
     "runtime-main.js.map": "/fbangel/static/js/runtime-main.33fa6fd9.js.map",
     "static/css/2.c90ed7a6.chunk.css": "/fbangel/static/css/2.c90ed7a6.chunk.css",
-    "static/js/2.417bb376.chunk.js": "/fbangel/static/js/2.417bb376.chunk.js",
-    "static/js/2.417bb376.chunk.js.map": "/fbangel/static/js/2.417bb376.chunk.js.map",
+    "static/js/2.87a177dc.chunk.js": "/fbangel/static/js/2.87a177dc.chunk.js",
+    "static/js/2.87a177dc.chunk.js.map": "/fbangel/static/js/2.87a177dc.chunk.js.map",
     "static/js/3.b61eb1c9.chunk.js": "/fbangel/static/js/3.b61eb1c9.chunk.js",
     "static/js/3.b61eb1c9.chunk.js.map": "/fbangel/static/js/3.b61eb1c9.chunk.js.map",
     "index.html": "/fbangel/index.html",
     "static/css/2.c90ed7a6.chunk.css.map": "/fbangel/static/css/2.c90ed7a6.chunk.css.map",
-    "static/js/2.417bb376.chunk.js.LICENSE.txt": "/fbangel/static/js/2.417bb376.chunk.js.LICENSE.txt",
+    "static/js/2.87a177dc.chunk.js.LICENSE.txt": "/fbangel/static/js/2.87a177dc.chunk.js.LICENSE.txt",
     "static/media/arrow.475d5732.svg": "/fbangel/static/media/arrow.475d5732.svg",
     "static/media/browser-girl.f778d263.svg": "/fbangel/static/media/browser-girl.f778d263.svg",
     "static/media/businessManagerImageOne.f26cb6eb.jpg": "/fbangel/static/media/businessManagerImageOne.f26cb6eb.jpg",
@@ -30,13 +30,14 @@
     "static/media/option-two-img-two.e1117a03.jpg": "/fbangel/static/media/option-two-img-two.e1117a03.jpg",
     "static/media/sending-email.eb36c6e4.svg": "/fbangel/static/media/sending-email.eb36c6e4.svg",
     "static/media/tasks-list.16b32df3.png": "/fbangel/static/media/tasks-list.16b32df3.png",
+    "static/media/telegram.406dba18.svg": "/fbangel/static/media/telegram.406dba18.svg",
     "static/media/todo-list.c8e35342.svg": "/fbangel/static/media/todo-list.c8e35342.svg",
     "static/media/watching-laptop.b1c67f7c.svg": "/fbangel/static/media/watching-laptop.b1c67f7c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.33fa6fd9.js",
     "static/css/2.c90ed7a6.chunk.css",
-    "static/js/2.417bb376.chunk.js",
-    "static/js/main.77342f32.chunk.js"
+    "static/js/2.87a177dc.chunk.js",
+    "static/js/main.a51a6c77.chunk.js"
   ]
 }
