@@ -17,7 +17,7 @@ const JoinUsPage = () => {
       <JoinUsSection>
         <JoinUsSectionWrapper>
           <JoinUsSectionTitle>
-            Es válido tu perfil de Facebook para nuestro programa de alquiler?
+            ¿Es válido tu perfil de Facebook para nuestro programa de alquiler?
           </JoinUsSectionTitle>
           <JoinUsSectionInfo>
             Para saber si es válido para nuestro programa de alquiler, completa

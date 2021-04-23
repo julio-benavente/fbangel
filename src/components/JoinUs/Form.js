@@ -22,7 +22,7 @@ import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(4);
+  const [formStep, setFormStep] = useState(2);
   const methods = useForm({ mode: "all" });
 
   const {
@@ -42,12 +42,29 @@ const Form = () => {
     handleFormStep(1, formStep);
   };
 
+  // Step two state
+  const [country, setCountry] = useState("");
+  const [region, setRegion] = useState("");
+  const [phone, setPhone] = useState(null);
+  const [date, setDate] = useState(null);
+
   const showStep = (step) => {
     switch (step) {
       case 1:
         return <StepOne />;
       case 2:
-        return <StepTwo />;
+        return (
+          <StepTwo
+            country={country}
+            setCountry={setCountry}
+            region={region}
+            setRegion={setRegion}
+            phone={phone}
+            setPhone={setPhone}
+            date={date}
+            setDate={setDate}
+          />
+        );
       case 3:
         return <StepThree />;
       case 4:
@@ -59,6 +76,7 @@ const Form = () => {
     }
   };
 
+  //
   const handleFormStep = async (direction, formStep) => {
     const steps = ["stepOne", "stepTwo", "stepThree", "stepFour", "stepFive"];
     var step = steps[formStep - 1];

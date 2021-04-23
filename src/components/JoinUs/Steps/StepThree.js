@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 // Components
 import FileInput from "../FileInput";
@@ -156,6 +157,28 @@ const StepThree = () => {
           },
         })}
       />
+      <div className="message">
+        <p>
+          Envía una foto para confirmar el email asociado.{" "}
+          <a href="#">Ejemplo 1 desde ordenador</a>{" "}
+          <a href="#">Ejemplo 2 desde móvil</a>
+        </p>
+        <p>
+          <b>Móvil:</b> Configuración > Configuración de la cuenta > Información
+          personal > Información de contacto
+        </p>
+        <p>
+          <b>Ordenador:</b> Configuración y privacidad >Configuración > General
+          > Contacto
+        </p>
+        <p>
+          O ve a :{" "}
+          <a href="https://www.facebook.com/settings">
+            https://www.facebook.com/settings
+          </a>
+        </p>
+      </div>
+
       <FileInput
         className="bmIdIsConfirmed"
         question="Identificador del administrador comercial (BM id)"
@@ -180,6 +203,14 @@ const StepThree = () => {
           },
         })}
       />
+      <div className="message">
+        <p>
+          Envía una foto del número de tu Administrador Comercial.{" "}
+          <a href="#">Ejemplo 1 desde ordenador</a>{" "}
+          <a href="#">Ejemplo 2 desde móvil</a>
+        </p>
+      </div>
+
       <TextInput
         className="code2FA"
         question="Código 2FA (Token)"
@@ -196,6 +227,18 @@ const StepThree = () => {
           },
         })}
       />
+      <div className="message">
+        <p>
+          Si no sabes tu código usa esta dirección{" "}
+          <a href="https://www.facebook.com/security/2fac/setup/intro">
+            https://www.facebook.com/security/2fac/setup/intro
+          </a>{" "}
+          y haz clic en el botón azul que dice "Usar app de autenticación" copia
+          el código de 32 caracteres y pegalo aquí. O ve al Paso 2 de nuestra
+          sección <Link to="/como-funciona">Como funciona</Link> y consulta los
+          videos.
+        </p>
+      </div>
     </FormThree>
   );
 };

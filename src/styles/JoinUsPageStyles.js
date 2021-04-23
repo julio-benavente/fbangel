@@ -229,6 +229,21 @@ const baseForm = css`
   margin-bottom: 30px;
 `;
 
+const message = css`
+  .message {
+    grid-column: 1/-1;
+
+    p {
+      font-size: 0.8rem;
+      word-break: break-all;
+      a {
+        text-decoration: none;
+        color: ${(props) => props.theme.color.link};
+      }
+    }
+  }
+`;
+
 export const FormOne = styled.div`
   ${baseForm}
 `;
@@ -240,6 +255,7 @@ export const FormTwo = styled.div`
 
 export const FormThree = styled.div`
   ${baseForm}
+  ${message}
   grid-template-columns: 1fr 1fr;
 
   .frecuency,
@@ -254,6 +270,29 @@ export const FormThree = styled.div`
 
 export const FormFour = styled.div`
   ${baseForm}
+  ${message}
+  grid-template-columns: repeat(2, calc(((100% - 20px - 20px) / 2) + 10px));
+  > * {
+    grid-column: 1/-1;
+  }
+  .paypalEmail {
+    grid-column: 1/2;
+  }
+
+  .paypalEmailConfirmation {
+    grid-column: 2/3;
+  }
+
+  .holderName,
+  .bankAngency,
+  .bankAccountCode,
+  .referral {
+    width: 100%;
+    input[type="text"] {
+      width: 100%;
+      max-width: none;
+    }
+  }
 `;
 
 export const FormFive = styled.div`

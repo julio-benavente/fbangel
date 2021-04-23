@@ -12,12 +12,16 @@ import { FormTwo } from "../../../styles/JoinUsPageStyles";
 import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-const StepTwo = () => {
-  const [country, setCountry] = useState("");
-  const [region, setRegion] = useState("");
-  const [phone, setPhone] = useState(null);
-  const [date, setDate] = useState(null);
-
+const StepTwo = ({
+  country,
+  setCountry,
+  region,
+  setRegion,
+  phone,
+  setPhone,
+  date,
+  setDate,
+}) => {
   const methods = useFormContext();
   const {
     register,

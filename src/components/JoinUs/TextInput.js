@@ -9,11 +9,12 @@ const TextInput = ({
   question,
   error,
   component,
+  noRequired,
 }) => {
   return (
     <InputWraper className={className}>
       <Question>
-        {question} <span>*</span>
+        {question} {noRequired ? null : <span>*</span>}
       </Question>
       {!component ? (
         <input type={type ? type : "text"} {...register} />
