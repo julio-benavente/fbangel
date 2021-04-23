@@ -45,6 +45,7 @@ export const TelegramButton = styled.a`
   color: ${(props) => props.theme.color.primary};
   font-weight: 700;
   justify-self: center;
+  text-decoration: none;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
@@ -133,4 +134,5 @@ export const SendButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   margin-top: 2rem;
+  outline: none;
 `;

@@ -100,7 +100,10 @@ const ContactPage = () => {
                   También puedes consultar dudas en nuestro grupo de Telegram
                 </p>
               </ContactSideInformation>
-              <TelegramButton>
+              <TelegramButton
+                href="https://t.me/joinchat/T0g1FDrJeRxuiAt8"
+                target="_blank"
+              >
                 Únete al grupo <Telegram />
               </TelegramButton>
             </ContactSide>
