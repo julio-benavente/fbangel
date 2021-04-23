@@ -110,7 +110,7 @@ const arrowVariants = {
 const questionCardWrapperVariants = {
   end: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };

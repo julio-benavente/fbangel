@@ -82,11 +82,6 @@ export const Button = styled.div`
   cursor: pointer;
   outline: none;
   justify-items: end;
-
-  &:disabled {
-    background: ${(props) => props.theme.color.gray300};
-    cursor: not-allowed;
-  }
 `;
 
 export const Forms = styled.form`
@@ -101,7 +96,7 @@ export const InputWraper = styled.div`
   select[name="rcrs-country"],
   select[name="rcrs-region"],
   input.form-control[type="tel"] {
-    padding: 0 10px;
+    padding: 3px 10px;
     border: 2px solid ${(props) => props.theme.color.gray300};
     border-radius: 2px;
     outline: none;
@@ -130,7 +125,8 @@ export const InputWraper = styled.div`
 
   // Phone input
   input.form-control[type="tel"] {
-    max-height: 25.6px;
+    // min height plust 6px padding
+    max-height: calc(25.6px + 6px);
     width: 100%;
     padding-left: 48px;
   }
