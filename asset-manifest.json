@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/fbangel/static/js/main.ae736d01.chunk.js",
-    "main.js.map": "/fbangel/static/js/main.ae736d01.chunk.js.map",
+    "main.js": "/fbangel/static/js/main.05386f15.chunk.js",
+    "main.js.map": "/fbangel/static/js/main.05386f15.chunk.js.map",
     "runtime-main.js": "/fbangel/static/js/runtime-main.95007c67.js",
     "runtime-main.js.map": "/fbangel/static/js/runtime-main.95007c67.js.map",
     "static/css/2.c90ed7a6.chunk.css": "/fbangel/static/css/2.c90ed7a6.chunk.css",
@@ -13,8 +13,12 @@
     "static/css/2.c90ed7a6.chunk.css.map": "/fbangel/static/css/2.c90ed7a6.chunk.css.map",
     "static/js/2.b1e48409.chunk.js.LICENSE.txt": "/fbangel/static/js/2.b1e48409.chunk.js.LICENSE.txt",
     "static/media/browser-girl.f778d263.svg": "/fbangel/static/media/browser-girl.f778d263.svg",
+    "static/media/businessManagerImageOne.f26cb6eb.jpg": "/fbangel/static/media/businessManagerImageOne.f26cb6eb.jpg",
+    "static/media/businessManagerImageTwo.6016a3b4.jpg": "/fbangel/static/media/businessManagerImageTwo.6016a3b4.jpg",
     "static/media/cellphone-in-hand.eee818db.svg": "/fbangel/static/media/cellphone-in-hand.eee818db.svg",
     "static/media/drinking-coffe.637c6ede.svg": "/fbangel/static/media/drinking-coffe.637c6ede.svg",
+    "static/media/facebookEmailConfirmationImageOne.b25a635c.jpg": "/fbangel/static/media/facebookEmailConfirmationImageOne.b25a635c.jpg",
+    "static/media/facebookEmailConfirmationImageTwo.9ddb4c29.jpg": "/fbangel/static/media/facebookEmailConfirmationImageTwo.9ddb4c29.jpg",
     "static/media/friends-chatting.72018c7d.svg": "/fbangel/static/media/friends-chatting.72018c7d.svg",
     "static/media/girl-getting-off.e5f50cb6.svg": "/fbangel/static/media/girl-getting-off.e5f50cb6.svg",
     "static/media/money.6517d11b.png": "/fbangel/static/media/money.6517d11b.png",
@@ -31,6 +35,6 @@
     "static/js/runtime-main.95007c67.js",
     "static/css/2.c90ed7a6.chunk.css",
     "static/js/2.b1e48409.chunk.js",
-    "static/js/main.ae736d01.chunk.js"
+    "static/js/main.05386f15.chunk.js"
   ]
 }
