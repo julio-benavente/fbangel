@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // Styles
-import { Container, H2, Parragraph, RoundedBtn } from "./GlobalStyles";
+import { Container, H2, Parragraph, RoundedBtn, Tiny } from "./GlobalStyles";
 export const ReferralProgram = styled.div`
   padding-top: 90px;
 `;
@@ -21,6 +21,7 @@ export const ReferralProgramSectionInfo = styled(Parragraph)`
     color: ${(props) => props.theme.color.green};
     font-weight: 700;
   }
+
   .asterisk {
     color: ${(props) => props.theme.color.secondary};
   }
@@ -47,4 +48,7 @@ export const ReferralProgramImage = styled.img`
 
 export const RegistrationBtn = styled.a`
   ${RoundedBtn}
+  margin-bottom: 4rem;
 `;
+
+export const TinyLetter = styled(Tiny)``;

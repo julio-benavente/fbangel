@@ -7,6 +7,7 @@ import {
   InformationList,
   ReferralProgramImage,
   RegistrationBtn,
+  TinyLetter,
 } from "../../styles/ReferralProgramStyles";
 
 // Assets
@@ -75,6 +76,10 @@ const ReferralProgramPage = () => {
           Regístrate aquí
         </RegistrationBtn>
         <ReferralProgramImage src={friendsChatting} />
+        <TinyLetter>
+          <span>*</span> Por cada persona que registre su perfil con nosotros y
+          sea válido
+        </TinyLetter>
       </ReferralProgramSection>
     </ReferralProgram>
   );
