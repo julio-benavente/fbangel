@@ -140,3 +140,25 @@ export const PLink = css`
   color: ${(props) => props.theme.color.link};
   text-decoration: none;
 `;
+
+export const liBullets = css`
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 100px;
+    border: 1px solid ${(props) => props.theme.color.gray300};
+    top: 7px;
+    left: -22px;
+  }
+
+  &::after {
+    width: 10px;
+    height: 10px;
+    top: 9px;
+    left: -20px;
+    background-color: ${(props) => props.theme.color.secondary};
+  }
+`;

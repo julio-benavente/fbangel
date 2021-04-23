@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
 // Styles
-import { Container, H2, Parragraph, RoundedBtn, Tiny } from "./GlobalStyles";
+import {
+  Container,
+  H2,
+  Parragraph,
+  RoundedBtn,
+  Tiny,
+  liBullets,
+} from "./GlobalStyles";
+
 export const ReferralProgram = styled.div`
   padding-top: 90px;
 `;
@@ -28,6 +36,7 @@ export const ReferralProgramSectionInfo = styled(Parragraph)`
 `;
 
 export const InformationList = styled(Parragraph)`
+  position: relative;
   a {
     text-decoration: none;
     color: ${(props) => props.theme.color.link};
@@ -35,6 +44,12 @@ export const InformationList = styled(Parragraph)`
 
   .important {
     color: ${(props) => props.theme.color.secondary};
+  }
+
+  p {
+    margin-left: 14px;
+    position: relative;
+    ${liBullets}
   }
 `;
 

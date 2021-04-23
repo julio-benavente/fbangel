@@ -66,8 +66,6 @@ const ReferralProgramPage = () => {
             para así saber que son referidos tuyos y podamos generar tu próximo
             pago.
           </p>
-          <p></p>
-          <p></p>
         </InformationList>
         <RegistrationBtn
           href="https://form.jotform.com/210684831753358"
