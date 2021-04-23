@@ -162,3 +162,13 @@ export const liBullets = css`
     background-color: ${(props) => props.theme.color.secondary};
   }
 `;
+
+export const page = css`
+  padding-top: 90px;
+`;
+
+export const image = css`
+  width: clamp(250px, 20vw, 350px);
+  justify-self: end;
+  align-self: center;
+`;

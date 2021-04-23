@@ -9,6 +9,7 @@ import Home from "./components/Home/HomePage";
 import HowItWorks from "./components/HowItWorks/HowItWorksPage";
 import JoinUs from "./components/JoinUs/JoinUsPage";
 import ReferralProgram from "./components/ReferralProgram/ReferralProgramPage";
+import Faq from "./components/Faq/FaqPage";
 
 // Styles
 import GlobalStyle from "./styles/GlobalStyles";
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/como-funciona" component={HowItWorks} />
           <Route path="/unete-ahora" component={JoinUs} />
           <Route path="/programa-referidos" component={ReferralProgram} />
+          <Route path="/faq" component={Faq} />
         </Switch>
         <Footer />
       </ThemeProvider>
