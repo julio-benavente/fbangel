@@ -7,6 +7,7 @@ import {
   H2,
   Parragraph,
   PLink,
+  breakpoint,
 } from "../styles/GlobalStyles";
 
 export const HowItWorks = styled.div`
@@ -15,9 +16,14 @@ export const HowItWorks = styled.div`
 
 export const HowItWorksSection = styled(Container)`
   grid-template-columns: 1fr 1fr;
-
+  position: relative;
   > * {
     grid-column: 1/2;
+  }
+
+  @media screen and ${breakpoint.md} {
+    display: block;
+    flex-direction: column;
   }
 `;
 
@@ -35,8 +41,22 @@ export const HowItWorksImage = styled.img`
   grid-column: 2/3;
   grid-row: 1/3;
   justify-self: end;
-  width: clamp(200px, 20vw, 350px);
+  width: clamp(200px, 25vw, 300px);
   margin-top: 2rem;
+
+  @media screen and ${breakpoint.md} {
+    display: inline-block;
+    float: right;
+    margin-left: 20px;
+  }
+
+  @media screen and ${breakpoint.sm} {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(calc(clamp(150px, 25vw, 300px) / 2));
+    width: clamp(150px, 25vw, 300px);
+  }
 `;
 
 export const RequirementsSection = styled.div`
@@ -48,6 +68,10 @@ export const RequirementsSectionWrapper = styled(Container)`
   > * {
     grid-column: 2/3;
   }
+
+  @media screen and ${breakpoint.md} {
+    display: block;
+  }
 `;
 
 export const RequirementsSectionTitle = styled(H2)`
@@ -56,7 +80,6 @@ export const RequirementsSectionTitle = styled(H2)`
 
 export const RequirementsList = styled.ul`
   position: relative;
-
   li {
     position: relative;
 
@@ -80,13 +103,30 @@ export const RequirementsList = styled.ul`
       background-color: ${(props) => props.theme.color.secondary};
     }
   }
+
+  @media screen and ${breakpoint.md} {
+    margin-left: 20px;
+  }
 `;
 
 export const RequirementsImage = styled.img`
   grid-column: 1/2;
   grid-row: 1/3;
-  width: clamp(200px, 20vw, 350px);
+  width: clamp(200px, 25vw, 350px);
   margin-top: 2rem;
+
+  @media screen and ${breakpoint.md} {
+    grid-column: auto;
+    grid-row: auto;
+    float: right;
+    margin-left: 20px;
+  }
+  @media sreen and ${breakpoint} {
+    position: relative;
+    width: clamp(150px, 25vw, 350px);
+    shape-outside: circle();
+    /* left: 40px; */
+  }
 `;
 
 // Configuration section
@@ -100,6 +140,9 @@ export const ConfigurationSectionWrapper = styled(Container)`
   > * {
     grid-column: 1/2;
   }
+  @media screen and ${breakpoint.md} {
+    grid-template-columns: 1fr auto;
+  }
 `;
 
 export const ConfigurationSectionTitle = styled(H2)``;
@@ -109,6 +152,15 @@ export const ConfigurationInfo = styled(Parragraph)``;
 export const ConfigurationImage = styled(HowItWorksImage)`
   grid-column: 2/3;
   grid-row: 1/5;
+
+  @media screen and ${breakpoint.sm} {
+    position: absolute;
+    top: clamp(50px, 10vh, 100px);
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+    transform: translateY(calc(-100% + 20px));
+  }
 `;
 
 export const ConfigurationList = styled.ol`
@@ -120,6 +172,7 @@ export const ConfigurationList = styled.ol`
 `;
 
 export const StepOne = styled.div`
+  max-width: 500px;
   ol,
   ul {
     padding-left: 20px;
@@ -143,6 +196,10 @@ export const Options = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
+
+  @media screen and ${breakpoint.sm} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const OptionOne = styled.div`
@@ -196,11 +253,29 @@ export const RegistrationSection = styled.div`
 
 export const RegistrationSectionWrapper = styled(Container)`
   grid-template-columns: 1fr 1fr;
+  position: relative;
+  @media screen and ${breakpoint.md} {
+    display: block;
+  }
 `;
 
 export const RegistrationSectionTitle = styled(H2)``;
 
-export const RegistrationImage = styled(HowItWorksImage)``;
+export const RegistrationImage = styled(HowItWorksImage)`
+  @media screen and ${breakpoint.md} {
+    position: relative;
+    float: right;
+    margin: 0 0 30px 30px;
+  }
+  @media screen and ${breakpoint.sm} {
+    position: absolute;
+    top: clamp(50px, 10vh, 100px);
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+    transform: translateY(calc(-100% + 40px));
+  }
+`;
 
 export const RegistrationInfo = styled(Parragraph)`
   a {
@@ -217,6 +292,10 @@ export const PaymentSectionWrapper = styled(Container)`
   > * {
     grid-column: 2/3;
   }
+
+  @media screen and ${breakpoint.md} {
+    display: block;
+  }
 `;
 
 export const PaymentImage = styled(HowItWorksImage)`
@@ -225,6 +304,19 @@ export const PaymentImage = styled(HowItWorksImage)`
   justify-self: start;
   align-self: center;
   margin-top: 0;
+
+  @media screen and ${breakpoint.md} {
+    transform: scaleX(-1);
+  }
+
+  @media screen and ${breakpoint.sm} {
+    position: absolute;
+    top: clamp(50px, 10vh, 100px);
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+    transform: scaleX(-1) translateY(calc(-100% + 40px));
+  }
 `;
 
 export const PaymentSectionTitle = styled(H2)`
@@ -248,6 +340,10 @@ export const SupportSectionWrapper = styled(Container)`
   > * {
     grid-column: 1/2;
   }
+
+  @media screen and ${breakpoint.sm} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const SupportImage = styled(RequirementsImage)`
@@ -255,6 +351,15 @@ export const SupportImage = styled(RequirementsImage)`
   grid-row: 1/3;
   justify-self: end;
   align-self: center;
+
+  @media screen and ${breakpoint.sm} {
+    position: absolute;
+    top: clamp(50px, 10vh, 100px);
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+    transform: scaleX(-1) translateY(calc(-100% + 40px));
+  }
 `;
 
 export const SupportSectionTitle = styled(H2)``;

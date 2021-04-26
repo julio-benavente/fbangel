@@ -1,6 +1,11 @@
 import styled, { createGlobalStyle, css } from "styled-components";
 
 export default createGlobalStyle`
+
+    html {
+      overflow-x: hidden;
+    }
+
     /* Box sizing rules */
     *,
     *::before,
@@ -68,22 +73,32 @@ export default createGlobalStyle`
   
 `;
 
+export const breakpoint = {
+  sm: `(max-width : 600px)`,
+  md: `(max-width : 900px)`,
+  lg: `(max-width : 1200px)`,
+};
+
 export const Container = styled.div`
   display: grid;
   width: 100%;
   max-width: 960px;
-  max-width: ${(props) => props.fluid && "none"};
+  position: relative;
+  max-width: ${(props) => props.fluid && "1200px"};
   margin: auto;
-  padding: clamp(70px, 15vw, 100px) 32px;
+  padding: clamp(50px, 10vh, 100px) 32px;
   grid-template-columns: ${(props) => props.grid12 && "repeat(12, 1fr)"};
 `;
 
 export const H1 = styled.h1`
   font-size: clamp(2rem, 3vw, 2.5rem);
   margin-bottom: 40px;
+  @media screen and ${breakpoint.sm} {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+  }
 `;
 export const H2 = styled.h2`
-  font-size: 2rem;
+  font-size: 1.55rem;
   color: ${(props) => props.theme.color.primary};
   margin-bottom: 30px;
 `;
@@ -92,7 +107,7 @@ export const H3 = styled.h3`
   color: ${(props) => props.theme.color.primary};
   margin-bottom: 25px;
 `;
-export const H4 = styled.h1`
+export const H4 = styled.h4`
   font-size: 1rem;
   color: ${(props) => props.theme.color.primary};
   margin-bottom: 20px;

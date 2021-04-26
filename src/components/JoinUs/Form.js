@@ -168,7 +168,6 @@ const Form = () => {
         >
           {showStep(formStep)}
           {renderButton()}
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
         </Forms>
       </FormProvider>
     </FormsWrapper>

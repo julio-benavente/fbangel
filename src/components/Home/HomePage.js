@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 // Styles
 import {
@@ -114,10 +115,25 @@ const testimonies = [
   },
 ];
 
+const testimoniesNavVariants = {};
+
 const HomePage = () => {
+  const [currentTestimony, setCurrentTestimony] = useState(0);
+  const testimoniesNavAnimation = useAnimation();
+  const handleTestimoniesNav = (to) => {
+    const translate = (to) => (400 + 50) * -to;
+    testimoniesNavAnimation.start({
+      x: translate(to),
+      transition: {
+        esae: "esaeInOut",
+      },
+    });
+    setCurrentTestimony(to);
+  };
+
   return (
     <Home className="Home" id="Home">
-      <BannerSection fluid>
+      <BannerSection>
         <LeftSide>
           <Headline>
             Gana dinero con tu perfil de Facebook ¡Es un juego de niños!
@@ -143,10 +159,10 @@ const HomePage = () => {
       </ProcessSection>
 
       <RequirementsSection>
-        <MoneyImage src={money} />
-        <TaskListImage src={task_list} />
         <RequirementsSectionWrapper>
+          <MoneyImage src={money} />
           <SectionTitle>¿Cuánto ganarás?</SectionTitle>
+          <TaskListImage src={task_list} />
           <RequirementsInfo>
             <p>
               <span>! Gana 30 dólares cada mes !</span> Confirma que cumples los
@@ -214,18 +230,28 @@ const HomePage = () => {
             ¡Gente que se unió a nosotros y ya está ganando dinero!
           </TestimoniesInfo>
           <TestimoniesCardWrapper>
-            {testimonies.map(({ testimony, author, country, membership }) => (
-              <TestimonyCard>
-                <Testimony>{testimony}</Testimony>
-                <Author>{author}</Author>
-                {/* <Country></Country> */}
-                <Membership>{`Miembro desde ${membership}`}</Membership>
-              </TestimonyCard>
-            ))}
+            {testimonies.map(
+              ({ testimony, author, country, membership }, i) => (
+                <TestimonyCard
+                  key={i}
+                  as={motion.div}
+                  animate={testimoniesNavAnimation}
+                >
+                  <Testimony>{testimony}</Testimony>
+                  <Author>{author}</Author>
+                  {/* <Country></Country> */}
+                  <Membership>{`Miembro desde ${membership}`}</Membership>
+                </TestimonyCard>
+              )
+            )}
           </TestimoniesCardWrapper>
           <TestimoniesNav>
-            {testimonies.map((testimony) => (
-              <TestimoniesNavLink />
+            {testimonies.map((e, i) => (
+              <TestimoniesNavLink
+                key={i}
+                active={i == currentTestimony}
+                onClick={() => handleTestimoniesNav(i)}
+              />
             ))}
           </TestimoniesNav>
         </TestimoniesSectionWrapper>

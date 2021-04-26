@@ -16,6 +16,7 @@ export const FooterSectionWrapper = styled(Container)`
   grid-template-columns: auto auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  max-width: 1200px;
 `;
 
 export const FooterLinks = styled.div`

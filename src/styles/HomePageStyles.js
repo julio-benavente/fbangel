@@ -11,6 +11,7 @@ import {
   RoundedBtn,
   Tiny,
   Parragraph,
+  breakpoint,
 } from "./GlobalStyles";
 
 export const Home = styled.div``;
@@ -18,10 +19,14 @@ export const Home = styled.div``;
 // Banner section
 export const BannerSection = styled(Container)`
   padding: clamp(150px, 15vh, 300px) 40px;
-  /* min-height: 100vw; */
   grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
   align-items: start;
   align-content: start;
+  position: relative;
+  @media screen and ${breakpoint.sm} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const LeftSide = styled(Container)`
@@ -31,29 +36,65 @@ export const LeftSide = styled(Container)`
 export const Headline = styled(H1)`
   line-height: 1;
   margin-bottom: 10px;
+  color: ${(props) => props.theme.color.primary};
 `;
 
 export const Subheadline = styled(H4)`
   font-weight: 400;
   margin-bottom: 40px;
+  color: ${(props) => transparentize(0.2, props.theme.color.primary)};
 `;
 
 export const StartButton = styled(Link)`
   ${RoundedBtn}
   font-weight: 500;
-  background-color: ${(props) => props.theme.color.primary};
+  transform: scale(1.2);
+  background-color: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.white};
+  justify-self: end;
+
+  @media screen and ${breakpoint.md} {
+    transform: scale(1);
+  }
+  @media screen and ${breakpoint.md} {
+    justify-self: center;
+  }
 `;
 
 export const Image = styled.img`
   justify-self: end;
-  padding-right: clamp(50px, 10vw, 100px);
-  width: 400px;
+  padding-right: clamp(0px, 5vw, 100px);
+  width: clamp(200px, 30vw, 300px);
+  transform: scaleX(-1);
+
+  @media screen and ${breakpoint.md} {
+    padding-right: 0;
+  }
+
+  @media screen and ${breakpoint.sm} {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    transform: scaleX(-1) translateX(-30%);
+    z-index: -1;
+    width: clamp(150px, 20vw, 200px);
+
+    /* display: none; */
+  }
 `;
 export const ProcessSection = styled(Container)`
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   position: relative;
+
+  @media screen and ${breakpoint.md} {
+    gap: 20px;
+  }
+
+  @media screen and ${breakpoint.sm} {
+    gap: 50px 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 export const Card = styled.div`
   display: grid;
@@ -66,7 +107,7 @@ export const Number = styled.div`
   font-weight: 800;
   font-size: 7rem;
   line-height: 1;
-  transform: translate(-40px, calc(-100% + 48px));
+  transform: translate(-30px, calc(-100% + 48px));
 `;
 export const CardTitle = styled(H4)``;
 
@@ -83,20 +124,37 @@ export const RequirementsSection = styled.div`
 
 export const MoneyImage = styled.img`
   position: absolute;
-  height: clamp(100px, 16vw, 200px);
+  height: clamp(100px, 10vw, 150px);
   transform: rotate(90deg) translate(-50%, 20%);
+  left: clamp(-30px, -10vw, -300px);
+
+  @media screen and ${breakpoint.lg} {
+  }
+
+  @media screen and ${breakpoint.md} {
+    left: 0px;
+  }
 `;
 
 export const TaskListImage = styled.img`
   position: absolute;
-  height: clamp(10px, 20vw, 300px);
+  width: clamp(100px, 15vw, 150px);
   bottom: 0;
-  right: 0;
+  right: clamp(-30px, -10vw, -300px);
+
   transform: translate(30%, 0%);
+  @media screen and ${breakpoint.md} {
+    right: 0px;
+  }
 `;
 
 export const RequirementsSectionWrapper = styled(Container)`
+  position: relative;
   grid-template-columns: 1fr 1fr;
+
+  @media screen and ${breakpoint.sm} {
+    grid-template-columns: 1fr;
+  }
 `;
 export const SectionTitle = styled(H2)`
   grid-column: 1/-1;
@@ -119,7 +177,7 @@ export const HowItWorksBtn = styled(Link)`
 export const RequirementsSubtitle = styled(H4)``;
 export const RequirementsList = styled.ul`
   position: relative;
-
+  margin-left: 20px;
   li {
     position: relative;
 
@@ -150,12 +208,25 @@ export const ReferralSection = styled.div``;
 
 export const ReferralSectionWrapper = styled(Container)`
   grid-template-columns: 1fr 1fr;
+  position: relative;
 
   > * {
     grid-column: 1/2;
   }
+
+  @media screen and ${breakpoint.sm} {
+    grid-template-columns: 1fr;
+
+    > * {
+      grid-column: auto;
+    }
+  }
 `;
-export const ReferralSectionTitle = styled(H2)``;
+export const ReferralSectionTitle = styled(H2)`
+  @media screen and ${breakpoint.md} {
+    grid-column: 1/-1;
+  }
+`;
 export const ReferralInfo = styled(Parragraph)``;
 export const RegisterBtn = styled(Link)`
   ${RoundedBtn}
@@ -163,13 +234,32 @@ export const RegisterBtn = styled(Link)`
 
 export const ReferrealTiny = styled(Tiny)`
   margin-top: 100px;
+
+  @media screen and ${breakpoint.sm} {
+    margin-top: 150px;
+  }
 `;
 export const FriendsImage = styled.img`
   grid-column: 2/-1;
   grid-row: 1/5;
-  width: clamp(240px, 100%, 350px);
+  width: clamp(240px, 30vw, 350px);
   justify-self: end;
   margin-top: clamp(50px, 10vh, 150px);
+
+  @media screen and ${breakpoint.md} {
+    width: clamp(240px, 20vw, 350px);
+    grid-row: 2/5;
+  }
+
+  @media screen and ${breakpoint.sm} {
+    max-width: none;
+    position: absolute;
+    margin-top: 0;
+    height: clamp(100px, 60vw, 200px);
+    grid-row: 3/4;
+    z-index: -1;
+    bottom: -150px;
+  }
 `;
 
 // Testimonies section
@@ -235,9 +325,8 @@ export const TestimoniesNavLink = styled.div`
   height: 10px;
   width: 30px;
   background-color: ${(props) =>
-    transparentize(0.6, props.theme.color.secondary)};
-
-  &.active {
-    background-color: ${(props) => props.theme.color.secondary};
-  }
+    props.active
+      ? props.theme.color.secondary
+      : transparentize(0.6, props.theme.color.secondary)};
+  cursor: pointer;
 `;

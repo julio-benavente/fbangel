@@ -2,11 +2,23 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const NavbarSection = styled.div`
+  position: relative;
+  width: 100%;
+  display: grid;
+  z-index: 10;
+`;
+
+export const NavbarWrapper = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
+  justify-content: center;
+  justify-items: center;
+  max-width: 1200px;
   padding: 20px 40px;
   position: absolute;
   width: 100%;
+  transform: translateX(-50%);
+  left: 50%;
   top: 0;
 `;
 
@@ -14,7 +26,7 @@ export const Logo = styled(NavLink)`
   font-size: 1.6rem;
   text-decoration: none;
   font-weight: 700;
-  color: ${(props) => props.theme.color.gray300};
+  color: ${(props) => props.theme.color.primary};
   span {
     display: inline-grid;
     justify-items: center;

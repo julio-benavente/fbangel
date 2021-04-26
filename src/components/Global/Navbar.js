@@ -1,5 +1,11 @@
 import React from "react";
-import { NavbarSection, Logo, NavLinks, Link } from "../../styles/NavbarStyles";
+import {
+  NavbarSection,
+  Logo,
+  NavLinks,
+  Link,
+  NavbarWrapper,
+} from "../../styles/NavbarStyles";
 
 const navLinks = [
   {
@@ -37,16 +43,18 @@ const navLinks = [
 const Navbar = () => {
   return (
     <NavbarSection>
-      <Logo to="/">
-        <span>fb</span> fbangel
-      </Logo>
-      <NavLinks>
-        {navLinks.map(({ link, to, active }) => (
-          <Link to={to} exact activeClassName={active}>
-            {link}
-          </Link>
-        ))}
-      </NavLinks>
+      <NavbarWrapper>
+        <Logo to="/">
+          <span>fb</span> fbangel
+        </Logo>
+        <NavLinks>
+          {navLinks.map(({ link, to, active }) => (
+            <Link to={to} exact activeClassName={active}>
+              {link}
+            </Link>
+          ))}
+        </NavLinks>
+      </NavbarWrapper>
     </NavbarSection>
   );
 };

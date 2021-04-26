@@ -69,6 +69,7 @@ const HowItWorksPage = () => {
       {/* HowItWorks section starts */}
       <HowItWorksSection>
         <HowItWorksSectionTitle>¿Cómo funciona?</HowItWorksSectionTitle>
+        <HowItWorksImage src={girl_getting_off} />
         <HowItWorksSectionInfo>
           <p>
             El proceso es realmente simplemente. Si tienes una cuenta de
@@ -93,7 +94,6 @@ const HowItWorksPage = () => {
             Consulta nuestra sección F.A.Q para obtener más información
           </FAQLink>
         </HowItWorksSectionInfo>
-        <HowItWorksImage src={girl_getting_off} />
       </HowItWorksSection>
       {/* HowItWorks section ends */}
 
@@ -103,6 +103,8 @@ const HowItWorksPage = () => {
           <RequirementsSectionTitle>
             Requisitos del perfil
           </RequirementsSectionTitle>
+          <RequirementsImage src={todo_list} />
+
           <RequirementsList>
             <li>
               Debe ser real, activo, con foto y nombre real que coincida con el
@@ -124,7 +126,6 @@ const HowItWorksPage = () => {
             </li>
             <li>Debes tener un email asociado a tu perfil</li>
           </RequirementsList>
-          <RequirementsImage src={todo_list} />
         </RequirementsSectionWrapper>
       </RequirementsSection>
       {/* Requirements section ends */}
