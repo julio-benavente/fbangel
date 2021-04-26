@@ -18,6 +18,10 @@ export const FormSideWrapper = styled.div`
   box-shadow: 4px 4px 10px ${(props) => props.theme.color.gray300};
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContactSide = styled.div`
@@ -25,6 +29,10 @@ export const ContactSide = styled.div`
   align-content: start;
   background: ${(props) => props.theme.color.primary};
   padding: 30px;
+
+  @media screen and (max-width: 700px) {
+    grid-row: 1/2;
+  }
 `;
 
 export const ContactSideTitle = styled.p`
@@ -66,6 +74,10 @@ export const TelegramButton = styled.a`
     svg {
       fill: ${(props) => props.theme.color.white};
     }
+  }
+
+  @media screen and (max-width: 700px) {
+    justify-self: start;
   }
 `;
 

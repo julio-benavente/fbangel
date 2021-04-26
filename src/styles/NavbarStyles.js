@@ -45,7 +45,7 @@ export const NavLinks = styled.div`
 
 export const Link = styled(NavLink)`
   position: relative;
-  margin: 0 15px;
+  margin: 0 clamp(5px, 0.8vw, 15px);
   text-decoration: none;
   color: ${(props) => props.theme.color.black};
 

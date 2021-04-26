@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 // Styles
 import {
@@ -10,6 +9,7 @@ import {
   Parragraph,
   image,
   liBullets,
+  breakpoint,
 } from "./GlobalStyles";
 
 export const Faq = styled.div`
@@ -48,6 +48,16 @@ export const Answer = styled(Parragraph)`
 
 export const QuestionsSectionImage = styled.img`
   ${image}
+  width: clamp(200px, 25vw, 300px);
+
+  @media screen and ${breakpoint.sm} {
+    grid-columns: auto;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: translate(30%, -60%);
+    opacity: 0.3;
+  }
 `;
 
 export const Arrow = styled.div`
@@ -70,6 +80,12 @@ export const AccountSecureSection = styled.div``;
 export const AccountSecureSectionWrapper = styled(Container)`
   grid-template-columns: 1fr auto;
   padding-top: 0;
+  @media screen and ${breakpoint.sm} {
+    grid-template-columns: 1fr;
+    > * {
+      grid-column: auto;
+    }
+  }
 `;
 
 export const AccountSecureSectionTitle = styled(H4)`
