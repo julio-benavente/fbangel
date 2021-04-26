@@ -98,9 +98,13 @@ export const H1 = styled.h1`
   }
 `;
 export const H2 = styled.h2`
-  font-size: 1.55rem;
+  font-size: 1.7rem;
   color: ${(props) => props.theme.color.primary};
   margin-bottom: 30px;
+
+  @media screen and ${breakpoint.sm} {
+    font-size: 1.4rem;
+  }
 `;
 export const H3 = styled.h3`
   font-size: 1.5rem;

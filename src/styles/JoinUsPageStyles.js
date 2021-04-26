@@ -19,6 +19,11 @@ export const FormsWrapper = styled.div`
   display: grid;
   grid-template-columns: 4fr 6fr;
   border-radius: 10px;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 `;
 export const FormLocation = styled.div`
   width: 100%;
@@ -27,12 +32,22 @@ export const FormLocation = styled.div`
   color: ${(props) => props.theme.color.white};
   border-radius: 10px;
   padding: 20px;
+
+  @media screen and (max-width: 700px) {
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    padding: 10px 20px;
+  }
 `;
 
 export const FormLocationTitle = styled.p`
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 2rem;
+  @media screen and (max-width: 700px) {
+    grid-column: 1/-1;
+    margin-bottom: 1rem;
+  }
 `;
 export const Location = styled.div`
   display: grid;
@@ -60,6 +75,14 @@ export const Location = styled.div`
 
     .location {
       color: ${(props) => props.theme.color.white};
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    justify-self: center;
+    margin-bottom: 0;
+    .location {
+      display: none;
     }
   }
 `;

@@ -37,12 +37,20 @@ export const Headline = styled(H1)`
   line-height: 1;
   margin-bottom: 10px;
   color: ${(props) => props.theme.color.primary};
+
+  @media screen and ${breakpoint.sm} {
+    text-align: center;
+  }
 `;
 
 export const Subheadline = styled(H4)`
   font-weight: 400;
   margin-bottom: 40px;
   color: ${(props) => transparentize(0.2, props.theme.color.primary)};
+
+  @media screen and ${breakpoint.sm} {
+    text-align: center;
+  }
 `;
 
 export const StartButton = styled(Link)`
@@ -73,13 +81,11 @@ export const Image = styled.img`
 
   @media screen and ${breakpoint.sm} {
     position: absolute;
-    bottom: -40px;
+    bottom: 0px;
     right: 0;
     transform: scaleX(-1) translateX(-30%);
     z-index: -1;
     width: clamp(150px, 20vw, 200px);
-
-    /* display: none; */
   }
 `;
 export const ProcessSection = styled(Container)`
@@ -128,9 +134,6 @@ export const MoneyImage = styled.img`
   transform: rotate(90deg) translate(-50%, 20%);
   left: clamp(-30px, -10vw, -300px);
 
-  @media screen and ${breakpoint.lg} {
-  }
-
   @media screen and ${breakpoint.md} {
     left: 0px;
   }
@@ -138,11 +141,11 @@ export const MoneyImage = styled.img`
 
 export const TaskListImage = styled.img`
   position: absolute;
-  width: clamp(100px, 15vw, 150px);
+  width: clamp(100px, 20vw, 200px);
   bottom: 0;
   right: clamp(-30px, -10vw, -300px);
-
   transform: translate(30%, 0%);
+
   @media screen and ${breakpoint.md} {
     right: 0px;
   }
@@ -285,18 +288,19 @@ export const TestimoniesCardWrapper = styled.div`
   margin-bottom: 50px;
 `;
 export const TestimonyCard = styled.div`
+  display: grid;
+  grid-template-rows: 1fr auto auto;
   padding: 24px;
   box-shadow: 4px 4px 10px ${(props) => props.theme.color.gray300};
   overflow-x: hidden;
 `;
 export const Testimony = styled.div`
-  height: 220px;
   position: relative;
-
+  margin-bottom: 1rem;
   &::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1rem;
     width: calc(100% + 100px);
     left: -40px;
     height: 0.5px;
