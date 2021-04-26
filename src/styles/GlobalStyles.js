@@ -74,6 +74,7 @@ export default createGlobalStyle`
 `;
 
 export const breakpoint = {
+  xs: `(max-width : 450px)`,
   sm: `(max-width : 600px)`,
   md: `(max-width : 900px)`,
   lg: `(max-width : 1200px)`,

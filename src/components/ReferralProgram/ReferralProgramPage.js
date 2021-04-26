@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+// Styles
 import {
   ReferralProgram,
   ReferralProgramSection,
@@ -21,8 +24,11 @@ const ReferralProgramPage = () => {
           Conviértete en un Referente
         </ReferralProgramSectionTitle>
         <ReferralProgramSectionInfo>
-          Incrementa tus ganacias seriamente y obtén{" "}
-          <span className="money">5 dólares</span> por referido{" "}
+          <a href="https://form.jotform.com/210684831753358" target="_blank">
+            Regístrate aquí
+          </a>{" "}
+          e incrementa tus ganacias seriamente y obtén{" "}
+          <span className="money">5 dólares</span> por referido
           <span className="asterisk">*</span>
         </ReferralProgramSectionInfo>
         <InformationList>
@@ -67,13 +73,14 @@ const ReferralProgramPage = () => {
             pago.
           </p>
         </InformationList>
+        <ReferralProgramImage src={friendsChatting} />
+
         <RegistrationBtn
           href="https://form.jotform.com/210684831753358"
           target="_blank"
         >
           Regístrate aquí
         </RegistrationBtn>
-        <ReferralProgramImage src={friendsChatting} />
         <TinyLetter>
           <span>*</span> Por cada persona que registre su perfil con nosotros y
           sea válido

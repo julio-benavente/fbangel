@@ -8,6 +8,7 @@ import {
   RoundedBtn,
   Tiny,
   liBullets,
+  breakpoint,
 } from "./GlobalStyles";
 
 export const ReferralProgram = styled.div`
@@ -20,11 +21,28 @@ export const ReferralProgramSection = styled(Container)`
   > * {
     grid-column: 1/2;
   }
+
+  @media screen and ${breakpoint.md} {
+    grid-template-columns: 6fr 4fr;
+  }
+
+  @media screen and ${breakpoint.sm} {
+    grid-template-columns: 1fr;
+    > * {
+      grid-column: auto;
+    }
+    /* display: block; */
+  }
 `;
 
 export const ReferralProgramSectionTitle = styled(H2)``;
 
 export const ReferralProgramSectionInfo = styled(Parragraph)`
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.color.secondary};
+    font-weight: 700;
+  }
   .money {
     color: ${(props) => props.theme.color.green};
     font-weight: 700;
@@ -58,12 +76,32 @@ export const ReferralProgramImage = styled.img`
   grid-row: 1/4;
   justify-self: end;
   align-self: center;
-  width: clamp(200px, 25vw, 350px);
+  width: clamp(200px, 30vw, 350px);
+
+  @media screen and ${breakpoint.md} {
+    position: relative;
+    align-self: auto;
+    top: 10rem;
+    margin-left: 2rem;
+  }
+
+  @media screen and ${breakpoint.sm} {
+    grid-column: auto;
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    top: 0;
+  }
 `;
 
 export const RegistrationBtn = styled.a`
   ${RoundedBtn}
   margin-bottom: 4rem;
+
+  @media screen and ${breakpoint.sm} {
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    align-self: start;
+  }
 `;
 
 export const TinyLetter = styled(Tiny)``;

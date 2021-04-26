@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { transparentize } from "polished";
 
 // Styles
-import { H2, Container, Parragraph } from "./GlobalStyles";
+import { H2, Container, Parragraph, breakpoint } from "./GlobalStyles";
 
 export const JoinUs = styled.div`
   margin-top: 90px;
@@ -246,6 +246,7 @@ const baseForm = css`
   gap: 20px;
   align-content: start;
   margin-bottom: 30px;
+  padding-bottom: 30px;
 `;
 
 const message = css`
@@ -270,6 +271,9 @@ export const FormOne = styled.div`
 export const FormTwo = styled.div`
   ${baseForm}
   grid-template-columns: repeat(2, calc(((100% - 20px - 20px) / 2) + 10px));
+  @media screen and ${breakpoint.xs} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const FormThree = styled.div`
@@ -285,12 +289,20 @@ export const FormThree = styled.div`
   .code2FA {
     grid-column: 1/-1;
   }
+
+  @media screen and ${breakpoint.xs} {
+    .username,
+    .password {
+      grid-column: 1/-1;
+    }
+  }
 `;
 
 export const FormFour = styled.div`
   ${baseForm}
   ${message}
   grid-template-columns: repeat(2, calc(((100% - 20px - 20px) / 2) + 10px));
+  overflow-x: hidden;
   > * {
     grid-column: 1/-1;
   }
@@ -327,6 +339,16 @@ export const FormFour = styled.div`
     p {
       word-break: normal;
       margin-bottom: 5px;
+    }
+  }
+
+  @media screen and ${breakpoint.sm} {
+    .paypalEmail {
+      grid-column: 1/-1;
+    }
+
+    .paypalEmailConfirmation {
+      grid-column: 1/-1;
     }
   }
 `;

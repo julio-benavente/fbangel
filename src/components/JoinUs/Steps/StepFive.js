@@ -6,7 +6,7 @@ import { FormFive } from "../../../styles/JoinUsPageStyles";
 const StepFive = () => {
   return (
     <FormFive>
-      <p>El procese de registro esta finalizado.</p>
+      <p>El proceso de registro está finalizado.</p>
       <p>Nos estaremos poniendo en contacto contigo pronto.</p>
     </FormFive>
   );
