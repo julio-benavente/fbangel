@@ -123,6 +123,9 @@ const questionCardVariants = {
   end: {
     x: 0,
     opacity: 1,
+    transition: {
+      ease: "easeInOut",
+    },
   },
 };
 

@@ -81,7 +81,7 @@ export const TelegramButton = styled.a`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   display: grid;
   align-content: start;
   padding: 30px;
@@ -136,7 +136,7 @@ export const TextArea = styled.textarea`
   }
 `;
 
-export const SendButton = styled.button`
+export const SendButton = styled.input`
   background: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.white};
   font-weight: 700;

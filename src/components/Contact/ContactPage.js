@@ -26,17 +26,22 @@ import { ReactComponent as Telegram } from "../../assets/svgs/telegram.svg";
 const ContactPage = () => {
   const {
     register,
+    handleSubmit,
     formState: { errors },
   } = useForm({
     mode: "all",
   });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <Contact>
       <ContactSection>
         <ContactSectionWrapper>
           <FormSideWrapper>
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               <FormTitle>Déjanos un mensaje</FormTitle>
               <InputWrapper>
                 <Label>
@@ -86,7 +91,7 @@ const ContactPage = () => {
                   {errors.message && errors.message.message}
                 </p>
               </InputWrapper>
-              <SendButton>Enviar</SendButton>
+              <SendButton type="submit" value="Enviar" />
             </Form>
             <ContactSide>
               <ContactSideTitle>Contáctanos</ContactSideTitle>
