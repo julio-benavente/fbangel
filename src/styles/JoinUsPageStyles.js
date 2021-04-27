@@ -2,10 +2,10 @@ import styled, { css } from "styled-components";
 import { transparentize } from "polished";
 
 // Styles
-import { H2, Container, Parragraph, breakpoint } from "./GlobalStyles";
+import { page, H2, Container, Parragraph, breakpoint } from "./GlobalStyles";
 
 export const JoinUs = styled.div`
-  margin-top: 90px;
+  ${page}
 `;
 export const JoinUsSection = styled.div``;
 export const JoinUsSectionWrapper = styled(Container)``;
