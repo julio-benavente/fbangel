@@ -141,6 +141,7 @@ export const MoneyImage = styled.img`
 `;
 
 export const TaskListImage = styled.img`
+  display: none;
   position: absolute;
   width: clamp(100px, 20vw, 200px);
   bottom: 0;
@@ -156,7 +157,7 @@ export const RequirementsSectionWrapper = styled(Container)`
   position: relative;
   grid-template-columns: 1fr 1fr;
 
-  @media screen and ${breakpoint.sm} {
+  @media screen and ${breakpoint.md} {
     grid-template-columns: 1fr;
   }
 `;
@@ -180,12 +181,34 @@ export const HowItWorksBtn = styled(Link)`
 `;
 export const RequirementsSubtitle = styled(H4)``;
 export const RequirementsList = styled.ul`
+  grid-column: 1/2;
   position: relative;
   margin-left: 20px;
   li {
     position: relative;
 
     ${liBullets}
+  }
+
+  @media screen and ${breakpoint.md} {
+    li {
+      max-width: 500px;
+    }
+  }
+`;
+
+export const Video = styled.video`
+  width: clamp(200px, 100%, 400px);
+  z-index: 5;
+  @media screen and ${breakpoint.md} {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    justify-self: center;
+    margin-bottom: 2rem;
+  }
+
+  @media screen and ${breakpoint.sm} {
+    justify-self: start;
   }
 `;
 

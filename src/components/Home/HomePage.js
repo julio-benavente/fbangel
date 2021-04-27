@@ -28,6 +28,7 @@ import {
   HowItWorksBtn,
   RequirementsSubtitle,
   RequirementsList,
+  Video,
   // Referral Section
   ReferralSection,
   ReferralSectionWrapper,
@@ -55,6 +56,8 @@ import phone from "../../assets/svgs/cellphone-in-hand.svg";
 import money from "../../assets/images/money.png";
 import task_list from "../../assets/images/tasks-list.png";
 import friends_chatting from "../../assets/svgs/friends-chatting.svg";
+import poster from "../../assets/images/video-poster.jpg";
+import fbaAngelVideo from "../../assets/videos/fbangel.mp4";
 
 const cards = [
   {
@@ -193,6 +196,9 @@ const HomePage = () => {
             <li>ID verificado​</li>
             <li>2FA App Activado​</li>
           </RequirementsList>
+          <Video controls poster={poster}>
+            <source src={fbaAngelVideo} type="video/mp4"></source>
+          </Video>
         </RequirementsSectionWrapper>
       </RequirementsSection>
 
