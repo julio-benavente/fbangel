@@ -1,28 +1,30 @@
 {
   "files": {
-    "main.js": "/fbangel/static/js/main.c9569ad2.chunk.js",
-    "main.js.map": "/fbangel/static/js/main.c9569ad2.chunk.js.map",
-    "runtime-main.js": "/fbangel/static/js/runtime-main.2cfa7a4c.js",
-    "runtime-main.js.map": "/fbangel/static/js/runtime-main.2cfa7a4c.js.map",
+    "main.js": "/fbangel/static/js/main.2fd67113.chunk.js",
+    "main.js.map": "/fbangel/static/js/main.2fd67113.chunk.js.map",
+    "runtime-main.js": "/fbangel/static/js/runtime-main.30c89e8b.js",
+    "runtime-main.js.map": "/fbangel/static/js/runtime-main.30c89e8b.js.map",
     "static/css/2.c90ed7a6.chunk.css": "/fbangel/static/css/2.c90ed7a6.chunk.css",
-    "static/js/2.e10db568.chunk.js": "/fbangel/static/js/2.e10db568.chunk.js",
-    "static/js/2.e10db568.chunk.js.map": "/fbangel/static/js/2.e10db568.chunk.js.map",
-    "static/js/3.e6e6503b.chunk.js": "/fbangel/static/js/3.e6e6503b.chunk.js",
-    "static/js/3.e6e6503b.chunk.js.map": "/fbangel/static/js/3.e6e6503b.chunk.js.map",
+    "static/js/2.171476f0.chunk.js": "/fbangel/static/js/2.171476f0.chunk.js",
+    "static/js/2.171476f0.chunk.js.map": "/fbangel/static/js/2.171476f0.chunk.js.map",
+    "static/js/3.8129daf7.chunk.js": "/fbangel/static/js/3.8129daf7.chunk.js",
+    "static/js/3.8129daf7.chunk.js.map": "/fbangel/static/js/3.8129daf7.chunk.js.map",
     "index.html": "/fbangel/index.html",
     "static/css/2.c90ed7a6.chunk.css.map": "/fbangel/static/css/2.c90ed7a6.chunk.css.map",
-    "static/js/2.e10db568.chunk.js.LICENSE.txt": "/fbangel/static/js/2.e10db568.chunk.js.LICENSE.txt",
+    "static/js/2.171476f0.chunk.js.LICENSE.txt": "/fbangel/static/js/2.171476f0.chunk.js.LICENSE.txt",
     "static/media/arrow.475d5732.svg": "/fbangel/static/media/arrow.475d5732.svg",
     "static/media/browser-girl.f778d263.svg": "/fbangel/static/media/browser-girl.f778d263.svg",
     "static/media/businessManagerImageOne.f26cb6eb.jpg": "/fbangel/static/media/businessManagerImageOne.f26cb6eb.jpg",
     "static/media/businessManagerImageTwo.6016a3b4.jpg": "/fbangel/static/media/businessManagerImageTwo.6016a3b4.jpg",
     "static/media/cellphone-in-hand.eee818db.svg": "/fbangel/static/media/cellphone-in-hand.eee818db.svg",
+    "static/media/close.aa5cd411.svg": "/fbangel/static/media/close.aa5cd411.svg",
     "static/media/drinking-coffe.637c6ede.svg": "/fbangel/static/media/drinking-coffe.637c6ede.svg",
     "static/media/facebookEmailConfirmationImageOne.b25a635c.jpg": "/fbangel/static/media/facebookEmailConfirmationImageOne.b25a635c.jpg",
     "static/media/facebookEmailConfirmationImageTwo.9ddb4c29.jpg": "/fbangel/static/media/facebookEmailConfirmationImageTwo.9ddb4c29.jpg",
     "static/media/friends-chatting.72018c7d.svg": "/fbangel/static/media/friends-chatting.72018c7d.svg",
     "static/media/girl-getting-off.e5f50cb6.svg": "/fbangel/static/media/girl-getting-off.e5f50cb6.svg",
     "static/media/guy-in-squar-box.36814155.svg": "/fbangel/static/media/guy-in-squar-box.36814155.svg",
+    "static/media/menu.0ba5eb05.svg": "/fbangel/static/media/menu.0ba5eb05.svg",
     "static/media/money.6517d11b.png": "/fbangel/static/media/money.6517d11b.png",
     "static/media/option-one-img-one.43faa2c2.jpg": "/fbangel/static/media/option-one-img-one.43faa2c2.jpg",
     "static/media/option-one-img-two.ea6cc965.jpg": "/fbangel/static/media/option-one-img-two.ea6cc965.jpg",
@@ -35,9 +37,9 @@
     "static/media/watching-laptop.b1c67f7c.svg": "/fbangel/static/media/watching-laptop.b1c67f7c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2cfa7a4c.js",
+    "static/js/runtime-main.30c89e8b.js",
     "static/css/2.c90ed7a6.chunk.css",
-    "static/js/2.e10db568.chunk.js",
-    "static/js/main.c9569ad2.chunk.js"
+    "static/js/2.171476f0.chunk.js",
+    "static/js/main.2fd67113.chunk.js"
   ]
 }
