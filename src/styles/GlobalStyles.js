@@ -162,6 +162,7 @@ export const PLink = css`
 `;
 
 export const liBullets = css`
+  list-style: none;
   &::before,
   &::after {
     content: "";

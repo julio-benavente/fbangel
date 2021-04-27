@@ -11,6 +11,8 @@ import JoinUs from "./components/JoinUs/JoinUsPage";
 import ReferralProgram from "./components/ReferralProgram/ReferralProgramPage";
 import Faq from "./components/Faq/FaqPage";
 import Contact from "./components/Contact/ContactPage";
+import NoValid from "./components/NoValid/NoValidPage";
+import TermsAndConditions from "./components/TermsAndConditions/TermsAndConditionsPage";
 
 // Styles
 import GlobalStyle from "./styles/GlobalStyles";
@@ -30,6 +32,8 @@ const App = () => {
           <Route path="/programa-referidos" component={ReferralProgram} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
+          <Route path="/no-valid" component={NoValid} />
+          <Route path="/terminos-condiciones" component={TermsAndConditions} />
         </Switch>
         <Footer />
       </ThemeProvider>
