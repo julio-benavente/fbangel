@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { transparentize } from "polished";
 
 export const NavbarSection = styled.div`
   position: relative;
@@ -20,6 +21,13 @@ export const NavbarWrapper = styled.div`
   transform: translateX(-50%);
   left: 50%;
   top: 0;
+
+  /* @media screen and (max-width: 1000px) {
+    height: 100vh;
+    background: red;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  } */
 `;
 
 export const Logo = styled(NavLink)`
@@ -41,6 +49,27 @@ export const NavLinks = styled.div`
   display: grid;
   grid-auto-columns: auto;
   grid-auto-flow: column;
+
+  @media screen and (max-width: 1000px) {
+    height: 100vh;
+    width: 100vw;
+    background: ${(props) => props.theme.color.primary};
+    position: absolute;
+    grid-template-columns: 1fr;
+    grid-auto-columns: unset;
+    grid-auto-flow: unset;
+    align-content: center;
+    justify-items: center;
+  }
+`;
+
+export const NavbarLink = styled.div`
+  position: relative;
+  align-self: center;
+
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const Link = styled(NavLink)`
@@ -54,7 +83,7 @@ export const Link = styled(NavLink)`
     position: absolute;
     width: 0%;
     height: 2px;
-    bottom: 10px;
+    bottom: -10px;
     background-color: ${(props) => props.theme.color.primary};
     transition: width 200ms ease-in-out;
   }
@@ -64,5 +93,43 @@ export const Link = styled(NavLink)`
     &::before {
       width: 100%;
     }
+  }
+
+  @media screen and (max-width: 1000px) {
+    margin: 15px;
+    color: ${(props) => props.theme.color.white};
+
+    &::before {
+      bottom: -5px;
+      background: ${(props) => props.theme.color.white};
+    }
+  }
+`;
+
+export const Menu = styled.div`
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  border-radius: 1000px;
+  background: ${(props) =>
+    props.open
+      ? transparentize(0.5, props.theme.color.white)
+      : transparentize(0.85, props.theme.color.primary)};
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  .openNav {
+    width: 30px;
+    fill: ${(props) => props.theme.color.primary};
+    height: 30px;
+  }
+
+  .closeNav {
+    width: 30px;
+    height: 30px;
   }
 `;

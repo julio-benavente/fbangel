@@ -7,7 +7,6 @@ const theme = {
     black: "#000000",
     gray100: "#FDFDFD",
     gray300: "#BFBFBF",
-    link: "#3498db",
     link: "#2980b9",
   },
 };

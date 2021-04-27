@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Styles
 import {
   NavbarSection,
   Logo,
   NavLinks,
+  NavbarLink,
   Link,
   NavbarWrapper,
+  Menu,
 } from "../../styles/NavbarStyles";
+
+// Assets
+import { ReactComponent as OpenNav } from "../../assets/svgs/menu.svg";
+import { ReactComponent as CloseNav } from "../../assets/svgs/close.svg";
 
 const navLinks = [
   {
@@ -42,11 +49,58 @@ const navLinks = [
   },
 ];
 
+const hamburgerMenuVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
+const navbarVariants = {
+  initial: { display: "none", height: 0 },
+  animate: {
+    display: "grid",
+    height: "100vh",
+    transition: {
+      when: "beforeChildren",
+      ease: "easeInOut",
+      staggerChildren: 0.05,
+      hegiht: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  },
+  exit: {
+    height: "0vw",
+    transitionEnd: {
+      display: "none",
+    },
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.05,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const navLinkVariants = {
+  initial: { opacity: 0, x: -20 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  exit: { opacity: 0, x: -20 },
+};
+
 const Navbar = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
-  const handleNavbar = () => setNavIsOpen(!navIsOpen);
+  const openNavbar = () => setNavIsOpen(true);
+  const closeNavbar = () => setNavIsOpen(false);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-  const _900 = innerWidth < 901;
+  const widthMark = innerWidth < 1001;
 
   const size = useWindowSize();
 
@@ -60,18 +114,37 @@ const Navbar = () => {
         <Logo to="/">
           <span>fb</span> fbangel
         </Logo>
-        {!_900 && navIsOpen && (
-          <NavLinks>
-            {navLinks.map(({ link, to, active }) => (
-              <Link to={to} exact activeClassName={active}>
-                {link}
-              </Link>
-            ))}
-          </NavLinks>
+        <AnimatePresence>
+          {(!widthMark || navIsOpen) && (
+            <NavLinks
+              as={widthMark && motion.div}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={navbarVariants}
+            >
+              {navLinks.map(({ link, to, active }) => (
+                <NavbarLink
+                  as={motion.div}
+                  variants={navLinkVariants}
+                  onClick={closeNavbar}
+                >
+                  <Link to={to} exact activeClassName={active}>
+                    {link}
+                  </Link>
+                </NavbarLink>
+              ))}
+            </NavLinks>
+          )}
+        </AnimatePresence>
+        {widthMark && (
+          <Menu open={navIsOpen}>
+            {!navIsOpen && <OpenNav className="openNav" onClick={openNavbar} />}
+            {navIsOpen && (
+              <CloseNav className="closeNav" onClick={closeNavbar} />
+            )}
+          </Menu>
         )}
-        <div className="hamburger" onClick={handleNavbar}>
-          ham
-        </div>
       </NavbarWrapper>
     </NavbarSection>
   );

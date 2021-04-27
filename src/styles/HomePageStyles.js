@@ -64,7 +64,7 @@ export const StartButton = styled(Link)`
   @media screen and ${breakpoint.md} {
     transform: scale(1);
   }
-  @media screen and ${breakpoint.md} {
+  @media screen and ${breakpoint.sm} {
     justify-self: center;
   }
 `;
