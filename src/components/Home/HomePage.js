@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 // Styles
@@ -115,13 +115,14 @@ const testimonies = [
   },
 ];
 
-const testimoniesNavVariants = {};
-
 const HomePage = () => {
   const [currentTestimony, setCurrentTestimony] = useState(0);
   const testimoniesNavAnimation = useAnimation();
+  const { width } = useWindowSize();
+
+  const distance = width < 600 ? 300 : 400;
   const handleTestimoniesNav = (to) => {
-    const translate = (to) => (400 + 50) * -to;
+    const translate = (to) => (distance + 50) * -to;
     testimoniesNavAnimation.start({
       x: translate(to),
       transition: {
@@ -130,6 +131,10 @@ const HomePage = () => {
     });
     setCurrentTestimony(to);
   };
+
+  useEffect(() => {
+    handleTestimoniesNav(currentTestimony);
+  }, [distance]);
 
   return (
     <Home className="Home" id="Home">
@@ -229,7 +234,9 @@ const HomePage = () => {
           <TestimoniesInfo>
             ¡Gente que se unió a nosotros y ya está ganando dinero!
           </TestimoniesInfo>
-          <TestimoniesCardWrapper>
+          <TestimoniesCardWrapper
+            style={{ gridTemplateColumns: width < 600 && "repeat(3,300px)" }}
+          >
             {testimonies.map(
               ({ testimony, author, country, membership }, i) => (
                 <TestimonyCard
@@ -263,3 +270,34 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+
+  return windowSize;
+}
