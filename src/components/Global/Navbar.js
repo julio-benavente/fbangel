@@ -78,6 +78,7 @@ const navbarVariants = {
     transition: {
       when: "afterChildren",
       staggerChildren: 0.05,
+      staggerDirection: -1,
       ease: "easeInOut",
     },
   },

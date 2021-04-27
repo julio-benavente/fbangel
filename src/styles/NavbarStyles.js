@@ -21,13 +21,6 @@ export const NavbarWrapper = styled.div`
   transform: translateX(-50%);
   left: 50%;
   top: 0;
-
-  /* @media screen and (max-width: 1000px) {
-    height: 100vh;
-    background: red;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  } */
 `;
 
 export const Logo = styled(NavLink)`
