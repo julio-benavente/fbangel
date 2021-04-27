@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 // Components
 import StepOne from "./Steps/StepOne";
@@ -22,12 +23,12 @@ import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(2);
+  const [formStep, setFormStep] = useState(1);
   const methods = useForm({ mode: "all" });
+  const history = useHistory();
 
   const {
     handleSubmit,
-    watch,
     trigger,
     getValues,
     formState: { errors, isValid },
@@ -76,6 +77,21 @@ const Form = () => {
   const handleFormStep = async (direction, formStep) => {
     const steps = ["stepOne", "stepTwo", "stepThree", "stepFour", "stepFive"];
     var step = steps[formStep - 1];
+
+    // Verify if the qualification form is positive
+    const qualificationVerification = async () => {
+      await trigger();
+
+      if ((formStep === 1) & !errors.stepOne) {
+        const values = Object.values(getValues("stepOne"));
+        const valuesToCompare = ["si", "si", "no", "si", "si"];
+        const some = values.some((value, i) => value !== valuesToCompare[i]);
+
+        if (some) history.push("/no-valid");
+      }
+    };
+
+    await qualificationVerification();
 
     // Validate if isValid the step
     if (direction === 1) {
