@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/fbangel/static/js/main.a0c6b495.chunk.js",
-    "main.js.map": "/fbangel/static/js/main.a0c6b495.chunk.js.map",
+    "main.js": "/fbangel/static/js/main.5351793e.chunk.js",
+    "main.js.map": "/fbangel/static/js/main.5351793e.chunk.js.map",
     "runtime-main.js": "/fbangel/static/js/runtime-main.30c89e8b.js",
     "runtime-main.js.map": "/fbangel/static/js/runtime-main.30c89e8b.js.map",
     "static/css/2.c90ed7a6.chunk.css": "/fbangel/static/css/2.c90ed7a6.chunk.css",
@@ -21,6 +21,7 @@
     "static/media/drinking-coffe.637c6ede.svg": "/fbangel/static/media/drinking-coffe.637c6ede.svg",
     "static/media/facebookEmailConfirmationImageOne.b25a635c.jpg": "/fbangel/static/media/facebookEmailConfirmationImageOne.b25a635c.jpg",
     "static/media/facebookEmailConfirmationImageTwo.9ddb4c29.jpg": "/fbangel/static/media/facebookEmailConfirmationImageTwo.9ddb4c29.jpg",
+    "static/media/fbangel.7613c224.mp4": "/fbangel/static/media/fbangel.7613c224.mp4",
     "static/media/friends-chatting.72018c7d.svg": "/fbangel/static/media/friends-chatting.72018c7d.svg",
     "static/media/girl-getting-off.e5f50cb6.svg": "/fbangel/static/media/girl-getting-off.e5f50cb6.svg",
     "static/media/guy-in-hole.61375142.svg": "/fbangel/static/media/guy-in-hole.61375142.svg",
@@ -35,12 +36,13 @@
     "static/media/tasks-list.16b32df3.png": "/fbangel/static/media/tasks-list.16b32df3.png",
     "static/media/telegram.406dba18.svg": "/fbangel/static/media/telegram.406dba18.svg",
     "static/media/todo-list.c8e35342.svg": "/fbangel/static/media/todo-list.c8e35342.svg",
+    "static/media/video-poster.780c5d5a.jpg": "/fbangel/static/media/video-poster.780c5d5a.jpg",
     "static/media/watching-laptop.b1c67f7c.svg": "/fbangel/static/media/watching-laptop.b1c67f7c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.30c89e8b.js",
     "static/css/2.c90ed7a6.chunk.css",
     "static/js/2.f760f899.chunk.js",
-    "static/js/main.a0c6b495.chunk.js"
+    "static/js/main.5351793e.chunk.js"
   ]
 }
