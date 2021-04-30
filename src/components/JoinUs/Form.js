@@ -121,35 +121,51 @@ const Form = () => {
 
   const fetchIncompleteCandidateInformation = async (data) => {
     const { stepOne, stepTwo, stepThree, stepFour } = data;
+    const { fbEmailIsConfirmed } = stepThree;
+    const { bmIdIsConfirmed } = stepThree;
+    const { documentationProved } = stepFour;
+
+    const encodeImage = (img) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(documentationProved[0]);
+        reader.onloadend = (e) => resolve(e.target.result);
+
+        // Error
+        reader.onerror = (error) => reject(error);
+      });
+    };
+
     const candidateInformation = {
       ...stepOne,
       ...stepTwo,
       ...stepThree,
       ...stepFour,
+      // fbEmailIsConfirmed: fbEmailIsConfirmed[0],
+      // bmIdIsConfirmed: bmIdIsConfirmed[0],
+      documentationProved: await encodeImage(documentationProved[0]),
     };
 
     // Images
-    const { fbEmailIsConfirmed } = stepThree;
-    const { bmIdIsConfirmed } = stepThree;
-    const { documentationProved } = stepFour;
-    const form = new FormData();
 
-    Object.entries(candidateInformation).map((entry) => {
-      form.append(entry[0], entry[1]);
-    });
+    // const form = new FormData();
+
+    // Object.entries(candidateInformation).map((entry) => {
+    //   form.append(entry[0], entry[1]);
+    // });
 
     // form.set("fbEmailIsConfirmed", fbEmailIsConfirmed[0]);
     // form.set("bmIdIsConfirmed", bmIdIsConfirmed[0]);
     // form.set("documentationProved", documentationProved[0]);
 
-    form.set("fbEmailIsConfirmed", documentationProved[0]);
-    form.set("bmIdIsConfirmed", documentationProved[0]);
-    form.set("documentationProved", documentationProved[0]);
+    // form.set("fbEmailIsConfirmed", documentationProved[0]);
+    // form.set("bmIdIsConfirmed", documentationProved[0]);
+    // form.set("documentationProved", documentationProved[0]);
 
     try {
       const response = await axios.post(
         "/api/incompleteCandidates/registration",
-        form
+        candidateInformation
       );
       return response;
     } catch ({ response }) {

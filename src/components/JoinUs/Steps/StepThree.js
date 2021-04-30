@@ -140,14 +140,14 @@ const StepThree = () => {
         })}
       />
       <FileInput
-        className="fbEmailIsConfirmed"
+        className="fbEmailImage"
         question="Confirmación del email asociado a tu perfil"
         error={
           errors.stepThree &&
-          errors.stepThree.fbEmailIsConfirmed &&
-          errors.stepThree.fbEmailIsConfirmed.message
+          errors.stepThree.fbEmailImage &&
+          errors.stepThree.fbEmailImage.message
         }
-        register={register("stepThree.fbEmailIsConfirmed", {
+        register={register("stepThree.fbEmailImage", {
           required: {
             value: true,
             message:
@@ -190,14 +190,14 @@ const StepThree = () => {
       </div>
 
       <FileInput
-        className="bmIdIsConfirmed"
+        className="bmIdImage"
         question="Identificador del administrador comercial (BM id)"
         error={
           errors.stepThree &&
-          errors.stepThree.bmIdIsConfirmed &&
-          errors.stepThree.bmIdIsConfirmed.message
+          errors.stepThree.bmIdImage &&
+          errors.stepThree.bmIdImage.message
         }
-        register={register("stepThree.bmIdIsConfirmed", {
+        register={register("stepThree.bmIdImage", {
           required: {
             value: true,
             message:

@@ -185,14 +185,14 @@ const StepFour = () => {
       )}
 
       <FileInput
-        className="documentationProved"
+        className="documentImage"
         question="Prueba de identidad"
         error={
           errors.stepFour &&
-          errors.stepFour.documentationProved &&
-          errors.stepFour.documentationProved.message
+          errors.stepFour.documentImage &&
+          errors.stepFour.documentImage.message
         }
-        register={register("stepFour.documentationProved", {
+        register={register("stepFour.documentImage", {
           required: {
             value: true,
             message: "Por favor, ingrese una foto confirmando su identidad",
