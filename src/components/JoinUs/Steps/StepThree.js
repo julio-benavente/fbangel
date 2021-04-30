@@ -174,12 +174,12 @@ const StepThree = () => {
           </a>
         </p>
         <p>
-          <b>Móvil:</b> Configuración > Configuración de la cuenta > Información
-          personal > Información de contacto
+          <b>Móvil:</b> Configuración &gt; Configuración de la cuenta &gt;
+          Información personal &gt; Información de contacto
         </p>
         <p>
-          <b>Ordenador:</b> Configuración y privacidad >Configuración > General
-          > Contacto
+          <b>Ordenador:</b> Configuración y privacidad &gt; Configuración &gt;
+          General &gt; Contacto
         </p>
         <p>
           O ve a :{" "}

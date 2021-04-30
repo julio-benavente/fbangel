@@ -79,56 +79,33 @@ const Form = () => {
     const response = await fetchCandidateInformation(data);
     const { status } = response;
 
-    // if (status !== 200) {
-    // handleFormStep(1, formStep);
-    // } else {
-    const incompleteCandidate = await fetchIncompleteCandidateInformation(data);
-    console.log(incompleteCandidate);
-    // }
+    if (status === 200) {
+      handleFormStep(1, formStep);
+    } else {
+      const incompleteCandidate = await fetchCandidateInformation(
+        data,
+        "incomplete"
+      );
+    }
 
     return null;
   };
 
-  const fetchCandidateInformation = async (data) => {
+  const fetchCandidateInformation = async (data, type = "complete") => {
+    const url =
+      type === "complete"
+        ? "/api/candidates/registration"
+        : "/api/incompleteCandidates/registration";
+
     const { stepOne, stepTwo, stepThree, stepFour } = data;
-    const candidateInformation = {
-      ...stepOne,
-      ...stepTwo,
-      ...stepThree,
-      ...stepFour,
-    };
-
-    try {
-      const response = await axios.post("/api/candidates/registration", {
-        ...candidateInformation,
-      });
-
-      return response;
-    } catch ({ response }) {
-      return response;
-    }
-  };
-
-  // const testImage = async (data) => {
-  //   try {
-  //     const response = await axios.post("https://httpbin.org/anything", form);
-  //     return response;
-  //   } catch (error) {
-  //     console.log("error:", { error });
-  //     return error;
-  //   }
-  // };
-
-  const fetchIncompleteCandidateInformation = async (data) => {
-    const { stepOne, stepTwo, stepThree, stepFour } = data;
-    const { fbEmailIsConfirmed } = stepThree;
-    const { bmIdIsConfirmed } = stepThree;
-    const { documentationProved } = stepFour;
+    const { fbEmailImage } = stepThree;
+    const { bmIdImage } = stepThree;
+    const { documentImage } = stepFour;
 
     const encodeImage = (img) => {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
-        reader.readAsDataURL(documentationProved[0]);
+        reader.readAsDataURL(img);
         reader.onloadend = (e) => resolve(e.target.result);
 
         // Error
@@ -141,32 +118,17 @@ const Form = () => {
       ...stepTwo,
       ...stepThree,
       ...stepFour,
-      // fbEmailIsConfirmed: fbEmailIsConfirmed[0],
-      // bmIdIsConfirmed: bmIdIsConfirmed[0],
-      documentationProved: await encodeImage(documentationProved[0]),
+      fbEmailImage:
+        fbEmailImage && fbEmailImage[0] && (await encodeImage(fbEmailImage[0])),
+      bmIdImage: bmIdImage && bmIdImage[0] && (await encodeImage(bmIdImage[0])),
+      documentImage:
+        documentImage &&
+        documentImage[0] &&
+        (await encodeImage(documentImage[0])),
     };
 
-    // Images
-
-    // const form = new FormData();
-
-    // Object.entries(candidateInformation).map((entry) => {
-    //   form.append(entry[0], entry[1]);
-    // });
-
-    // form.set("fbEmailIsConfirmed", fbEmailIsConfirmed[0]);
-    // form.set("bmIdIsConfirmed", bmIdIsConfirmed[0]);
-    // form.set("documentationProved", documentationProved[0]);
-
-    // form.set("fbEmailIsConfirmed", documentationProved[0]);
-    // form.set("bmIdIsConfirmed", documentationProved[0]);
-    // form.set("documentationProved", documentationProved[0]);
-
     try {
-      const response = await axios.post(
-        "/api/incompleteCandidates/registration",
-        candidateInformation
-      );
+      const response = await axios.post(url, candidateInformation);
       return response;
     } catch ({ response }) {
       return response;

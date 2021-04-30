@@ -297,8 +297,8 @@ export const FormThree = styled.div`
   .frecuency,
   .devices,
   .os,
-  .fbEmailIsConfirmed,
-  .bmIdIsConfirmed,
+  .fbEmailImage,
+  .bmIdImage,
   .code2FA {
     grid-column: 1/-1;
   }
