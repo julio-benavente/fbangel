@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 // Components
 import StepOne from "./Steps/StepOne";
@@ -18,25 +19,142 @@ import {
   FormLocationTitle,
   Buttons,
   Button,
+  SubmitButton,
 } from "../../styles/JoinUsPageStyles";
 import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(1);
-  const methods = useForm({ mode: "all" });
+  const [formStep, setFormStep] = useState(4);
+  const formData = useRef();
+  const defaultValues = {
+    stepOne: {
+      isAdult: "yes",
+      accountIsReal: "yes",
+      isFirstTime: "no",
+      isOneYear: "yes",
+      haveFriends: "yes",
+    },
+    stepTwo: {
+      name: "julio",
+      lastname: "julio",
+      email: "julio@julio.com",
+      country: "Peru",
+      city: "Lima",
+      // birthday: "1982-10-06T05:00:00.000Z",
+      phone: "51934988135",
+    },
+    stepThree: {
+      frecuency: "2-3_a_week",
+      devices: ["tablet", "movil"],
+      os: ["windows", "other"],
+      username: "julio@julio.com",
+      password: "julio1234",
+      code2FA: "43211234432112344321123443211234",
+    },
+    stepFour: {
+      paymentMethod: "paypal",
+      paypalEmail: "julio@julio.com",
+      paypalEmailConfirmation: "julio@julio.com",
+      referral: "",
+      termsAndConditions: "yes",
+      gdprAgreement: "yes",
+    },
+  };
+  const methods = useForm({
+    mode: "all",
+    defaultValues,
+  });
   const history = useHistory();
 
   const {
     handleSubmit,
     trigger,
     getValues,
+    watch,
     formState: { errors, isValid },
   } = methods;
 
-  const onSubmit = (data) => {
-    console.log("datos", data);
-    handleFormStep(1, formStep);
+  const onSubmit = async (data) => {
+    const response = await fetchCandidateInformation(data);
+    const { status } = response;
+
+    // if (status !== 200) {
+    // handleFormStep(1, formStep);
+    // } else {
+    const incompleteCandidate = await fetchIncompleteCandidateInformation(data);
+    console.log(incompleteCandidate);
+    // }
+
+    return null;
+  };
+
+  const fetchCandidateInformation = async (data) => {
+    const { stepOne, stepTwo, stepThree, stepFour } = data;
+    const candidateInformation = {
+      ...stepOne,
+      ...stepTwo,
+      ...stepThree,
+      ...stepFour,
+    };
+
+    try {
+      const response = await axios.post("/api/candidates/registration", {
+        ...candidateInformation,
+      });
+
+      return response;
+    } catch ({ response }) {
+      return response;
+    }
+  };
+
+  // const testImage = async (data) => {
+  //   try {
+  //     const response = await axios.post("https://httpbin.org/anything", form);
+  //     return response;
+  //   } catch (error) {
+  //     console.log("error:", { error });
+  //     return error;
+  //   }
+  // };
+
+  const fetchIncompleteCandidateInformation = async (data) => {
+    const { stepOne, stepTwo, stepThree, stepFour } = data;
+    const candidateInformation = {
+      ...stepOne,
+      ...stepTwo,
+      ...stepThree,
+      ...stepFour,
+    };
+
+    // Images
+    const { fbEmailIsConfirmed } = stepThree;
+    const { bmIdIsConfirmed } = stepThree;
+    const { documentationProved } = stepFour;
+    const form = new FormData();
+
+    Object.entries(candidateInformation).map((entry) => {
+      form.append(entry[0], entry[1]);
+    });
+
+    // form.set("fbEmailIsConfirmed", fbEmailIsConfirmed[0]);
+    // form.set("bmIdIsConfirmed", bmIdIsConfirmed[0]);
+    // form.set("documentationProved", documentationProved[0]);
+
+    form.set("fbEmailIsConfirmed", documentationProved[0]);
+    form.set("bmIdIsConfirmed", documentationProved[0]);
+    form.set("documentationProved", documentationProved[0]);
+
+    try {
+      const response = await axios.post(
+        "/api/incompleteCandidates/registration",
+        form
+      );
+      return response;
+    } catch ({ response }) {
+      return response;
+    }
   };
 
   // Step two state
@@ -84,7 +202,7 @@ const Form = () => {
 
       if ((formStep === 1) & !errors.stepOne) {
         const values = Object.values(getValues("stepOne"));
-        const valuesToCompare = ["si", "si", "no", "si", "si"];
+        const valuesToCompare = ["yes", "yes", "no", "yes", "yes"];
         const some = values.some((value, i) => value !== valuesToCompare[i]);
 
         if (some) history.push("/no-valid");
@@ -120,7 +238,7 @@ const Form = () => {
             <Button onClick={() => handleFormStep(-1, formStep)}>
               Anterior
             </Button>
-            <Button onClick={() => handleFormStep(1, formStep)}>Enviar</Button>
+            <SubmitButton type="submit">Enviar</SubmitButton>
           </Buttons>
         );
 
@@ -179,11 +297,10 @@ const Form = () => {
         )}
       </FormLocation>
       <FormProvider {...methods}>
-        <Forms
-          onSubmit={handleSubmit(onSubmit, (e) => console.log("onerror", e))}
-        >
+        <Forms onSubmit={handleSubmit(onSubmit)} ref={formData}>
           {showStep(formStep)}
           {renderButton()}
+          <pre>{JSON.stringify(watch(), null, 2)}</pre>
         </Forms>
       </FormProvider>
     </FormsWrapper>

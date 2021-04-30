@@ -107,6 +107,19 @@ export const Button = styled.div`
   justify-items: end;
 `;
 
+export const SubmitButton = styled.button`
+  background: ${(props) => props.theme.color.secondary};
+  border: none;
+  color: ${(props) => props.theme.color.white};
+  padding: 5px 25px 7px;
+  font-weight: 600;
+  border-radius: 5px;
+  align-self: end;
+  cursor: pointer;
+  outline: none;
+  justify-items: end;
+`;
+
 export const Forms = styled.form`
   padding: 20px;
   display: grid;

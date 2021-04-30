@@ -22,7 +22,7 @@ const StepOne = () => {
         type="radio"
         width="short"
         options={[
-          ["Sí", "si"],
+          ["Sí", "yes"],
           ["No", "no"],
         ]}
         question="¿Eres mayor de edad?"
@@ -44,7 +44,7 @@ const StepOne = () => {
         className="accountIsReal"
         type="radio"
         options={[
-          ["Sí", "si"],
+          ["Sí", "yes"],
           ["No", "no"],
         ]}
         error={
@@ -65,7 +65,7 @@ const StepOne = () => {
         className="isFirstTime"
         type="radio"
         options={[
-          ["Sí", "si"],
+          ["Sí", "yes"],
           ["No", "no"],
         ]}
         question="¿Tú o alguien más ha utilizado tu cuenta antes para crear publicidad?"
@@ -86,7 +86,7 @@ const StepOne = () => {
         className="isOneYear"
         type="radio"
         options={[
-          ["Sí", "si"],
+          ["Sí", "yes"],
           ["No", "no"],
         ]}
         question="¿Tu cuenta tiene más de un año?"
@@ -107,7 +107,7 @@ const StepOne = () => {
         className="haveFriends"
         type="radio"
         options={[
-          ["Sí", "si"],
+          ["Sí", "yes"],
           ["No", "no"],
         ]}
         question="¿Tienes más de 100 amigos en Facebook?"

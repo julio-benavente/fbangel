@@ -36,10 +36,10 @@ const StepThree = () => {
           errors.stepThree.frecuency.message
         }
         options={[
-          ["Todos los días", "1"],
-          ["1 - 2 veces a la semana", "2"],
-          ["2 - 3 veces a la semana", "3"],
-          ["1 - 2 veces al mes", "4"],
+          ["Todos los días", "everyday"],
+          ["2 - 3 veces a la semana", "1-2_a_week"],
+          ["1 - 2 veces a la semana", "2-3_a_week"],
+          ["1 - 2 veces al mes", "1-2_a_month"],
         ]}
         question="¿Con qué frecuencia usas Facebook?"
         register={register("stepThree.frecuency", {
@@ -55,10 +55,10 @@ const StepThree = () => {
         className="devices"
         type="checkbox"
         options={[
-          ["PC sobremesa", "1"],
-          ["Tablet", "2"],
-          ["Móvil", "3"],
-          ["Otros", "4"],
+          ["PC sobremesa", "pc"],
+          ["Tablet", "tablet"],
+          ["Móvil", "movil"],
+          ["Otros", "other"],
         ]}
         error={
           errors.stepThree &&
@@ -79,10 +79,10 @@ const StepThree = () => {
         className="os"
         type="checkbox"
         options={[
-          ["Windows", "1"],
-          ["Android", "2"],
-          ["Apple", "3"],
-          ["Otros", "4"],
+          ["Windows", "windows"],
+          ["Android", "android"],
+          ["Apple", "apple"],
+          ["Otros", "other"],
         ]}
         question="¿Qué sistema operativo utilizas con Facebook? (Puedes seleccionar más de uno)"
         error={

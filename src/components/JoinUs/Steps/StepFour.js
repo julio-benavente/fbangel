@@ -26,7 +26,7 @@ const StepFour = () => {
 
   // Unregistration of the payment method
   useEffect(() => {
-    if (paymentMethod === "banco-peru") {
+    if (paymentMethod === "bank-peru") {
       unregister(["stepFour.paypalEmail", "stepFour.paypalEmailConfirmation"]);
     }
 
@@ -47,7 +47,7 @@ const StepFour = () => {
         type="radio"
         options={[
           ["Paypal", "paypal"],
-          ["Cuenta bancaria - Solo para Perú", "banco-peru"],
+          ["Cuenta bancaria - Solo para Perú", "bank-peru"],
         ]}
         error={
           errors.stepFour &&
@@ -118,7 +118,7 @@ const StepFour = () => {
           </div>
         </>
       )}
-      {paymentMethod === "banco-peru" && (
+      {paymentMethod === "bank-peru" && (
         <>
           <TextInput
             className="holderName"
@@ -237,7 +237,7 @@ const StepFour = () => {
         width="full"
         className="termsAndConditions"
         type="checkbox"
-        options={[["Acepto los Términos y Condiciones", "si"]]}
+        options={[["Acepto los Términos y Condiciones", "yes"]]}
         error={
           errors.stepFour &&
           errors.stepFour.termsAndConditions &&
@@ -681,7 +681,7 @@ const StepFour = () => {
         options={[
           [
             "Doy mi consentimiento para que este sitio web almacene mi información enviada para que puedan responder a mi consulta.",
-            "si",
+            "yes",
           ],
         ]}
         error={
