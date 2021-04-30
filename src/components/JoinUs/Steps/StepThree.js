@@ -1,6 +1,7 @@
-import React from "react";
-import { useForm, useFormContext } from "react-hook-form";
+import React, { useState } from "react";
+import { useFormContext } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { Lightbox } from "react-modal-image";
 
 // Components
 import FileInput from "../FileInput";
@@ -17,8 +18,22 @@ import facebookEmailConfirmationImageTwo from "../../../assets/images/facebookEm
 import { FormThree } from "../../../styles/JoinUsPageStyles";
 
 const StepThree = () => {
-  const methods = useFormContext();
+  const [bussinessManagerImageExOne, setBussinessManagerImageExOne] = useState(
+    false
+  );
+  const [bussinessManagerImageExTwo, setBussinessManagerImageExTwo] = useState(
+    false
+  );
+  const [
+    facebookEmailConfirmationImageExOne,
+    setFacebookEmailConfirmationImageExOne,
+  ] = useState(false);
+  const [
+    facebookEmailConfirmationImageExTwo,
+    setFacebookEmailConfirmationImageExTwo,
+  ] = useState(false);
 
+  const methods = useFormContext();
   const {
     register,
     formState: { errors },
@@ -165,13 +180,34 @@ const StepThree = () => {
       />
       <div className="message">
         <p>
-          Envía una foto para confirmar el email asociado.{" "}
-          <a href={facebookEmailConfirmationImageOne} target="_blank">
+          Envía una foto para confirmar el email asociado. <br />
+          <a onClick={() => setFacebookEmailConfirmationImageExOne(true)}>
             Ejemplo 1 desde ordenador
           </a>{" "}
-          <a href={facebookEmailConfirmationImageTwo} target="_blank">
+          {facebookEmailConfirmationImageExOne && (
+            <Lightbox
+              hideDownload={true}
+              medium={facebookEmailConfirmationImageOne}
+              large={facebookEmailConfirmationImageOne}
+              alt="Confirmación de email de Facebook. Ejemplo 1."
+              onClose={() => setFacebookEmailConfirmationImageExOne(false)}
+              // hideZoom={false}
+            />
+          )}
+          <br />
+          <a onClick={() => setFacebookEmailConfirmationImageExTwo(true)}>
             Ejemplo 2 desde móvil
           </a>
+          {facebookEmailConfirmationImageExTwo && (
+            <Lightbox
+              hideDownload={true}
+              medium={facebookEmailConfirmationImageTwo}
+              large={facebookEmailConfirmationImageTwo}
+              alt="Confirmación de email de Facebook. Ejemplo 2."
+              onClose={() => setFacebookEmailConfirmationImageExTwo(false)}
+            />
+          )}
+          <br />
         </p>
         <p>
           <b>Móvil:</b> Configuración &gt; Configuración de la cuenta &gt;
@@ -215,13 +251,33 @@ const StepThree = () => {
       />
       <div className="message">
         <p>
-          Envía una foto del número de tu Administrador Comercial.{" "}
-          <a href={businessManagerImageOne} target="_blank">
+          Envía una foto del número de tu Administrador Comercial. <br />
+          <a onClick={() => setBussinessManagerImageExOne(true)}>
             Ejemplo 1 desde ordenador
           </a>{" "}
-          <a href={businessManagerImageTwo} target="_blank">
+          {bussinessManagerImageExOne && (
+            <Lightbox
+              hideDownload={true}
+              medium={businessManagerImageOne}
+              large={businessManagerImageOne}
+              alt="Administrados comercial. Ejemplo 1."
+              onClose={() => setBussinessManagerImageExOne(false)}
+            />
+          )}
+          <br />
+          <a onClick={() => setBussinessManagerImageExTwo(true)}>
             Ejemplo 2 desde móvil
           </a>
+          {bussinessManagerImageExTwo && (
+            <Lightbox
+              hideDownload={true}
+              medium={businessManagerImageTwo}
+              large={businessManagerImageTwo}
+              alt="Administrador comercial. Ejemplo 2."
+              onClose={() => setBussinessManagerImageExTwo(false)}
+            />
+          )}
+          <br />
         </p>
       </div>
 

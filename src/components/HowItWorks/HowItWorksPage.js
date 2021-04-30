@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ModalImage from "react-modal-image";
 
 import {
   // How it works section
@@ -180,8 +181,13 @@ const HowItWorksPage = () => {
                 Según la versión de tu facebook verás una de las siguientes
                 imágenes.
               </p>
-              <a href={op1img1} target="_blank">
-                <img src={op1img1} alt="Option one image one" />
+              <a>
+                <ModalImage
+                  small={op1img1}
+                  large={op1img1}
+                  hideDownload={true}
+                  alt="Option one image one"
+                />
               </a>
               {/* <img src={op1img1} alt="Option one image one" /> */}
               <p>
@@ -201,8 +207,13 @@ const HowItWorksPage = () => {
                   <b>Identificador del administrador comercial</b>
                 </li>
               </ol>
-              <a href={op1img2} target="_blank">
-                <img src={op1img2} alt="Option one image two" />
+              <a>
+                <ModalImage
+                  small={op1img2}
+                  large={op1img2}
+                  hideDownload={true}
+                  alt="Option one image two"
+                />
               </a>
               <p>
                 Primero cierra la ventana emergente, haz clic en la X superior
@@ -232,8 +243,13 @@ const HowItWorksPage = () => {
 
             <OptionTwo>
               <OptionTwoTitle>Opción 2 (requiere verificar ID)</OptionTwoTitle>
-              <a href={op2img1} target="_blank">
-                <img src={op2img1} alt="Option two image one" />
+              <a>
+                <ModalImage
+                  small={op2img1}
+                  large={op2img1}
+                  hideDownload={true}
+                  alt="Option two image one"
+                />
               </a>
               <p>
                 Primero cierra la ventana emergente, haz clic en la X superior
@@ -272,8 +288,13 @@ const HowItWorksPage = () => {
                   business.facebook.com/accountquality
                 </a>
               </p>
-              <a href={op2img2} target="_blank">
-                <img src={op2img2} alt="Option one image two" />
+              <a>
+                <ModalImage
+                  small={op2img2}
+                  large={op2img2}
+                  hideDownload={true}
+                  alt="Option one image two"
+                />
               </a>
               <p>
                 Solo una vez que Facebook te ha confirmado que tu identidad está

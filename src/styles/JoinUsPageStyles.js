@@ -272,6 +272,7 @@ const message = css`
       a {
         text-decoration: none;
         color: ${(props) => props.theme.color.link};
+        cursor: pointer;
       }
     }
   }

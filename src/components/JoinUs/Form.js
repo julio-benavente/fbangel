@@ -25,7 +25,7 @@ import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(4);
+  const [formStep, setFormStep] = useState(1);
   const formData = useRef();
   const defaultValues = {
     stepOne: {
@@ -63,7 +63,6 @@ const Form = () => {
   };
   const methods = useForm({
     mode: "all",
-    defaultValues,
   });
   const history = useHistory();
 
@@ -278,7 +277,7 @@ const Form = () => {
         <Forms onSubmit={handleSubmit(onSubmit)} ref={formData}>
           {showStep(formStep)}
           {renderButton()}
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
+          {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
         </Forms>
       </FormProvider>
     </FormsWrapper>
