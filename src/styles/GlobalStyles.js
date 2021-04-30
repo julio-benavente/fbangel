@@ -193,3 +193,22 @@ export const image = css`
   justify-self: end;
   align-self: center;
 `;
+
+export const textInputStyle = css`
+  padding: 3px 10px;
+  border: 2px solid ${(props) => props.theme.color.gray300};
+  border-radius: 2px;
+  outline: none;
+  width: 100%;
+  max-width: 250px;
+  &:focus {
+    border: 2px solid ${(props) => props.theme.color.secondary};
+  }
+`;
+
+export const errorInputStyle = css`
+  position: absolute;
+  font-size: 0.75rem;
+  color: ${(props) => props.theme.color.secondary};
+  max-width: 100%;
+`;

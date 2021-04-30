@@ -124,8 +124,9 @@ const Navbar = () => {
               exit="exit"
               variants={navbarVariants}
             >
-              {navLinks.map(({ link, to, active }) => (
+              {navLinks.map(({ link, to, active }, index) => (
                 <NavbarLink
+                  key={index}
                   as={motion.div}
                   variants={navLinkVariants}
                   onClick={closeNavbar}

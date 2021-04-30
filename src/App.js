@@ -13,6 +13,7 @@ import Faq from "./components/Faq/FaqPage";
 import Contact from "./components/Contact/ContactPage";
 import NoValid from "./components/NoValid/NoValidPage";
 import TermsAndConditions from "./components/TermsAndConditions/TermsAndConditionsPage";
+import ReferralRegistration from "./components/ReferralRegistration/ReferralRegistrationPage";
 
 // Styles
 import GlobalStyle from "./styles/GlobalStyles";
@@ -34,6 +35,10 @@ const App = () => {
           <Route path="/contact" component={Contact} />
           <Route path="/no-valid" component={NoValid} />
           <Route path="/terminos-condiciones" component={TermsAndConditions} />
+          <Route
+            path="/referral-registration"
+            component={ReferralRegistration}
+          />
         </Switch>
         <Footer />
       </ThemeProvider>
