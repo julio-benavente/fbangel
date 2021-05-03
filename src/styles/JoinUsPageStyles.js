@@ -118,6 +118,19 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   outline: none;
   justify-items: end;
+  position: relative;
+  /* line-height: 1rem; */
+  svg {
+    height: 20px;
+    fill: ${(props) => props.theme.color.white};
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export const Forms = styled.form`

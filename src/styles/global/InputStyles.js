@@ -30,14 +30,14 @@ export const Options = styled.div`
 
   ${(props) =>
     // Yes or no option
-    props.width == "short" &&
+    props.width === "short" &&
     css`
       grid-auto-columns: auto;
       grid-auto-flow: column;
     `}
 
   ${(props) =>
-    props.width == "wide" &&
+    props.width === "wide" &&
     // Half width
     css`
       grid-template-columns: 1fr 1fr;
@@ -45,7 +45,7 @@ export const Options = styled.div`
   
   ${(props) =>
     // Full width
-    props.width == "full" &&
+    props.width === "full" &&
     css`
       grid-template-columns: 1fr;
     `}

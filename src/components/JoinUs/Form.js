@@ -24,9 +24,14 @@ import {
 import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
+// Assets
+import { ReactComponent as LoadingSvg } from "../../assets/svgs/loading.svg";
+
 const Form = () => {
   const [formStep, setFormStep] = useState(1);
   const formData = useRef();
+  const [isRequesting, setIsRequesting] = useState(false);
+
   const defaultValues = {
     stepOne: {
       isAdult: "yes",
@@ -75,6 +80,8 @@ const Form = () => {
   } = methods;
 
   const onSubmit = async (data) => {
+    // Spinner on
+    setIsRequesting(true);
     const response = await fetchCandidateInformation(data);
     const { status } = response;
 
@@ -87,6 +94,9 @@ const Form = () => {
       );
     }
 
+    // Spinner off
+    setIsRequesting(false);
+
     return null;
   };
 
@@ -97,6 +107,7 @@ const Form = () => {
         : "/api/incompleteCandidates/registration";
 
     const { stepOne, stepTwo, stepThree, stepFour } = data;
+
     const { fbEmailImage } = stepThree;
     const { bmIdImage } = stepThree;
     const { documentImage } = stepFour;
@@ -215,7 +226,9 @@ const Form = () => {
             <Button onClick={() => handleFormStep(-1, formStep)}>
               Anterior
             </Button>
-            <SubmitButton type="submit">Enviar</SubmitButton>
+            <SubmitButton type="submit">
+              {isRequesting ? <LoadingSvg /> : "Enviar"}
+            </SubmitButton>
           </Buttons>
         );
 

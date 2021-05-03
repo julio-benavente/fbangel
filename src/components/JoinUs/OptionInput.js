@@ -26,10 +26,10 @@ const OptionInput = ({
       )}
 
       <Options width={width}>
-        {options.map((option) => {
+        {options.map((option, index) => {
           return (
             <>
-              <Option>
+              <Option key={index}>
                 <input
                   style={{ opacity: 0 }}
                   type={type}
