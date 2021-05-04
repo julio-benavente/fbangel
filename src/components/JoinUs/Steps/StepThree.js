@@ -179,22 +179,24 @@ const StepThree = () => {
         })}
       />
       <div className="message">
+        <p>Envía una foto para confirmar el email asociado. </p>
         <p>
-          Envía una foto para confirmar el email asociado. <br />
+          {" "}
           <a onClick={() => setFacebookEmailConfirmationImageExOne(true)}>
             Ejemplo 1 desde ordenador
           </a>{" "}
-          {facebookEmailConfirmationImageExOne && (
-            <Lightbox
-              hideDownload={true}
-              medium={facebookEmailConfirmationImageOne}
-              large={facebookEmailConfirmationImageOne}
-              alt="Confirmación de email de Facebook. Ejemplo 1."
-              onClose={() => setFacebookEmailConfirmationImageExOne(false)}
-              // hideZoom={false}
-            />
-          )}
-          <br />
+        </p>{" "}
+        {facebookEmailConfirmationImageExOne && (
+          <Lightbox
+            hideDownload={true}
+            medium={facebookEmailConfirmationImageOne}
+            large={facebookEmailConfirmationImageOne}
+            alt="Confirmación de email de Facebook. Ejemplo 1."
+            onClose={() => setFacebookEmailConfirmationImageExOne(false)}
+            // hideZoom={false}
+          />
+        )}
+        <p>
           <a onClick={() => setFacebookEmailConfirmationImageExTwo(true)}>
             Ejemplo 2 desde móvil
           </a>
@@ -207,7 +209,6 @@ const StepThree = () => {
               onClose={() => setFacebookEmailConfirmationImageExTwo(false)}
             />
           )}
-          <br />
         </p>
         <p>
           <b>Móvil:</b> Configuración &gt; Configuración de la cuenta &gt;

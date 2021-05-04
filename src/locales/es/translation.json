@@ -1,0 +1,533 @@
+{
+  "home": {
+    "banner": {
+      "headline": "¡Gana dinero con tu perfil de Facebook ¡Es un juego de niños!",
+      "sub_headline": "Sigue disfrutando de tu cuenta de Facebook como siempre y cada mes obtendrás tu dinero. Nosotros lo generamos por ti.",
+      "start_button": "Empieza a ganar dinero"
+    },
+    "process": {
+      "cards": [
+        {
+          "number": "01",
+          "title": "Completa el formulario",
+          "info": "Te ofrecemos unirte a nuestro programa en unos pocos clics y empezar a ganar online, sin ningún esfuerzo adicional!"
+        },
+        {
+          "number": "02",
+          "title": "Espera nuestra confirmación",
+          "info": "¡La confirmación demora de 3 a 5 días hábiles!* (¡Por lo general, en 48 horas!)",
+          "disclaimer": "Después del primer inicio de sesión"
+        },
+        {
+          "number": "03",
+          "title": "Recibe pagos mensuales",
+          "info": "Mientras tu haces tu vida normal, nosotros hacemos que tu cuenta de Facebook genere ganancias para ti. !"
+        },
+        {
+          "number": "04",
+          "title": "Comparte con tus amigos",
+          "info": "Comparte con tus amigos y aumenta tus ganancias. Recibirás un pago por cada nueva inscripción referida por ti. ¡Sin límites!"
+        }
+      ]
+    },
+    "requirements": {
+      "title": "¿Cuánto ganarás?",
+      "info": {
+        "span": "!Gana 30 dólares cada mes!",
+        "p": "Confirma que cumples los y prepara tu perfil, haz clic en botón y aprende cómo."
+      },
+      "how_it_works_btn": "¿Cómo funciona?",
+      "sub_title": "Requisitos para que el perfil sea válido",
+      "list": [
+        "Real, activo, con foto y nombre real",
+        "Con al menos 100 amigos",
+        "Al menos un año de edad",
+        "Contenido apropiado",
+        "Ser mayor de edad",
+        "No debe haber sido previamente utilizado o alquilado a otras empresas para el uso de publicidad",
+        "Tener un email asociado a tu perfil",
+        "Administrador Comercial (BM) creado​",
+        "ID verificado​",
+        "2FA App Activado​"
+      ]
+    },
+    "referral": {
+      "title": "Programa de referidos",
+      "info": {
+        "p_1": {
+          "0": "¡Tenemos un programa de referidos para ti! Si nos traes familiares o amgios puedes ganar más de",
+          "1": "1000 dólares",
+          "2": "al mes."
+        },
+        "p_2": {
+          "0": "Activa tu código de referente y gana",
+          "1": "5 dólares",
+          "2": "por cada referido válido. ¡Sin límite!"
+        }
+      },
+      "register_btn": "Regístrate aquí",
+      "tiny": {
+        "p_1": "Los planes se pagarán después de que nuestro equipo haya confirmado el perfil como válido.",
+        "p_2": "En todos los planes, nuestro equipo debe poder contactar a los propietarios para resolver cualquier eventual problema que pueda ocurrir."
+      }
+    },
+    "testimonies": {
+      "title": "¿Qué es lo que dice la gente?",
+      "info": "¡Gente que se unió a nosotros y ya está ganando dinero!",
+      "testimonies": [
+        {
+          "number": "1",
+          "testimony": "He colaborado con fbangel durante más de un año, no he tenido ningún problema. El dinero siempre llega a tiempo y siempre recibo respuestas a todas mis preguntas. Es genial que no tenga que hacer nada y, además, no afecta a mi perfil en absoluto. Digamos que simplemente gano dinero alquilando mi cuenta de Facebook. Se lo recomiendo a todo el mundo!",
+          "author": "Ana Martín",
+          "membership": "Miembro desde mayo 2019"
+        },
+        {
+          "number": "2",
+          "testimony": "Decidí intentar ganar dinero con FbAngel, ya que me interesaba saber cómo funciona. Puedo decir que es una gran manera de tener ingresos adicionales. ¡Simplemente he tenido que rellenar el formulario Y NADA MAS! Los chicos se encargan del resto yo simplemente me limito a recoger mi dinero en mi cuenta PayPal",
+          "author": "Tony Smith",
+          "membership": "Miembro desde octubre 2019"
+        },
+        {
+          "number": "3",
+          "testimony": "Cuando en mi país tuvimos que ir al encierro debido a covid-19, me quedé sin trabajo, y sin ingresos, una amiga me explicó que tenía un ingreso extra alquilando su facebook para anunciar publicidad, yo era un poco escéptica pero decidí probar, y la verdad es que hasta ahora no he tenido ningún problema , los pagos son siemprepuntuales, y siempre me han pagado por todos los amigos que he traído. ¡Lo recomiendo!",
+          "author": "Alena Due",
+          "membership": "Miembro desde marzo 2020"
+        }
+      ]
+    }
+  },
+  "how_it_works": {
+    "how_it_works": {
+      "title": "¿Cómo funciona?",
+      "info": {
+        "p_1": "     El proceso es realmente simplemente. Si tienes una cuenta de Facebook, probablemente estés familiarizado con anuncios y banners en Facebook. Están en todas partes, todo el tiempo, y mucha gente está haciendo dinero con ello.",
+        "p_2": "Lo que no sabes es que usted también puedes, y muy fácil, alquilando tu cuenta de Facebook, sin hacer nada.",
+        "p_3": "Dado que Facebook es una entidad de corporación protegida, que protege la actividad y los derechos de sus usuarios, esto no te afectará a ti ni a tu actividad en línea en absoluto.",
+        "p_4": "Ninguno de tus amigos recibirá spam o verá tus anuncios, y aún así te pagaremos, solo por utilizar la parte publicitaria de tu perfil."
+      },
+      "faq_link": "Consulta nuestra sección F.A.Q para obtener más información"
+    },
+    "requirements": {
+      "title": "Requisitos del perfil",
+      "list": [
+        "Debe ser real, activo, con foto y nombre real que coincida con el nombre de tu documento",
+        "Con al menos 100 amigos",
+        "Al menos un año de antigüedad",
+        "Con contenido apropiado, no se adminten fotos que muestren cualquier tipo de violencia contra humanos o animales, fotos de contenido sexual, apología del terrorismo o de alto significado político, así como cualquier otro tipo que pueda ser considerado socialmente ofensivo",
+        "Debe ser mayor de edad",
+        "No debe haber sido previamente utilizado o alquilado a otras empresas para el uso de publicidad",
+        "Debes tener un email asociado a tu perfil"
+      ]
+    },
+    "configuration": {
+      "title": "Configuración",
+      "info": {
+        "0": "Si y solo si tu cuenta de Facebook cumple con",
+        "1": "TODOS",
+        "2": "los requistos anteriormente expuestos debes completar 2 sencillos pasos antes de poder completar el formulario de registro."
+      },
+      "list": [
+        "Crear un Administrador Comercial (BM)",
+        "Activar autenticación en dos pasos via App"
+      ],
+      "step_one": {
+        "title": "Paso 1: Crear un Administrador Comercial (BM)",
+        "list": {
+          "li_1": {
+            "0": "Ve a"
+          },
+          "li_2": {
+            "0": "Haz clic en",
+            "1": "Crear cuenta"
+          },
+          "li_3": {
+            "0": "Ingresa un nombre para tu negocio, tu nombre y una dirección de correo electrónico haz clic en",
+            "1": "Enviar",
+            "2": "Listo"
+          },
+          "li_4": {
+            "0": "Después de hacer clic en",
+            "1": "Listo",
+            "2": "Facebook te puede mostrar las siguientes opciones."
+          }
+        }
+      },
+      "option_one": {
+        "title": "Opción 1 (no requiere verificar ID)",
+        "p_1": "Según la versión de tu facebook verás una de las siguientes imágenes.",
+        "p_2": "Para obtener el Identificador del administrador comercial (BM Id) que debes enviar en el formulario de registro sigue los siguientes pasos.",
+        "list_1": {
+          "li_1": {
+            "0": "Clic en",
+            "1": "Configuración del negocio"
+          },
+          "li_2": {
+            "0": "Desciende hasta",
+            "1": "Información del negocio"
+          },
+          "li_3": {
+            "0": "Haz una foto o captura de pantalla de tu",
+            "1": "Identificador del administrador comercial"
+          }
+        },
+        "p_3": "Primero cierra la ventana emergente, haz clic en la X superior izquierda.",
+        "p_4": {
+          "0": "Para obtener el",
+          "1": "Identificador del administrador comercial",
+          "2": "(BM Id) que debes enviar en el formulario de registro sigue los siguientes pasos."
+        },
+        "list_2": {
+          "li_1": {
+            "0": "Haz clic en",
+            "1": "Más herramientas"
+          },
+          "li_2": {
+            "0": "Clic en",
+            "1": "Configuración del negocio"
+          },
+          "li_3": {
+            "0": "Desciende hasta",
+            "1": "Información del negocio"
+          },
+          "li_4": {
+            "0": "Haz una foto o captura de pantalla de tu",
+            "1": "Identificador del administrador comercial"
+          }
+        }
+      },
+      "option_two": {
+        "title": "Opción 2 (requiere verificar ID)",
+        "p_1": "Primero cierra la ventana emergente, haz clic en la X superior izquierda.",
+        "p_2": "Debes seguir los siguientes pasos para verificar tu identidad.",
+        "list_1": {
+          "li_1": {
+            "0": "Haz clic en",
+            "1": "Ver detalles"
+          },
+          "li_2": {
+            "0": "Clic en",
+            "1": "Solicitar Revisión"
+          },
+          "li_3": {
+            "0": "Clic en",
+            "1": "Continuar"
+          },
+          "li_4": {
+            "0": "Subir tu documento de identificación"
+          },
+          "li_5": {
+            "0": "Clic en",
+            "1": "Continuar"
+          }
+        },
+        "p_3": "En 24 o 48 horas Facebook suele confirmar tu identidad y te avisa a tu email si algo es incorrecto.",
+        "p_4": "Puedes comprobar si tu identidad ha sido verificada usando el siguiente enlace",
+        "p_5": {
+          "0": "Solo una vez que Facebook te ha confirmado que tu identidad está verificada, sigue estos pasos para obtener el",
+          "1": "Identificador del administrador comercial",
+          "2": "(BM Id) que debes enviar en el formulario de registro"
+        },
+        "list_2": {
+          "li_1": {
+            "0": "Ve a"
+          },
+          "li_2": {
+            "0": "Desciende hasta",
+            "1": "Información del negocio"
+          },
+          "li_3": {
+            "0": "Haz una foto o captura de pantalla de tu",
+            "1": "Identificador del administrador comercial"
+          }
+        }
+      },
+      "step_two": {
+        "title": "Paso 2: Activar la autenticación en dos pasos (2FA) via App",
+        "list": {
+          "li_1": {
+            "0": "Ve a",
+            "1": "Configuración y privacida"
+          },
+          "li_2": {
+            "0": "Selecciona",
+            "1": "Configuración"
+          },
+          "li_3": {
+            "0": "Selecciona",
+            "1": "Seguridad en inicio de sesion"
+          },
+          "li_4": {
+            "0": "Busca \"Usar autenticación en dos pasos\" –",
+            "1": "Editar"
+          },
+          "li_5": {
+            "0": "Selecciona",
+            "1": "Usar app de autenticación"
+          },
+          "li_6": {
+            "0": "Copiar código - Token – Continuar y nos pide código de confirmación"
+          },
+          "extra": {
+            "p_1": "Código de confirmación",
+            "p_2": "Sin cerrar la página abrir otra http://2fa.live,pega tu Token y haz clic en “Submit”. Copia los ultimos 6 números del resultado.",
+            "p_3": "También, si prefieres, puedes usar una App como Google Authenticator, Duo Mobile o LastPass."
+          },
+          "li_7": {
+            "0": "Regresa a fb y completa el código de confirmación –",
+            "1": "Listo"
+          }
+        }
+      }
+    },
+    "registration": {
+      "title": "Registro",
+      "info": {
+        "p_1": {
+          "0": "Utiliza",
+          "1": "este formulario",
+          "2": "para registrarse."
+        },
+        "p_2": {
+          "0": "Antes de tener acceso a llenar tus datos, tendrás que respondera a unas sencillas preguntas sobre tu perfil de Facebook para preevaluar si tu perfil cumple con los requisitos, cosas como“¿Qué edad tiene tu cuenta?”, “¿Cuántos amigos tienes en tu perfil de Facebook?”, etc."
+        },
+        "p_3": {
+          "0": "No te preocupes, se hace en",
+          "1": "menos de 1 minuto"
+        },
+        "p_4": {
+          "0": "Si tu perfil califica, tendrás que rellenar tus datos y adjuntar una foto de un documento para verificar que tu perfil es real y que eres mayor de edad."
+        },
+        "p_5": {
+          "0": "Necesitaremos una foto de tu documento en alta resolución y legible, puedes cubrir cualquier detalle que desees, excepto la foto, el nombre completo y la fecha de nacimiento."
+        },
+        "p_6": {
+          "0": "Si decides cubrir algún dato no lo haga editando la foto o Facebook no la admitirá, usa los dedos por ejemplo, o trozo de papel."
+        },
+        "p_7": {
+          "0": "Puedes usar, DNI, pasaporte o licencia de conducir, si no tienes ninguno de ellos por favor",
+          "1": "haz clic aquí para obtener una guía con opciones alternativas"
+        },
+        "p_8": {
+          "0": "Durante el proceso de registro deberás adjuntar también una foto tu",
+          "1": "Identificador del administrador comercial",
+          "2": "que creaste en el paso 1 e introducir el",
+          "3": "código de autenticación de 32 caracteres",
+          "4": "(Token) que has obtenido en el paso 2"
+        }
+      }
+    },
+    "payment": {
+      "title": "Recibe el pago",
+      "info": {
+        "p_1": {
+          "0": "Una vez que nuestro equipo verifique que podemos acceder a tu perfil mediante 2FA y que efectivamente el Admistrador comercial (BM) está creado y sin restringir, nuestro equipo terminará de configurar el BM y se procesará tu primer pago a través de Paypal."
+        },
+        "p_2": {
+          "0": "Normalemente de 4 a 5 días hábiles después de haber recibido su formulario, siempre que los datos sean correctos y podamos acceder a su perfil y el Business Manager no esté restringido."
+        },
+        "p_3": {
+          "0": "Ah, y si nos envias a tus amigos obtienes más dinero por cada referido, echa un vistazo a nuestro",
+          "1": "Programa de Referidos"
+        },
+        "p_4": {
+          "0": "Recibirás el primer pago una vez que la cuenta se haya revisado y se haya configurado correctamente un Business Manager."
+        },
+        "p_5": {
+          "0": "Después del primer pago los siguientes pagos mesuales se realizan de la siguiente manera:"
+        },
+        "p_6": {
+          "0": "Los perfiles activados en la primera quincena del mes (primeras 2 semanas) se pagarán la semana del 15 del mes siguiente."
+        },
+        "p_7": {
+          "0": "Los perfiles activados en la segunda quincena del mes (2 últimas semanas) se pagarán a fin de mes."
+        },
+        "p_8": {
+          "0": "El pago de referidos se realiza siempre a fin de mes, nuestro equipo se comunicará contigo para confirmar el número de referidos registrados por tu parte y realizar el pago correspondiente."
+        }
+      }
+    },
+    "support": {
+      "title": "Soporte",
+      "info": {
+        "p_1": {
+          "0": "Puedes ponerte en contacto con nosotros en cualquier momento para resolver cualquier pregunta, y también podría ser que eventualmente necesitemos ponernos en contacto contigo para resolver cualquier cosa."
+        },
+        "p_2": {
+          "0": "Importante"
+        },
+        "p_3": {
+          "0": "Tarde o temprano Facebook te pedirá que cambie la contraseña o tal vez tu decidas cambiarla, si esto sucede,",
+          "1": "comunicate con nosotros inmediatamente",
+          "2": ", de lo contrario podrás crearnos problemas ya que no podremos usar la cuenta y no podremos pagarte."
+        },
+        "p_4": {
+          "0": "Contáctanos"
+        }
+      }
+    }
+  },
+  "join_us": {
+    "title": "¿Es válido tu perfil de Facebook para nuestro programa de alquiler?",
+    "info": "Para saber si es válido para nuestro programa de alquiler, completa este sencillo cuestionario.",
+    "form_location": {
+      "title": "Formulario de registro",
+      "p_1": "Cuestionario de calificación",
+      "p_2": "Datos personales",
+      "p_3": "Datos de cuenta de Facebook",
+      "p_4": "Confirmación y Método de pago",
+      "p_5": "Felicitaciones"
+    },
+    "step_one": {
+      "isAdult": {
+        "question": "¿Eres mayor de edad?",
+        "option_1": "Sí",
+        "option_2": "No",
+        "error_1": "Este campo es obligatorio."
+      },
+      "accountIsReal": {
+        "question": "¿Estás creando la solicitud con tu perfil real de Facebook?",
+        "option_1": "Sí",
+        "option_2": "No",
+        "error_1": "Este campo es obligatorio."
+      },
+      "isFirstTime": {
+        "question": "¿Tú o alguien más ha utilizado tu cuenta antes para crear publicidad?",
+        "option_1": "Sí",
+        "option_2": "No",
+        "error_1": "Este campo es obligatorio."
+      },
+      "isOneYear": {
+        "question": "¿Tu cuenta tiene más de un año?",
+        "option_1": "Sí",
+        "option_2": "No",
+        "error_1": "Este campo es obligatorio."
+      },
+      "haveFriends": {
+        "question": "¿Tienes más de 100 amigos en Facebook?",
+        "option_1": "Sí",
+        "option_2": "No",
+        "error_1": "Este campo es obligatorio."
+      }
+    },
+    "step_two": {
+      "name": {
+        "question": "Tu nombre",
+        "error_1": "Por favor, registre su nombre",
+        "error_2": "El nombre contiene caracteres no permitidos"
+      },
+      "lastname": {
+        "question": "Tus apellidos",
+        "error_1": "Por favor, registre su apellido",
+        "error_2": "El apellido contiene caracteres no permitidos"
+      },
+      "country": {
+        "question": "Tu país de residencia",
+        "error_1": "Este campo es obligatorio"
+      },
+      "city": {
+        "question": "Tu ciudad de residencia",
+        "error_1": "Este campo es obligatorio"
+      },
+      "birthday": {
+        "question": "Fecha de nacimiento",
+        "error_1": "Por favor, ingrese la fecha de su nacimiento",
+        "error_2": "Debes ser mayor de 18 años"
+      },
+      "phone": {
+        "question": "Tu celular",
+        "error_1": "Este campo es obligatorio",
+        "error_2": "Ingrese un numero de celular válido"
+      },
+      "email": {
+        "question": "Email",
+        "error_1": "Por favor, ingrese su email",
+        "error_2": "Ingrese un email valido"
+      }
+    },
+    "step_three": {
+      "frequency": {
+        "question": "¿Con qué frecuencia usas Facebook?",
+        "option_1": "Todos los días",
+        "option_2": "2 - 3 veces a la semana",
+        "option_3": "1 - 2 veces a la semana",
+        "option_4": "1 - 2 veces al mes",
+        "error_1": "Por favor, seleccione una de las opciones"
+      },
+      "devices": {
+        "question": "¿Con qué frecuencia usas Facebook? (Puedes seleccionar más de uno)",
+        "option_1": "PC sobremesa",
+        "option_2": "Tablet",
+        "option_3": "Móvil",
+        "option_4": "Otros",
+        "error_1": "Por favor, seleccione una de las opciones"
+      },
+      "os": {
+        "question": "¿Qué sistema operativo utilizas con Facebook? (Puedes seleccionar más de uno)",
+        "option_1": "Windows",
+        "option_2": "Android",
+        "option_3": "Apple",
+        "option_4": "Otros",
+        "error_1": "Por favor, seleccione una de las opciones"
+      },
+      "username": {
+        "question": "Usuario de Facebook",
+        "error_1": "Por favor, ingrese su usuario de Facebook",
+        "error_2": "El usuario debe contener al menos 6 caracteres"
+      },
+      "password": {
+        "question": "Contraseña de Facebook",
+        "error_1": "Por favor, ingrese su constraseña de Facebook",
+        "error_2": "Su contraseña debe contener al menos 6 caracteres"
+      },
+      "fbEmailImage": {
+        "question": "fbEmailImage",
+        "error_1": "Por favor, ingrese una foto confirmando el email asociado",
+        "error_2": "El archivo puede pesar máximo 2mb",
+        "error_3": "El archivo solo puede tener formato PNG, JPG o JPEG",
+        "message": {
+          "p_1": {
+            "0": "Envía una foto para confirmar el email asociado."
+          },
+          "p_2": {
+            "0": "Ejemplo 1 desde ordenador"
+          },
+          "p_3": {
+            "0": "Ejemplo 2 desde móvil"
+          },
+          "p_4": {
+            "0": "Móvil:",
+            "1": "Configuración",
+            "2": "Configuración de la cuenta",
+            "3": "Información personal",
+            "4": "Información de contacto"
+          },
+          "p_5": {
+            "0": "Ordenador:",
+            "1": "Configuración y privacidad",
+            "2": "Configuración",
+            "3": "General",
+            "4": "Contacto"
+          },
+          "p_6": {
+            "0": "O ve a :"
+          }
+        }
+      },
+      "frequency": {
+        "question": "",
+        "error_1": "",
+        "error_2": ""
+      },
+      "frequency": {
+        "question": "",
+        "error_1": "",
+        "error_2": ""
+      },
+      "frequency": {
+        "question": "",
+        "error_1": "",
+        "error_2": ""
+      }
+    }
+  }
+}

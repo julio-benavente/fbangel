@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ModalImage from "react-modal-image";
+import { useTranslation } from "react-i18next";
 
 import {
   // How it works section
@@ -65,35 +66,21 @@ import op2img1 from "../../assets/images/option-two-img-one.jpg";
 import op2img2 from "../../assets/images/option-two-img-two.jpg";
 
 const HowItWorksPage = () => {
+  const { t } = useTranslation();
   return (
     <HowItWorks>
       {/* HowItWorks section starts */}
       <HowItWorksSection>
-        <HowItWorksSectionTitle>¿Cómo funciona?</HowItWorksSectionTitle>
+        <HowItWorksSectionTitle>
+          {t("how_it_works.how_it_works.title")}
+        </HowItWorksSectionTitle>
         <HowItWorksImage src={girl_getting_off} />
         <HowItWorksSectionInfo>
-          <p>
-            El proceso es realmente simplemente. Si tienes una cuenta de
-            Facebook, probablemente estés familiarizado con anuncios y banners
-            en Facebook. Están en todas partes, todo el tiempo, y mucha gente
-            está haciendo dinero con ello.
-          </p>
-          <p>
-            Lo que no sabes es que usted también puedes, y muy fácil, alquilando
-            tu cuenta de Facebook, sin hacer nada.
-          </p>
-          <p>
-            Dado que Facebook es una entidad de corporación protegida, que
-            protege la actividad y los derechos de sus usuarios, esto no te
-            afectará a ti ni a tu actividad en línea en absoluto.
-          </p>
-          <p>
-            Ninguno de tus amigos recibirá spam o verá tus anuncios, y aún así
-            te pagaremos, solo por utilizar la parte publicitaria de tu perfil.
-          </p>
-          <FAQLink to="/faq">
-            Consulta nuestra sección F.A.Q para obtener más información
-          </FAQLink>
+          <p>{t("how_it_works.how_it_works.info.p_1")}</p>
+          <p>{t("how_it_works.how_it_works.info.p_2")}</p>
+          <p>{t("how_it_works.how_it_works.info.p_3")}</p>
+          <p>{t("how_it_works.how_it_works.info.p_4")}</p>
+          <FAQLink to="/faq">{t("how_it_works.how_it_works.faq_link")}</FAQLink>
         </HowItWorksSectionInfo>
       </HowItWorksSection>
       {/* HowItWorks section ends */}
@@ -102,30 +89,16 @@ const HowItWorksPage = () => {
       <RequirementsSection>
         <RequirementsSectionWrapper>
           <RequirementsSectionTitle>
-            Requisitos del perfil
+            {t("how_it_works.requirements.title")}
           </RequirementsSectionTitle>
           <RequirementsImage src={todo_list} />
 
           <RequirementsList>
-            <li>
-              Debe ser real, activo, con foto y nombre real que coincida con el
-              nombre de tu documento
-            </li>
-            <li>Con al menos 100 amigos</li>
-            <li>Al menos un año de antigüedad</li>
-            <li>
-              Con contenido apropiado, no se adminten fotos que muestren
-              cualquier tipo de violencia contra humanos o animales, fotos de
-              contenido sexual, apología del terrorismo o de alto significado
-              político, así como cualquier otro tipo que pueda ser considerado
-              socialmente ofensivo
-            </li>
-            <li>Debe ser mayor de edad</li>
-            <li>
-              No debe haber sido previamente utilizado o alquilado a otras
-              empresas para el uso de publicidad
-            </li>
-            <li>Debes tener un email asociado a tu perfil</li>
+            {t("how_it_works.requirements.list", { returnObjects: true }).map(
+              (e, i) => (
+                <li key={i}>{e}</li>
+              )
+            )}
           </RequirementsList>
         </RequirementsSectionWrapper>
       </RequirementsSection>
@@ -135,52 +108,58 @@ const HowItWorksPage = () => {
       <ConfigurationSection>
         <ConfigurationSectionWrapper>
           <ConfigurationImage src={browser_girl} />
-          <ConfigurationSectionTitle>Configuración</ConfigurationSectionTitle>
+          <ConfigurationSectionTitle>
+            {t("how_it_works.configuration.title")}
+          </ConfigurationSectionTitle>
           <ConfigurationInfo>
-            Si y solo si tu cuenta de Facebook cumple con <b>TODOS</b> los
-            requistos anteriormente expuestos debes completar 2 sencillos pasos
-            antes de poder completar el formulario de registro.
+            {t("how_it_works.configuration.info.0")}
+            <b> {t("how_it_works.configuration.info.1")} </b>
+            {t("how_it_works.configuration.info.2")}
           </ConfigurationInfo>
           <ConfigurationList>
-            <li>Crear un Administrador Comercial (BM)</li>
-            <li>Activar autenticación en dos pasos via App</li>
+            {t("how_it_works.configuration.list", { returnObjects: true }).map(
+              (e, i) => (
+                <li key={i}>{e}</li>
+              )
+            )}
           </ConfigurationList>
           <StepOne>
             <StepOneTitle>
-              Paso 1: Crear un Administrador Comercial (BM)
+              {t("how_it_works.configuration.step_one.title")}
             </StepOneTitle>
             <ol>
               <li>
-                Ve a{" "}
+                {t("how_it_works.configuration.step_one.list.li_1.0")}
                 <a
                   href="https://business.facebook.com/overview#/"
                   target="_blank"
                 >
+                  {" "}
                   business.facebook.com/overview
                 </a>
               </li>
               <li>
-                Haz clic en <b>Crear cuenta</b>
+                {t("how_it_works.configuration.step_one.list.li_2.0")}{" "}
+                <b>{t("how_it_works.configuration.step_one.list.li_2.1")}</b>
               </li>
               <li>
-                Ingresa un nombre para tu negocio, tu nombre y una dirección de
-                correo electrónico haz clic en <b>Enviar</b>. -<b> Listo</b>
+                {t("how_it_works.configuration.step_one.list.li_3.0")}{" "}
+                <b>{t("how_it_works.configuration.step_one.list.li_3.1")}</b>. -
+                <b> {t("how_it_works.configuration.step_one.list.li_3.2")}</b>
               </li>
               <li>
-                Después de hacer clic en <b>Listo</b> Facebook te puede mostrar
-                las siguientes opciones.
+                {t("how_it_works.configuration.step_one.list.li_4.0")}{" "}
+                <b> {t("how_it_works.configuration.step_one.list.li_4.1")} </b>{" "}
+                {t("how_it_works.configuration.step_one.list.li_4.2")}
               </li>
             </ol>
           </StepOne>
           <Options>
             <OptionOne>
               <OptionOneTitle>
-                Opción 1 (no requiere verificar ID)
+                {t("how_it_works.configuration.option_one.title")}
               </OptionOneTitle>
-              <p>
-                Según la versión de tu facebook verás una de las siguientes
-                imágenes.
-              </p>
+              <p>{t("how_it_works.configuration.option_one.p_1")}</p>
               <a>
                 <ModalImage
                   small={op1img1}
@@ -190,21 +169,25 @@ const HowItWorksPage = () => {
                 />
               </a>
               {/* <img src={op1img1} alt="Option one image one" /> */}
-              <p>
-                Para obtener el Identificador del administrador comercial (BM
-                Id) que debes enviar en el formulario de registro sigue los
-                siguientes pasos.
-              </p>
+              <p>{t("how_it_works.configuration.option_one.p_2")}</p>
               <ol>
                 <li>
-                  Clic en <b>Configuración del negocio</b>
+                  {t("how_it_works.configuration.option_one.list_1.li_1.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_one.list_1.li_1.1")}
+                  </b>
                 </li>
                 <li>
-                  Desciende hasta <b>Información del negocio</b>
+                  {t("how_it_works.configuration.option_one.list_1.li_2.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_one.list_1.li_2.1")}
+                  </b>
                 </li>
                 <li>
-                  Haz una foto o captura de pantalla de tu{" "}
-                  <b>Identificador del administrador comercial</b>
+                  {t("how_it_works.configuration.option_one.list_1.li_3.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_one.list_1.li_3.1")}
+                  </b>
                 </li>
               </ol>
               <a>
@@ -215,34 +198,44 @@ const HowItWorksPage = () => {
                   alt="Option one image two"
                 />
               </a>
+              <p>{t("how_it_works.configuration.option_one.p_3")}</p>
               <p>
-                Primero cierra la ventana emergente, haz clic en la X superior
-                izquierda.
-              </p>
-              <p>
-                Para obtener el <b>Identificador del administrador comercial</b>{" "}
-                (BM Id) que debes enviar en el formulario de registro sigue los
-                siguientes pasos.
+                {t("how_it_works.configuration.option_one.p_4.0")}{" "}
+                <b>{t("how_it_works.configuration.option_one.p_4.1")}</b>{" "}
+                {t("how_it_works.configuration.option_one.p_4.2")}
               </p>
               <ol>
                 <li>
-                  Haz clic en <b>Más herramientas</b>
+                  {t("how_it_works.configuration.option_one.list_2.li_1.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_one.list_2.li_1.1")}
+                  </b>
                 </li>
                 <li>
-                  Clic en <b>Configuración del negocio</b>
+                  {t("how_it_works.configuration.option_one.list_2.li_2.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_one.list_2.li_2.1")}
+                  </b>
                 </li>
                 <li>
-                  Desciende hasta <b>Información del negocio</b>
+                  {t("how_it_works.configuration.option_one.list_2.li_3.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_one.list_2.li_3.1")}
+                  </b>
                 </li>
                 <li>
-                  Haz una foto o captura de pantalla de tu{" "}
-                  <b>Identificador del administrador comercial</b>
+                  {t("how_it_works.configuration.option_one.list_2.li_4.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_one.list_2.li_4.1")}
+                  </b>
                 </li>
               </ol>
             </OptionOne>
 
             <OptionTwo>
-              <OptionTwoTitle>Opción 2 (requiere verificar ID)</OptionTwoTitle>
+              <OptionTwoTitle>
+                {t("how_it_works.configuration.option_two.title")}
+              </OptionTwoTitle>
               <a>
                 <ModalImage
                   small={op2img1}
@@ -251,43 +244,52 @@ const HowItWorksPage = () => {
                   alt="Option two image one"
                 />
               </a>
-              <p>
-                Primero cierra la ventana emergente, haz clic en la X superior
-                izquierda.
-              </p>
-              <p>
-                Debes seguir los siguientes pasos para verificar tu identidad.
-              </p>
+              <p>{t("how_it_works.configuration.option_two.p_1")}</p>
+              <p>{t("how_it_works.configuration.option_two.p_2")}</p>
               <ol>
                 <li>
-                  Haz clic en <b>Ver detalles</b>
+                  {t("how_it_works.configuration.option_two.list_1.li_1.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_two.list_1.li_1.1")}
+                  </b>
                 </li>
                 <li>
-                  Clic en <b>Solicitar Revisión</b>
+                  {t("how_it_works.configuration.option_two.list_1.li_2.0")}
+                  <b>
+                    {" "}
+                    {t("how_it_works.configuration.option_two.list_1.li_2.1")}
+                  </b>
                 </li>
                 <li>
-                  Clic en <b>Continuar</b>
+                  {t("how_it_works.configuration.option_two.list_1.li_3.0")}
+                  <b>
+                    {" "}
+                    {t("how_it_works.configuration.option_two.list_1.li_3.1")}
+                  </b>
                 </li>
-                <li>Subir tu documento de identificación</li>
                 <li>
-                  Clic en <b>Continuar</b>
+                  {t("how_it_works.configuration.option_two.list_1.li_4.0")}
+                </li>
+                <li>
+                  {t("how_it_works.configuration.option_two.list_1.li_5.0")}{" "}
+                  <b>
+                    {" "}
+                    {t("how_it_works.configuration.option_two.list_1.li_5.1")}
+                  </b>
                 </li>
               </ol>
-
+              <p>{t("how_it_works.configuration.option_two.p_3")}</p>
               <p>
-                En 24 o 48 horas Facebook suele confirmar tu identidad y te
-                avisa a tu email si algo es incorrecto.
-              </p>
-              <p>
-                Puedes comprobar si tu identidad ha sido verificada usando el
-                siguiente enlace{" "}
+                {t("how_it_works.configuration.option_two.p_4")}
                 <a
                   href="https://business.facebook.com/accountquality/"
                   target="_blank"
                 >
-                  business.facebook.com/accountquality
+                  {" "}
+                  business.facebook.com/accountquality{" "}
                 </a>
               </p>
+
               <a>
                 <ModalImage
                   small={op2img2}
@@ -297,14 +299,13 @@ const HowItWorksPage = () => {
                 />
               </a>
               <p>
-                Solo una vez que Facebook te ha confirmado que tu identidad está
-                verificada, sigue estos pasos para obtener el{" "}
-                <b>Identificador del administrador comercial</b> (BM Id) que
-                debes enviar en el formulario de registro
+                {t("how_it_works.configuration.option_two.p_5.0")}{" "}
+                <b>{t("how_it_works.configuration.option_two.p_5.1")}</b>{" "}
+                {t("how_it_works.configuration.option_two.p_5.2")}
               </p>
               <ol>
                 <li>
-                  Ve a{" "}
+                  {t("how_it_works.configuration.option_two.list_2.li_1.0")}{" "}
                   <a
                     href="https://business.facebook.com/settings/"
                     target="_blank"
@@ -313,11 +314,16 @@ const HowItWorksPage = () => {
                   </a>
                 </li>
                 <li>
-                  Desciende hasta <b>Información del negocio</b>
+                  {t("how_it_works.configuration.option_two.list_2.li_2.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_two.list_2.li_2.1")}
+                  </b>
                 </li>
                 <li>
-                  Haz una foto o captura de pantalla de tu{" "}
-                  <b>Identificador del administrador comercial</b>
+                  {t("how_it_works.configuration.option_two.list_2.li_3.0")}{" "}
+                  <b>
+                    {t("how_it_works.configuration.option_two.list_2.li_3.1")}
+                  </b>
                 </li>
               </ol>
             </OptionTwo>
@@ -325,47 +331,45 @@ const HowItWorksPage = () => {
 
           <StepTwo>
             <StepTwoTitle>
-              Paso 2: Activar la autenticación en dos pasos (2FA) via App
+              {t("how_it_works.configuration.step_two.title")}
             </StepTwoTitle>
             <ol>
               <li>
-                Ve a <b>Configuración y privacidad</b>
+                {t("how_it_works.configuration.step_two.list.li_1.0")}{" "}
+                <b>{t("how_it_works.configuration.step_two.list.li_1.1")}</b>
               </li>
               <li>
-                Selecciona <b>Configuración</b>
+                {t("how_it_works.configuration.step_two.list.li_2.0")}{" "}
+                <b>{t("how_it_works.configuration.step_two.list.li_2.1")}</b>
               </li>
               <li>
-                Selecciona <b>Seguridad en inicio de sesion</b>
+                {t("how_it_works.configuration.step_two.list.li_3.0")}{" "}
+                <b>{t("how_it_works.configuration.step_two.list.li_3.1")}</b>
               </li>
               <li>
-                Busca “Usar autenticación en dos pasos” – <b>Editar</b>
+                {t("how_it_works.configuration.step_two.list.li_4.0")}{" "}
+                <b>{t("how_it_works.configuration.step_two.list.li_4.1")}</b>
               </li>
               <li>
-                Selecciona <b>Usar app de autenticación</b>
+                {t("how_it_works.configuration.step_two.list.li_5.0")}{" "}
+                <b>{t("how_it_works.configuration.step_two.list.li_5.1")}</b>
               </li>
-              <li>
-                Copiar código - Token – Continuar y nos pide código de
-                confirmación
-              </li>
+              <li>{t("how_it_works.configuration.step_two.list.li_6.0")}</li>
               <div className="extra">
-                <p>Código de confirmación</p>
-                <p>
-                  Sin cerrar la página abrir otra http://2fa.live,pega tu Token
-                  y haz clic en “Submit”. Copia los ultimos 6 números del
-                  resultado.
-                </p>
+                <p>{t("how_it_works.configuration.step_two.list.extra.p_1")}</p>
+                <p>{t("how_it_works.configuration.step_two.list.extra.p_2")}</p>
                 <p>
                   <a
                     href="https://www.facebook.com/help/358336074294704?helpref=faq_content"
                     target="_blank"
                   >
-                    También, si prefieres, puedes usar una App como Google
-                    Authenticator, Duo Mobile o LastPass
+                    {t("how_it_works.configuration.step_two.list.extra.p_3")}
                   </a>
                 </p>
               </div>
               <li>
-                Regresa a fb y completa el código de confirmación – <b>Listo</b>
+                {t("how_it_works.configuration.step_two.list.li_7.0")}{" "}
+                <b>{t("how_it_works.configuration.step_two.list.li_7.1")}</b>
               </li>
             </ol>
           </StepTwo>
@@ -377,56 +381,42 @@ const HowItWorksPage = () => {
       <RegistrationSection>
         <RegistrationSectionWrapper>
           <RegistrationImage src={watching_laptop} />
-          <RegistrationSectionTitle>Registro</RegistrationSectionTitle>
+          <RegistrationSectionTitle>
+            {t("how_it_works.registration.title")}
+          </RegistrationSectionTitle>
           <RegistrationInfo>
             <p>
-              Utiliza <Link to="/unete-ahora">este formulario</Link> para
-              registrarse.
+              {t("how_it_works.registration.info.p_1.0")}{" "}
+              <Link to="/unete-ahora">
+                {t("how_it_works.registration.info.p_1.1")}
+              </Link>{" "}
+              {t("how_it_works.registration.info.p_1.2")}
             </p>
+            <p>{t("how_it_works.registration.info.p_2.0")}</p>
             <p>
-              Antes de tener acceso a llenar tus datos, tendrás que respondera a
-              unas sencillas preguntas sobre tu perfil de Facebook para
-              preevaluar si tu perfil cumple con los requisitos, cosas como
-              “¿Qué edad tiene tu cuenta?”, “¿Cuántos amigos tienes en tu perfil
-              de Facebook?”, etc.
+              {t("how_it_works.registration.info.p_3.0")}{" "}
+              <b>{t("how_it_works.registration.info.p_3.1")}</b>.
             </p>
+            <p>{t("how_it_works.registration.info.p_4.0")}</p>
+            <p>{t("how_it_works.registration.info.p_5.0")}</p>
+            <p>{t("how_it_works.registration.info.p_6.0")}</p>
             <p>
-              No te preocupes, se hace en <b>menos de 1 minuto</b>.
-            </p>
-            <p>
-              Si tu perfil califica, tendrás que rellenar tus datos y adjuntar
-              una foto de un documento para verificar que tu perfil es real y
-              que eres mayor de edad.
-            </p>
-            <p>
-              Necesitaremos una foto de tu documento en alta resolución y
-              legible, puedes cubrir cualquier detalle que desees, excepto la
-              foto, el nombre completo y la fecha de nacimiento.
-            </p>
-            <p>
-              Si decides cubrir algún dato no lo haga editando la foto o
-              Facebook no la admitirá, usa los dedos por ejemplo, o trozo de
-              papel.
-            </p>
-            <p>
-              Puedes usar, DNI, pasaporte o licencia de conducir, si no tienes
-              ninguno de ellos por favor{" "}
+              {t("how_it_works.registration.info.p_7.0")}{" "}
               <a
                 href="https://www.facebook.com/help/159096464162185"
                 target="_blank"
               >
-                haz clic aquí para obtener una guía con opciones alternativas
+                {t("how_it_works.registration.info.p_7.1")}
               </a>
               .
             </p>
             <p>
-              Durante el proceso de registro deberás adjuntar también una foto
-              tu <b>Identificador del administrador comercial</b> que creaste en
-              el paso 1 e introducir el{" "}
-              <b>código de autenticación de 32 caracteres </b>
-              (Token) que has obtenido en el paso 2
+              {t("how_it_works.registration.info.p_8.0")}{" "}
+              <b>{t("how_it_works.registration.info.p_8.1")}</b>{" "}
+              {t("how_it_works.registration.info.p_8.2")}{" "}
+              <b>{t("how_it_works.registration.info.p_8.3")} </b>
+              {t("how_it_works.registration.info.p_8.4")}
             </p>
-            <p></p>
           </RegistrationInfo>
         </RegistrationSectionWrapper>
       </RegistrationSection>
@@ -436,47 +426,25 @@ const HowItWorksPage = () => {
       <PaymentSection>
         <PaymentSectionWrapper>
           <PaymentImage src={drinking_coffe} />
-          <PaymentSectionTitle>Recibe el pago</PaymentSectionTitle>
+          <PaymentSectionTitle>
+            {t("how_it_works.payment.title")}
+          </PaymentSectionTitle>
           <PaymentInfo>
+            <p>{t("how_it_works.payment.info.p_1.0")}</p>
+            <p>{t("how_it_works.payment.info.p_2.0")}</p>
             <p>
-              Una vez que nuestro equipo verifique que podemos acceder a tu
-              perfil mediante 2FA y que efectivamente el Admistrador comercial
-              (BM) está creado y sin restringir, nuestro equipo terminará de
-              configurar el BM y se procesará tu primer pago a través de Paypal.
+              {t("how_it_works.payment.info.p_3.0")}{" "}
+              <Link to="programa-referidos">
+                {t("how_it_works.payment.info.p_3.1")}
+              </Link>
             </p>
             <p>
-              Normalemente de 4 a 5 días hábiles después de haber recibido su
-              formulario, siempre que los datos sean correctos y podamos acceder
-              a su perfil y el Business Manager no esté restringido.
+              <b>{t("how_it_works.payment.info.p_4.0")}</b>
             </p>
-            <p>
-              Ah, y si nos envias a tus amigos obtienes más dinero por cada
-              referido, echa un vistazo a nuestro{" "}
-              <Link to="programa-referidos">Programa de Referidos</Link>
-            </p>
-            <p>
-              <b>
-                Recibirás el primer pago una vez que la cuenta se haya revisado
-                y se haya configurado correctamente un Business Manager.
-              </b>
-            </p>
-            <p>
-              Después del primer pago los siguientes pagos mesuales se realizan
-              de la siguiente manera:
-            </p>
-            <p>
-              Los perfiles activados en la primera quincena del mes (primeras 2
-              semanas) se pagarán la semana del 15 del mes siguiente.
-            </p>
-            <p>
-              Los perfiles activados en la segunda quincena del mes (2 últimas
-              semanas) se pagarán a fin de mes.
-            </p>
-            <p>
-              El pago de referidos se realiza siempre a fin de mes, nuestro
-              equipo se comunicará contigo para confirmar el número de referidos
-              registrados por tu parte y realizar el pago correspondiente.
-            </p>
+            <p>{t("how_it_works.payment.info.p_5.0")}</p>
+            <p>{t("how_it_works.payment.info.p_6.0")}</p>
+            <p>{t("how_it_works.payment.info.p_7.0")}</p>
+            <p>{t("how_it_works.payment.info.p_8.0")}</p>
           </PaymentInfo>
         </PaymentSectionWrapper>
       </PaymentSection>
@@ -486,24 +454,19 @@ const HowItWorksPage = () => {
       <SupportSection>
         <SupportSectionWrapper>
           <SupportImage src={sending_email} />
-          <SupportSectionTitle>Soporte</SupportSectionTitle>
+          <SupportSectionTitle>
+            {t("how_it_works.support.title")}
+          </SupportSectionTitle>
           <SupportInfo>
+            <p>{t("how_it_works.support.info.p_1.0")}</p>
+            <p className="important">{t("how_it_works.support.info.p_2.0")}</p>
             <p>
-              Puedes ponerte en contacto con nosotros en cualquier momento para
-              resolver cualquier pregunta, y también podría ser que
-              eventualmente necesitemos ponernos en contacto contigo para
-              resolver cualquier cosa.
-            </p>
-            <p className="important">Importante</p>
-            <p>
-              Tarde o temprano Facebook te pedirá que cambie la contraseña o tal
-              vez tu decidas cambiarla, si esto sucede,{" "}
-              <b>comunicate con nosotros inmediatamente</b>, de lo contrario
-              podrás crearnos problemas ya que no podremos usar la cuenta y no
-              podremos pagarte.
+              {t("how_it_works.support.info.p_3.0")}{" "}
+              <b>{t("how_it_works.support.info.p_3.1")}</b>
+              {t("how_it_works.support.info.p_3.2")}
             </p>
             <p>
-              <Link to="/contact">Contáctanos</Link>
+              <Link to="/contact">{t("how_it_works.support.info.p_4.0")}</Link>
             </p>
           </SupportInfo>
         </SupportSectionWrapper>

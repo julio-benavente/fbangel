@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // Styles
 import {
@@ -12,17 +13,14 @@ import {
 import Form from "./Form";
 
 const JoinUsPage = () => {
+  const { t } = useTranslation();
+
   return (
     <JoinUs>
       <JoinUsSection>
         <JoinUsSectionWrapper>
-          <JoinUsSectionTitle>
-            ¿Es válido tu perfil de Facebook para nuestro programa de alquiler?
-          </JoinUsSectionTitle>
-          <JoinUsSectionInfo>
-            Para saber si es válido para nuestro programa de alquiler, completa
-            este sencillo cuestionario.
-          </JoinUsSectionInfo>
+          <JoinUsSectionTitle>{t("join_us.title")}</JoinUsSectionTitle>
+          <JoinUsSectionInfo>{t("join_us.info")} </JoinUsSectionInfo>
           <Form />
           <JoinUsImage />
         </JoinUsSectionWrapper>

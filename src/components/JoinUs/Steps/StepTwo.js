@@ -3,6 +3,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 import PhoneInput from "react-phone-input-2";
 import DatePicker from "react-datepicker";
+import { useTranslation } from "react-i18next";
 
 // Components
 import TextInput from "../TextInput";
@@ -22,6 +23,7 @@ const StepTwo = ({
   date,
   setDate,
 }) => {
+  const { t } = useTranslation();
   const methods = useFormContext();
   const {
     register,
@@ -42,15 +44,15 @@ const StepTwo = ({
     <FormTwo>
       <TextInput
         className="name"
-        question="Tu nombre"
+        question={t("join_us.step_two.name.question")}
         register={register("stepTwo.name", {
           required: {
             value: true,
-            message: "Por favor, registre su nombre",
+            message: t("join_us.step_two.name.error_1"),
           },
           pattern: {
             value: /^[ a-zA-Z\-\’]+$/,
-            message: "El nombre contiene caracteres no permitidos",
+            message: t("join_us.step_two.name.error_2"),
           },
         })}
         error={
@@ -60,15 +62,15 @@ const StepTwo = ({
 
       <TextInput
         className="lastname"
-        question="Tus apellidos"
+        question={t("join_us.step_two.lastname.question")}
         register={register("stepTwo.lastname", {
           required: {
             value: true,
-            message: "Por favor, registre su apellido",
+            message: t("join_us.step_two.lastname.error_1"),
           },
           pattern: {
             value: /^[ a-zA-Z\-\’]+$/,
-            message: "El apellido contiene caracteres no permitidos",
+            message: t("join_us.step_two.lastname.error_2"),
           },
         })}
         error={
@@ -80,7 +82,7 @@ const StepTwo = ({
 
       <TextInput
         className="countryDropdown"
-        question="Tu país de residencia"
+        question={t("join_us.step_two.country.question")}
         error={
           errors.stepTwo &&
           errors.stepTwo.country &&
@@ -94,7 +96,7 @@ const StepTwo = ({
             rules={{
               required: {
                 value: true,
-                message: "Este campo es obligatorio",
+                message: t("join_us.step_two.country.error_1"),
               },
             }}
             render={({ name, field: { onChange, onBlur } }) => {
@@ -115,7 +117,7 @@ const StepTwo = ({
       />
 
       <TextInput
-        question="Tu ciudad de residencia"
+        question={t("join_us.step_two.city.question")}
         className="regionDropdown"
         error={
           errors.stepTwo && errors.stepTwo.city && errors.stepTwo.city.message
@@ -127,7 +129,7 @@ const StepTwo = ({
             rules={{
               required: {
                 value: true,
-                message: "Este campo es obligatorio",
+                message: t("join_us.step_two.city.error_1"),
               },
             }}
             defaultValue=""
@@ -151,7 +153,7 @@ const StepTwo = ({
 
       <TextInput
         className="birthday"
-        question="Fecha de nacimiento"
+        question={t("join_us.step_two.birthday.question")}
         error={
           errors.stepTwo &&
           errors.stepTwo.birthday &&
@@ -165,7 +167,7 @@ const StepTwo = ({
             rules={{
               required: {
                 value: true,
-                message: "Por favor, ingrese la fecha de su nacimiento",
+                message: t("join_us.step_two.birthday.error_1"),
               },
               validate: {
                 isNotOldEnough: (v) => {
@@ -178,7 +180,7 @@ const StepTwo = ({
 
                   const age = getAge(v);
                   if (!(age >= 18)) {
-                    return "Debes ser mayor de 18 años";
+                    return t("join_us.step_two.birthday.error_2");
                   }
                   return true;
                 },
@@ -209,7 +211,7 @@ const StepTwo = ({
 
       <TextInput
         className="phone"
-        question="Tu celular"
+        question={t("join_us.step_two.phone.question")}
         error={
           errors.stepTwo && errors.stepTwo.phone && errors.stepTwo.phone.message
         }
@@ -221,11 +223,11 @@ const StepTwo = ({
             rules={{
               required: {
                 value: true,
-                message: "Este campo es obligatorio",
+                message: t("join_us.step_two.phone.error_1"),
               },
               pattern: {
                 value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
-                message: "Ingrese un numero de celular válido",
+                message: t("join_us.step_two.phone.error_2"),
               },
             }}
             render={({ name, field: { onChange, onBlur } }) => {
@@ -249,18 +251,18 @@ const StepTwo = ({
 
       <TextInput
         className="email"
-        question="Email"
+        question={t("join_us.step_two.email.question")}
         error={
           errors.stepTwo && errors.stepTwo.email && errors.stepTwo.email.message
         }
         register={register("stepTwo.email", {
           required: {
             value: true,
-            message: "Por favor, ingrese su email",
+            message: t("join_us.step_two.email.error_1"),
           },
           pattern: {
             value: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
-            message: "Ingrese un email valido",
+            message: t("join_us.step_two.email.error_2"),
           },
         })}
       />

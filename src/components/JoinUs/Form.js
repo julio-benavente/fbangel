@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 // Components
 import StepOne from "./Steps/StepOne";
@@ -28,7 +29,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ReactComponent as LoadingSvg } from "../../assets/svgs/loading.svg";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(1);
+  const { t } = useTranslation();
+  const [formStep, setFormStep] = useState(3);
   const formData = useRef();
   const [isRequesting, setIsRequesting] = useState(false);
 
@@ -262,27 +264,29 @@ const Form = () => {
   return (
     <FormsWrapper>
       <FormLocation>
-        <FormLocationTitle>Formulario de registro</FormLocationTitle>
+        <FormLocationTitle>
+          {t("join_us.form_location.title")}
+        </FormLocationTitle>
         <Location className={`${formStep === 1 && "active"}`}>
           <p className="number">1</p>
-          <p className="location">Cuestionario de calificación</p>
+          <p className="location">{t("join_us.form_location.p_1")}</p>
         </Location>
         <Location className={`${formStep === 2 && "active"}`}>
           <p className="number">2</p>
-          <p className="location">Datos personales</p>
+          <p className="location">{t("join_us.form_location.p_2")}</p>
         </Location>
         <Location className={`${formStep === 3 && "active"}`}>
           <p className="number">3</p>
-          <p className="location">Datos de cuenta de Facebook</p>
+          <p className="location">{t("join_us.form_location.p_3")}</p>
         </Location>
         <Location className={`${formStep === 4 && "active"}`}>
           <p className="number">4</p>
-          <p className="location">Confirmación y Método de pago</p>
+          <p className="location">{t("join_us.form_location.p_4")}</p>
         </Location>
         {formStep === 5 && (
           <Location className={`${formStep === 5 && "active"}`}>
             <p className="number">5</p>
-            <p className="location">Felicitaciones</p>
+            <p className="location">{t("join_us.form_location.p_5")}</p>
           </Location>
         )}
       </FormLocation>
