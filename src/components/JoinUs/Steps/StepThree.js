@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Lightbox } from "react-modal-image";
+import { useTranslation } from "react-i18next";
 
 // Components
 import FileInput from "../FileInput";
@@ -18,6 +19,7 @@ import facebookEmailConfirmationImageTwo from "../../../assets/images/facebookEm
 import { FormThree } from "../../../styles/JoinUsPageStyles";
 
 const StepThree = () => {
+  const { t } = useTranslation();
   const [bussinessManagerImageExOne, setBussinessManagerImageExOne] = useState(
     false
   );
@@ -51,16 +53,16 @@ const StepThree = () => {
           errors.stepThree.frecuency.message
         }
         options={[
-          ["Todos los días", "everyday"],
-          ["2 - 3 veces a la semana", "1-2_a_week"],
-          ["1 - 2 veces a la semana", "2-3_a_week"],
-          ["1 - 2 veces al mes", "1-2_a_month"],
+          [t("join_us.step_three.frequency.option_1"), "everyday"],
+          [t("join_us.step_three.frequency.option_2"), "1-2_a_week"],
+          [t("join_us.step_three.frequency.option_3"), "2-3_a_week"],
+          [t("join_us.step_three.frequency.option_4"), "1-2_a_month"],
         ]}
-        question="¿Con qué frecuencia usas Facebook?"
+        question={t("join_us.step_three.frequency.question")}
         register={register("stepThree.frecuency", {
           required: {
             value: true,
-            message: "Por favor, seleccione una de las opciones",
+            message: t("join_us.step_three.frequency.error_1"),
           },
         })}
       />
@@ -70,21 +72,21 @@ const StepThree = () => {
         className="devices"
         type="checkbox"
         options={[
-          ["PC sobremesa", "pc"],
-          ["Tablet", "tablet"],
-          ["Móvil", "movil"],
-          ["Otros", "other"],
+          [t("join_us.step_three.devices.option_1"), "pc"],
+          [t("join_us.step_three.devices.option_2"), "tablet"],
+          [t("join_us.step_three.devices.option_3"), "movil"],
+          [t("join_us.step_three.devices.option_4"), "other"],
         ]}
         error={
           errors.stepThree &&
           errors.stepThree.devices &&
           errors.stepThree.devices.message
         }
-        question="¿Con qué frecuencia usas Facebook? (Puedes seleccionar más de uno)"
+        question={t("join_us.step_three.devices.question")}
         register={register("stepThree.devices", {
           required: {
             value: true,
-            message: "Por favor, seleccione alguna de las opciones",
+            message: t("join_us.step_three.devices.error_1"),
           },
         })}
       />
@@ -94,19 +96,19 @@ const StepThree = () => {
         className="os"
         type="checkbox"
         options={[
-          ["Windows", "windows"],
-          ["Android", "android"],
-          ["Apple", "apple"],
-          ["Otros", "other"],
+          [t("join_us.step_three.os.option_1"), "windows"],
+          [t("join_us.step_three.os.option_2"), "android"],
+          [t("join_us.step_three.os.option_3"), "apple"],
+          [t("join_us.step_three.os.option_4"), "other"],
         ]}
-        question="¿Qué sistema operativo utilizas con Facebook? (Puedes seleccionar más de uno)"
+        question={t("join_us.step_three.os.question")}
         error={
           errors.stepThree && errors.stepThree.os && errors.stepThree.os.message
         }
         register={register("stepThree.os", {
           required: {
             value: true,
-            message: "Por favor, seleccione alguna de las opciones",
+            message: t("join_us.step_three.os.error_1"),
           },
         })}
       />
@@ -118,24 +120,22 @@ const StepThree = () => {
           errors.stepThree.username &&
           errors.stepThree.username.message
         }
-        question="Usuario de Facebook"
+        question={t("join_us.step_three.username.question")}
         register={register("stepThree.username", {
           required: {
             value: true,
-            message: "Por favor, ingrese su usuario de Facebook",
+            message: t("join_us.step_three.username.error_1"),
           },
           validate: {
             min: (v) =>
-              v.length < 6
-                ? "El usuario debe contener al menos 6 caracteres"
-                : true,
+              v.length < 6 ? t("join_us.step_three.username.error_2") : true,
           },
         })}
       />
       <TextInput
         type="password"
         className="password"
-        question="Contraseña de Facebook"
+        question={t("join_us.step_three.password.question")}
         error={
           errors.stepThree &&
           errors.stepThree.password &&
@@ -144,19 +144,17 @@ const StepThree = () => {
         register={register("stepThree.password", {
           required: {
             value: true,
-            message: "Por favor, ingrese su constraseña de Facebook",
+            message: t("join_us.step_three.password.error_1"),
           },
           validate: {
             min: (v) =>
-              v.length < 6
-                ? "Su contraseña debe contener al menos 6 caracteres"
-                : true,
+              v.length < 6 ? t("join_us.step_three.password.error_2") : true,
           },
         })}
       />
       <FileInput
         className="fbEmailImage"
-        question="Confirmación del email asociado a tu perfil"
+        question={t("join_us.step_three.fbEmailImage.question")}
         error={
           errors.stepThree &&
           errors.stepThree.fbEmailImage &&
@@ -165,25 +163,26 @@ const StepThree = () => {
         register={register("stepThree.fbEmailImage", {
           required: {
             value: true,
-            message:
-              "Por favor, ingrese una foto confirmando el email asociado",
+            message: t("join_us.step_three.fbEmailImage.error_1"),
           },
           validate: {
             size: (v) =>
-              v[0].size > 2000000 ? "El archivo puede pesar máximo 2mb" : true,
+              v[0].size > 2000000
+                ? t("join_us.step_three.fbEmailImage.error_2")
+                : true,
             type: (v) =>
               !["image/jpeg", "image/jpg", "image/png"].includes(v[0].type)
-                ? "El archivo solo puede tener formato PNG, JPG o JPEG"
+                ? t("join_us.step_three.fbEmailImage.error_3")
                 : true,
           },
         })}
       />
       <div className="message">
-        <p>Envía una foto para confirmar el email asociado. </p>
+        <p>{t("join_us.step_three.fbEmailImage.message.p_1.0")}</p>
         <p>
           {" "}
           <a onClick={() => setFacebookEmailConfirmationImageExOne(true)}>
-            Ejemplo 1 desde ordenador
+            {t("join_us.step_three.fbEmailImage.message.p_2.0")}
           </a>{" "}
         </p>{" "}
         {facebookEmailConfirmationImageExOne && (
@@ -191,35 +190,40 @@ const StepThree = () => {
             hideDownload={true}
             medium={facebookEmailConfirmationImageOne}
             large={facebookEmailConfirmationImageOne}
-            alt="Confirmación de email de Facebook. Ejemplo 1."
+            alt={t("join_us.step_three.fbEmailImage.image_one")}
             onClose={() => setFacebookEmailConfirmationImageExOne(false)}
-            // hideZoom={false}
           />
         )}
         <p>
           <a onClick={() => setFacebookEmailConfirmationImageExTwo(true)}>
-            Ejemplo 2 desde móvil
+            {t("join_us.step_three.fbEmailImage.message.p_3.0")}
           </a>
           {facebookEmailConfirmationImageExTwo && (
             <Lightbox
               hideDownload={true}
               medium={facebookEmailConfirmationImageTwo}
               large={facebookEmailConfirmationImageTwo}
-              alt="Confirmación de email de Facebook. Ejemplo 2."
+              alt={t("join_us.step_three.fbEmailImage.image_two")}
               onClose={() => setFacebookEmailConfirmationImageExTwo(false)}
             />
           )}
         </p>
         <p>
-          <b>Móvil:</b> Configuración &gt; Configuración de la cuenta &gt;
-          Información personal &gt; Información de contacto
+          <b>{t("join_us.step_three.fbEmailImage.message.p_4.0")}</b>{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_4.1")} &gt;{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_4.2")} &gt;{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_4.3")} &gt;{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_4.4")}
         </p>
         <p>
-          <b>Ordenador:</b> Configuración y privacidad &gt; Configuración &gt;
-          General &gt; Contacto
+          <b>{t("join_us.step_three.fbEmailImage.message.p_5.0")}</b>{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_5.1")} &gt;{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_5.2")} &gt;{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_5.3")} &gt;{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_5.4")}
         </p>
         <p>
-          O ve a :{" "}
+          {t("join_us.step_three.fbEmailImage.message.p_1.0")}{" "}
           <a href="https://www.facebook.com/settings" target="_blank">
             https://www.facebook.com/settings
           </a>
@@ -228,7 +232,7 @@ const StepThree = () => {
 
       <FileInput
         className="bmIdImage"
-        question="Identificador del administrador comercial (BM id)"
+        question={t("join_us.step_three.bmIdImage.question")}
         error={
           errors.stepThree &&
           errors.stepThree.bmIdImage &&
@@ -237,83 +241,85 @@ const StepThree = () => {
         register={register("stepThree.bmIdImage", {
           required: {
             value: true,
-            message:
-              "Por favor, ingrese una foto confirmando el número de tu Administrado Comercial",
+            message: t("join_us.step_three.bmIdImage.error_1"),
           },
           validate: {
             size: (v) =>
-              v[0].size > 2000000 ? "El archivo puede pesar máximo 2mb" : true,
+              v[0].size > 2000000
+                ? t("join_us.step_three.bmIdImage.error_2")
+                : true,
             type: (v) =>
               !["image/jpeg", "image/jpg", "image/png"].includes(v[0].type)
-                ? "El archivo solo puede tener formato PNG, JPG o JPEG"
+                ? t("join_us.step_three.bmIdImage.error_3")
                 : true,
           },
         })}
       />
       <div className="message">
+        <p>{t("join_us.step_three.bmIdImage.message.p_1.0")}</p>
         <p>
-          Envía una foto del número de tu Administrador Comercial. <br />
           <a onClick={() => setBussinessManagerImageExOne(true)}>
-            Ejemplo 1 desde ordenador
-          </a>{" "}
-          {bussinessManagerImageExOne && (
-            <Lightbox
-              hideDownload={true}
-              medium={businessManagerImageOne}
-              large={businessManagerImageOne}
-              alt="Administrados comercial. Ejemplo 1."
-              onClose={() => setBussinessManagerImageExOne(false)}
-            />
-          )}
-          <br />
-          <a onClick={() => setBussinessManagerImageExTwo(true)}>
-            Ejemplo 2 desde móvil
+            {t("join_us.step_three.bmIdImage.message.p_2.0")}
           </a>
-          {bussinessManagerImageExTwo && (
-            <Lightbox
-              hideDownload={true}
-              medium={businessManagerImageTwo}
-              large={businessManagerImageTwo}
-              alt="Administrador comercial. Ejemplo 2."
-              onClose={() => setBussinessManagerImageExTwo(false)}
-            />
-          )}
-          <br />
         </p>
+        {bussinessManagerImageExOne && (
+          <Lightbox
+            hideDownload={true}
+            medium={businessManagerImageOne}
+            large={businessManagerImageOne}
+            alt={t("join_us.step_three.bmIdImage.image_one")}
+            onClose={() => setBussinessManagerImageExOne(false)}
+          />
+        )}
+        <p>
+          <a onClick={() => setBussinessManagerImageExTwo(true)}>
+            {t("join_us.step_three.bmIdImage.message.p_3.0")}
+          </a>
+        </p>
+        {bussinessManagerImageExTwo && (
+          <Lightbox
+            hideDownload={true}
+            medium={businessManagerImageTwo}
+            large={businessManagerImageTwo}
+            alt={t("join_us.step_three.bmIdImage.image_two")}
+            onClose={() => setBussinessManagerImageExTwo(false)}
+          />
+        )}
       </div>
 
       <TextInput
         className="code2FA"
-        question="Código 2FA (Token)"
+        question={t("join_us.step_three.code2FA.question")}
         error={
           errors.stepThree &&
           errors.stepThree.code2FA &&
           errors.stepThree.code2FA.message
         }
         register={register("stepThree.code2FA", {
-          required: { value: true, message: "Por favor, ingrese su código" },
+          required: {
+            value: true,
+            message: t("join_us.step_three.code2FA.error_1"),
+          },
           validate: {
             numCharacters: (v) =>
-              v.length !== 32 ? "El códifo 2FA cuenta con 32 dígitos" : true,
+              v.length !== 32 ? t("join_us.step_three.code2FA.error_2") : true,
           },
         })}
       />
       <div className="message">
         <p>
-          Si no sabes tu código usa esta dirección{" "}
+          {t("join_us.step_three.code2FA.message.p_1")}{" "}
           <a
             href="https://www.facebook.com/security/2fac/setup/intro"
             target="_blank"
           >
             https://www.facebook.com/security/2fac/setup/intro
           </a>{" "}
-          y haz clic en el botón azul que dice "Usar app de autenticación" copia
-          el código de 32 caracteres y pegalo aquí. O ve al Paso 2 de nuestra
-          sección{" "}
+          {t("join_us.step_three.code2FA.message.p_2")}{" "}
           <Link to="/como-funciona" target="_blank">
-            Como funciona
+            {t("join_us.step_three.code2FA.message.p_3")}
           </Link>{" "}
-          y consulta los videos.
+          {t("join_us.step_three.code2FA.message.p_4")}
         </p>
       </div>
     </FormThree>

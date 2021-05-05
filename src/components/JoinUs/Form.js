@@ -30,7 +30,7 @@ import { ReactComponent as LoadingSvg } from "../../assets/svgs/loading.svg";
 
 const Form = () => {
   const { t } = useTranslation();
-  const [formStep, setFormStep] = useState(3);
+  const [formStep, setFormStep] = useState(4);
   const formData = useRef();
   const [isRequesting, setIsRequesting] = useState(false);
 
