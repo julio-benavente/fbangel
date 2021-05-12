@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm, useWatch } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 // Styles
 import {
@@ -40,8 +41,10 @@ const LoginPage = () => {
   const email = useWatch({ control, name: "email" });
   const password = useWatch({ control, name: "password" });
 
+  const { push } = useHistory();
   const onSubmit = (data) => {
     console.log(data);
+    push("/dashboard");
   };
 
   return (
@@ -97,6 +100,8 @@ const LoginPage = () => {
               {errors.password && errors.password.message}
             </p>
           </InputWrapper>
+          <a href="/#/login">¿No recuerdas tu contraseña? Haz click aquí</a>
+          <a href="/#/login">Reenviar email de confirmación</a>
           <Submit>Log in</Submit>
           {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
         </LoginForm>

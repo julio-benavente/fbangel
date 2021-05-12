@@ -43,6 +43,7 @@ const App = () => {
           />
           <Route path="/login" component={Login} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="*" render={() => <h1>Pagina no encontrada</h1>} />
         </Switch>
         <Footer />
       </ThemeProvider>

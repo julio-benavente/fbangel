@@ -1,4 +1,7 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
+// Components
 import {
   DashboardProlfile,
   Name,
@@ -12,6 +15,11 @@ import { ReactComponent as LogoutSvg } from "../../assets/svgs/logout.svg";
 const MainComponent = () => {
   const name = "Julio Benavente";
 
+  const { push } = useHistory();
+  const logout = () => {
+    push("/login");
+  };
+
   return (
     <DashboardProlfile>
       <Name>
@@ -20,7 +28,7 @@ const MainComponent = () => {
       <ProfileImage>
         <UserSvg />
       </ProfileImage>
-      <Logout>
+      <Logout onClick={logout}>
         Log out
         <LogoutSvg />
       </Logout>

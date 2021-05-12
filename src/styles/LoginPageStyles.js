@@ -41,6 +41,13 @@ export const LoginFormSide = styled.div`
 export const LoginForm = styled.form`
   width: clamp(200px, 70%, 300px);
   display: grid;
+
+  a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: ${(props) => props.theme.color.link};
+    text-align: center;
+  }
 `;
 
 export const FormTitle = styled(H2)`

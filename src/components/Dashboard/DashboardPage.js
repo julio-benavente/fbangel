@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 
 // Components
 import DashboardNavbar from "./DashboardNavbar";
@@ -9,7 +9,7 @@ import Payments from "./Payments/PaymentsPage";
 // Styles
 import { Dashboard, Main } from "../../styles/Dashboard/DashboardPageStyles";
 
-const DashboardPage = ({ match, ...props }) => {
+const DashboardPage = () => {
   useEffect(() => {
     const navbar = document.querySelector(".Navbar");
     const footer = document.querySelector(".Footer");
@@ -18,15 +18,29 @@ const DashboardPage = ({ match, ...props }) => {
     footer.classList.add("display-none");
   });
 
+  const { path } = useRouteMatch();
+
   return (
     <Dashboard>
-      <DashboardNavbar match={match} />
+      <DashboardNavbar />
       <DashboardProfile />
       <Main>
         <Switch>
-          <Route exact to="/" component={Payments} />
-          <Route exact to="/payments" component={Payments} />
-          {/* <Route to="/configuration" component={Configuration} /> */}
+          <Route
+            path={`${path}/payments`}
+            component={(...props) => {
+              return <Payments />;
+            }}
+          />
+          <Route
+            path={`${path}/*`}
+            render={() => <h1>Page doesn't exist</h1>}
+          />
+          <Route
+            path={`${path}/configuration`}
+            render={() => <h1>PConfiguration</h1>}
+          />
+          <Route path={path} component={Payments} />
         </Switch>
       </Main>
     </Dashboard>

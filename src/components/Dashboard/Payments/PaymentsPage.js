@@ -75,33 +75,33 @@ const PaymentsPage = () => {
       <Table>
         <div className="thead">
           <div className="tr" style={{ ...orderDetailsTableWidth }}>
-            <div className="th">Concept</div>
-            <div className="th">Paypal account</div>
-            <div className="th">Payment date</div>
-            <div className="th">Status</div>
-            <div className="th">Amount</div>
+            <div className="th">Concepto</div>
+            <div className="th">Cuenta de paypal</div>
+            <div className="th">Fecha de pago</div>
+            <div className="th">Estado</div>
+            <div className="th">Monto</div>
           </div>
         </div>
         <div className="tbody">
           <div className="tr" style={{ ...orderDetailsTableWidth }}>
-            <div className="td">User refered : marco.aurelio@gmail.com</div>
+            <div className="td">Usuario referido : marco.aurelio@gmail.com</div>
             <div className="td">jose.luis@gmail.com</div>
             <div className="td">02/06/2021</div>
-            <div className="td approved">Approved</div>
+            <div className="td approved">Aprobado</div>
             <div className="td">$ 5.00</div>
           </div>
           <div className="tr" style={{ ...orderDetailsTableWidth }}>
-            <div className="td">Monthly rental payment : JUN-2021</div>
+            <div className="td">Pago mensual por alquiler : JUN-2021</div>
             <div className="td">jose.luis@gmail.com</div>
             <div className="td">-</div>
-            <div className="td pending">Pending</div>
+            <div className="td pending">Pendiente</div>
             <div className="td">$ 30.00</div>
           </div>
           <div className="tr" style={{ ...orderDetailsTableWidth }}>
-            <div className="td">Monthly rental payment : JUN-2021</div>
+            <div className="td">Pago mensual por alquiler : JUN-2021</div>
             <div className="td">jose.luis@gmail.com</div>
             <div className="td">-</div>
-            <div className="td pending">Pending</div>
+            <div className="td pending">Pendiente</div>
             <div className="td">$ 30.00</div>
           </div>
         </div>
