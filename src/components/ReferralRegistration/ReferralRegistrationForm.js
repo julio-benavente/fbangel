@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 // Components
@@ -25,12 +24,39 @@ import "react-phone-input-2/lib/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [formStep, setFormStep] = useState(1);
+  const [formStep, setFormStep] = useState(2);
   const formData = useRef();
+  const defaultValues = {
+    stepOne: {
+      name: "julio",
+      lastname: "julio",
+      address: "Calle La loca vecindad 46",
+      email: "julio@julio.com",
+      country: "Peru",
+      city: "Lima",
+      zipCode: "16351",
+      // birthday: "1982-10-06T05:00:00.000Z",
+      phone: "51934988135",
+      password: "123456789",
+      passwordConfirmation: "123456789",
+    },
+    stepTwo: {
+      paymentMethod: "paypal",
+      paypalEmail: "elot@eloy.com",
+      paypalEmailConfirmation: "elot@eloy.com",
+      holderName: "Eloy",
+      bankAngency: "El banco de Eloy",
+      bankAccountCode: "13254132541325413254",
+      // documentImage: {},
+      referral: "5asd665",
+      termsAndConditions: true,
+      captcha: "true",
+    },
+  };
   const methods = useForm({
     mode: "all",
+    defaultValues,
   });
-  const history = useHistory();
 
   const {
     handleSubmit,
@@ -40,7 +66,9 @@ const Form = () => {
     formState: { errors, isValid },
   } = methods;
 
-  const onSubmit = async (data) => {};
+  const onSubmit = (data) => {
+    console.log("onSubmit", data);
+  };
 
   // Step two state
   const [country, setCountry] = useState("");
@@ -75,21 +103,6 @@ const Form = () => {
     const steps = ["stepOne", "stepTwo", "stepThree", "stepFour", "stepFive"];
     var step = steps[formStep - 1];
 
-    // Verify if the qualification form is positive
-    const qualificationVerification = async () => {
-      await trigger();
-
-      if ((formStep === 1) & !errors.stepOne) {
-        const values = Object.values(getValues("stepOne"));
-        const valuesToCompare = ["yes", "yes", "no", "yes", "yes"];
-        const some = values.some((value, i) => value !== valuesToCompare[i]);
-
-        if (some) history.push("/no-valid");
-      }
-    };
-
-    await qualificationVerification();
-
     // Validate if isValid the step
     if (direction === 1) {
       const fieldsToValidate = Object.keys(getValues(step)).map(
@@ -107,7 +120,7 @@ const Form = () => {
   };
 
   const renderButton = () => {
-    const submitPage = 4;
+    const submitPage = 2;
     switch (true) {
       case formStep > submitPage:
         return null;
@@ -154,23 +167,16 @@ const Form = () => {
         <FormLocationTitle>Formulario de registro</FormLocationTitle>
         <Location className={`${formStep === 1 && "active"}`}>
           <p className="number">1</p>
-          <p className="location">Cuestionario de calificación</p>
+          <p className="location">Datos personales</p>
         </Location>
         <Location className={`${formStep === 2 && "active"}`}>
           <p className="number">2</p>
-          <p className="location">Datos personales</p>
-        </Location>
-        <Location className={`${formStep === 3 && "active"}`}>
-          <p className="number">3</p>
-          <p className="location">Datos de cuenta de Facebook</p>
-        </Location>
-        <Location className={`${formStep === 4 && "active"}`}>
-          <p className="number">4</p>
           <p className="location">Confirmación y Método de pago</p>
         </Location>
-        {formStep === 5 && (
+
+        {formStep === 3 && (
           <Location className={`${formStep === 5 && "active"}`}>
-            <p className="number">5</p>
+            <p className="number">3</p>
             <p className="location">Felicitaciones</p>
           </Location>
         )}

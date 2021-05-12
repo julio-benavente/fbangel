@@ -2,75 +2,83 @@ import styled, { createGlobalStyle, css } from "styled-components";
 
 export default createGlobalStyle`
 
-    html {
-      overflow-x: hidden;
-    }
+  html {
+    overflow-x: hidden;
+  }
 
-    /* Box sizing rules */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-    /* Remove default padding */
-    ul,
-    ol {
-      padding: 0;
-    }
+  /* Remove default padding */
+  ul,
+  ol {
+    padding: 0;
+  }
 
-    /* Remove default margin */
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    ul,
-    ol,
-    li,
-    figure,
-    figcaption,
-    blockquote,
-    dl,
-    dd {
-      margin: 0;
-    }
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  ol,
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
 
-    /* Set core body defaults */
-    body {
-      min-height: 100vh;
-      scroll-behavior: smooth;
-      text-rendering: optimizeSpeed;
-      font-family: Roboto ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
-      min-width: 100vw;
-    }
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    font-family: Roboto ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    min-width: 100vw;
+  }
 
-    /* A elements that don't have a class get default styles */
-    a:not([class]) {
-      text-decoration-skip-ink: auto;
-    }
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
 
-    /* Make images easier to work with */
-    img {
-      max-width: 100%;
-      display: block;
-    }
+  /* Make images easier to work with */
+  img {
+    max-width: 100%;
+    display: block;
+  }
 
-    /* Natural flow and rhythm in articles by default */
-    article > * + * {
-      margin-top: 1em;
-    }
+  /* Natural flow and rhythm in articles by default */
+  article > * + * {
+    margin-top: 1em;
+  }
 
-    /* Inherit fonts for inputs and buttons */
-    input,
-    button,
-    textarea,
-    select {
-      font: inherit;
-    }
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
   
+  .visibility-hidden {
+    visibility: hidden;
+  }
+
+  .display-none {
+    display: none;
+  }
+
 `;
 
 export const breakpoint = {

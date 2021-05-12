@@ -110,7 +110,7 @@ const Navbar = () => {
   }, [size]);
 
   return (
-    <NavbarSection>
+    <NavbarSection className="Navbar">
       <NavbarWrapper>
         <Logo to="/">
           <span>fb</span> fbangel

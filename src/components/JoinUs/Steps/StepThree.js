@@ -20,12 +20,10 @@ import { FormThree } from "../../../styles/JoinUsPageStyles";
 
 const StepThree = () => {
   const { t } = useTranslation();
-  const [bussinessManagerImageExOne, setBussinessManagerImageExOne] = useState(
-    false
-  );
-  const [bussinessManagerImageExTwo, setBussinessManagerImageExTwo] = useState(
-    false
-  );
+  const [bussinessManagerImageExOne, setBussinessManagerImageExOne] =
+    useState(false);
+  const [bussinessManagerImageExTwo, setBussinessManagerImageExTwo] =
+    useState(false);
   const [
     facebookEmailConfirmationImageExOne,
     setFacebookEmailConfirmationImageExOne,
@@ -117,11 +115,11 @@ const StepThree = () => {
         className="username"
         error={
           errors.stepThree &&
-          errors.stepThree.username &&
-          errors.stepThree.username.message
+          errors.stepThree.fbUsername &&
+          errors.stepThree.fbUsername.message
         }
         question={t("join_us.step_three.username.question")}
-        register={register("stepThree.username", {
+        register={register("stepThree.fbUsername", {
           required: {
             value: true,
             message: t("join_us.step_three.username.error_1"),
@@ -138,10 +136,10 @@ const StepThree = () => {
         question={t("join_us.step_three.password.question")}
         error={
           errors.stepThree &&
-          errors.stepThree.password &&
-          errors.stepThree.password.message
+          errors.stepThree.fbPassword &&
+          errors.stepThree.fbPassword.message
         }
-        register={register("stepThree.password", {
+        register={register("stepThree.fbPassword", {
           required: {
             value: true,
             message: t("join_us.step_three.password.error_1"),

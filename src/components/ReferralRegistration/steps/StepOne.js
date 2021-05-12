@@ -3,6 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import DatePicker from "react-datepicker";
 import { useFormContext, Controller } from "react-hook-form";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import { useTranslation } from "react-i18next";
 
 // Styles
 import { StepOne } from "../../../styles/ReferralRegistrationPageStyles";
@@ -19,11 +20,13 @@ const Step = ({
   date,
   setDate,
 }) => {
+  const { t } = useTranslation();
   const methods = useFormContext();
   const {
     register,
     control,
     trigger,
+    getValues,
     formState: { errors },
   } = methods;
 
@@ -276,7 +279,7 @@ const Step = ({
 
       <TextInput
         className="email"
-        question="Email"
+        question="Registre su email"
         error={
           errors.stepOne && errors.stepOne.email && errors.stepOne.email.message
         }
@@ -288,6 +291,49 @@ const Step = ({
           pattern: {
             value: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
             message: "Ingrese un email valido",
+          },
+        })}
+      />
+
+      <TextInput
+        className="password"
+        question="Registre una contraseña"
+        type="password"
+        error={
+          errors.stepOne &&
+          errors.stepOne.password &&
+          errors.stepOne.password.message
+        }
+        register={register("stepOne.password", {
+          required: {
+            value: true,
+            message: "Por favor, registre este campo",
+          },
+          validate: {
+            min: (v) => (v.length < 8 ? "Mínimo 8 caracteres" : true),
+          },
+        })}
+      />
+
+      <TextInput
+        className="passwordConfirmation"
+        question="Confirme su contraseña"
+        type="password"
+        error={
+          errors.stepOne &&
+          errors.stepOne.passwordConfirmation &&
+          errors.stepOne.passwordConfirmation.message
+        }
+        register={register("stepOne.passwordConfirmation", {
+          required: {
+            value: true,
+            message: "Por favor, registre este campo",
+          },
+          validate: {
+            isTheSame: (v) =>
+              !(v === getValues("stepOne.password"))
+                ? "Las contraseñas no coinciden"
+                : true,
           },
         })}
       />

@@ -30,7 +30,7 @@ import { ReactComponent as LoadingSvg } from "../../assets/svgs/loading.svg";
 
 const Form = () => {
   const { t } = useTranslation();
-  const [formStep, setFormStep] = useState(4);
+  const [formStep, setFormStep] = useState(1);
   const formData = useRef();
   const [isRequesting, setIsRequesting] = useState(false);
 
@@ -226,10 +226,10 @@ const Form = () => {
         return (
           <Buttons>
             <Button onClick={() => handleFormStep(-1, formStep)}>
-              Anterior
+              {t("join_us.button.previous")}
             </Button>
             <SubmitButton type="submit">
-              {isRequesting ? <LoadingSvg /> : "Enviar"}
+              {isRequesting ? <LoadingSvg /> : t("join_us.button.send")}
             </SubmitButton>
           </Buttons>
         );
@@ -239,12 +239,12 @@ const Form = () => {
           <Buttons>
             <Buttons>
               <Button onClick={() => handleFormStep(-1, formStep)}>
-                Anterior
+                {t("join_us.button.previous")}
               </Button>
             </Buttons>
 
             <Button onClick={() => handleFormStep(1, formStep)}>
-              Siguiente
+              {t("join_us.button.next")}
             </Button>
           </Buttons>
         );
@@ -253,7 +253,7 @@ const Form = () => {
         return (
           <Buttons one>
             <Button onClick={() => handleFormStep(1, formStep)}>
-              Siguiente
+              {t("join_us.button.next")}
             </Button>
           </Buttons>
         );

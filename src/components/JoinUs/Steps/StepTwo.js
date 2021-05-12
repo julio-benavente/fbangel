@@ -45,7 +45,7 @@ const StepTwo = ({
       <TextInput
         className="name"
         question={t("join_us.step_two.name.question")}
-        register={register("stepTwo.name", {
+        register={register("stepTwo.firstName", {
           required: {
             value: true,
             message: t("join_us.step_two.name.error_1"),
@@ -56,14 +56,16 @@ const StepTwo = ({
           },
         })}
         error={
-          errors.stepTwo && errors.stepTwo.name && errors.stepTwo.name.message
+          errors.stepTwo &&
+          errors.stepTwo.firstName &&
+          errors.stepTwo.firstName.message
         }
       />
 
       <TextInput
         className="lastname"
         question={t("join_us.step_two.lastname.question")}
-        register={register("stepTwo.lastname", {
+        register={register("stepTwo.lastName", {
           required: {
             value: true,
             message: t("join_us.step_two.lastname.error_1"),
@@ -75,8 +77,8 @@ const StepTwo = ({
         })}
         error={
           errors.stepTwo &&
-          errors.stepTwo.lastname &&
-          errors.stepTwo.lastname.message
+          errors.stepTwo.lastName &&
+          errors.stepTwo.lastName.message
         }
       />
 

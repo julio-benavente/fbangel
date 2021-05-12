@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Styles
 import {
@@ -17,6 +18,7 @@ import {
 import friendsChatting from "../../assets/svgs/friends-chatting.svg";
 
 const ReferralProgramPage = () => {
+  const { t } = useTranslation();
   return (
     <ReferralProgram>
       <ReferralProgramSection>
@@ -25,7 +27,7 @@ const ReferralProgramPage = () => {
         </ReferralProgramSectionTitle>
         <ReferralProgramSectionInfo>
           <a href="https://form.jotform.com/210684831753358" target="_blank">
-            Regístrate aquí
+            {t("referral_program.title")}
           </a>{" "}
           e incrementa tus ganacias seriamente y obtén{" "}
           <span className="money">5 dólares</span> por referido
@@ -35,9 +37,8 @@ const ReferralProgramPage = () => {
           <p>
             Es muy fácil, solo tiene que compartir el enlace de nuestra página
             con tus amigos o conocidos y asegurarte que en el formulario de
-            registro agreguen tu código de referente en la casilla “
-            <b>Si tienes referente añade aquí su código</b>
-            ”.
+            registro agreguen tu código de referente en la casilla
+            <b>“Si tienes referente añade aquí su código”.</b>
           </p>
           <p>
             Para obtener tu código{" "}

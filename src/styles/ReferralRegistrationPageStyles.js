@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { transparentize } from "polished";
 
 // Styles
-import { page, Container, H2 } from "./GlobalStyles";
+import { page, Container, H2, textInputStyle } from "./GlobalStyles";
 
 export const ReferralRegistration = styled.div`
   ${page}
@@ -139,6 +139,22 @@ const baseStepStyle = css`
   padding-bottom: 30px;
 `;
 
+const message = css`
+  .message {
+    grid-column: 1/-1;
+
+    p {
+      font-size: 0.8rem;
+      word-break: break-all;
+      a {
+        text-decoration: none;
+        color: ${(props) => props.theme.color.link};
+        cursor: pointer;
+      }
+    }
+  }
+`;
+
 export const StepOne = styled.div`
   ${baseStepStyle}
 
@@ -147,8 +163,83 @@ export const StepOne = styled.div`
   input[class=" form-control"] {
     width: 100%;
     height: 31.82px;
-    text-indent: 10px;
+
+    ${textInputStyle}
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+
+  input[class=" form-control"] {
+    border: 2px solid #bfbfbf;
+    padding-left: 44px;
   }
 
   grid-template-columns: repeat(2, calc((50% - 10px)));
+`;
+
+export const StepTwo = styled.div`
+  ${baseStepStyle}
+  ${message}
+  grid-template-columns: repeat(2, calc(((100% - 20px - 20px) / 2) + 10px));
+  overflow-x: hidden;
+  > * {
+    grid-column: 1/-1;
+  }
+
+  .paymentMethod {
+    label {
+      width: 100%;
+      input {
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+  .paypalEmail {
+    grid-column: 1/2;
+  }
+
+  .paypalEmailConfirmation {
+    grid-column: 2/3;
+  }
+
+  .holderName,
+  .bankAngency,
+  .bankAccountCode,
+  .referral {
+    width: 100%;
+    input[type="text"] {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  .documentImage input {
+    border: none;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  .termsAndConditions {
+    margin input {
+      width: auto;
+    }
+    a {
+      text-decoration: none;
+      color: ${(props) => props.theme.color.link};
+    }
+  }
+`;
+
+export const Captcha = styled.div`
+  position: relative;
+  .error {
+    position: absolute;
+    font-size: 0.75rem;
+    color: #fb5d64;
+    max-width: 100%;
+  }
 `;

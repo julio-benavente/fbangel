@@ -269,7 +269,7 @@ export const Option = styled.label`
 
 const baseForm = css`
   display: grid;
-  gap: 20px;
+  gap: 30px 20px;
   align-content: start;
   margin-bottom: 30px;
   padding-bottom: 30px;

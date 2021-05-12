@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <FooterSection>
+    <FooterSection className="Footer">
       <FooterSectionWrapper fluid>
         <FooterLinks>
           <Contact to="/contacto">Contacto</Contact>
