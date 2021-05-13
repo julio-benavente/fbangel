@@ -33,7 +33,7 @@ const MainComponent = () => {
           to={() => `${path}/payments`}
         >
           <PaymentsSvg />
-          <p>Payment</p>
+          <p>Payments</p>
         </NavbarItem>
 
         <NavbarItem activeClassName="active" to={() => `${path}/configuration`}>

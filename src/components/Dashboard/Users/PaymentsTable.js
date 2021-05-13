@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import {
-  Payments,
-  Title,
-  Table,
-} from "../../../styles/Dashboard/PaymentsPageStyle";
+import { PaymentsTable } from "../../../styles/Dashboard/UsersPageStyles";
 
-const PaymentsPage = () => {
-  const [tableWidth, setTableWidth] = useState(null);
+const Table = (props) => {
+  const [paymentsTableWidth, setPaymentsTableWidth] = useState(null);
 
-  // This provides a table width behavior. All of the columns are going to have the same width
+  const { payments } = props;
+  console.log(payments);
+
+  // This provides to the PAYMENT TABLE a table width behavior. All of the columns are going to have the same width
   useEffect(() => {
-    const width = () =>
-      setTableWidth(() => {
-        const parentWidth = document.querySelector(".Payments").offsetWidth;
+    const paymentsWidth = () =>
+      setPaymentsTableWidth(() => {
+        const parentWidth = document.querySelector(".Users").offsetWidth;
         const padding = parentWidth * 0.07 * 2;
         const realWidth = parentWidth - padding;
 
@@ -62,18 +61,16 @@ const PaymentsPage = () => {
         };
       });
 
-    width();
-    window.addEventListener("resize", width);
+    paymentsWidth();
+    window.addEventListener("resize", paymentsWidth);
 
-    return () => window.removeEventListener("resize", setTableWidth);
+    return () => window.removeEventListener("resize", setPaymentsTableWidth);
   }, []);
-
   return (
-    <Payments className="Payments">
-      <Title>Payments</Title>
-      <Table>
+    <PaymentsTable className="PaymentsTable">
+      <div className="PaymentsTable">
         <div className="thead">
-          <div className="tr" style={{ ...tableWidth }}>
+          <div className="tr" style={{ ...paymentsTableWidth }}>
             <div className="th">Concepto</div>
             <div className="th">Cuenta de paypal</div>
             <div className="th">Fecha de pago</div>
@@ -82,31 +79,32 @@ const PaymentsPage = () => {
           </div>
         </div>
         <div className="tbody">
-          <div className="tr" style={{ ...tableWidth }}>
+          {payments.length !== 0 &&
+            payments.map((payment) => {
+              const { amount, concept, id, paymentDate, paypalEmail, status } =
+                payment;
+
+              return (
+                <div className="tr" style={{ ...paymentsTableWidth }}>
+                  <div className="td concept">{concept}</div>
+                  <div className="td paypalEmail">{paypalEmail}</div>
+                  <div className="td paymentDate">{paymentDate}</div>
+                  <div className="td status approved">{status}</div>
+                  <div className="td amount ">{`$ ${amount}`}</div>
+                </div>
+              );
+            })}
+          {/* <div className="tr" style={{ ...paymentsTableWidth }}>
             <div className="td">Usuario referido : marco.aurelio@gmail.com</div>
             <div className="td">jose.luis@gmail.com</div>
             <div className="td">02/06/2021</div>
             <div className="td approved">Aprobado</div>
             <div className="td">$ 5.00</div>
-          </div>
-          <div className="tr" style={{ ...tableWidth }}>
-            <div className="td">Pago mensual por alquiler : JUN-2021</div>
-            <div className="td">jose.luis@gmail.com</div>
-            <div className="td">-</div>
-            <div className="td pending">Pendiente</div>
-            <div className="td">$ 30.00</div>
-          </div>
-          <div className="tr" style={{ ...tableWidth }}>
-            <div className="td">Pago mensual por alquiler : JUN-2021</div>
-            <div className="td">jose.luis@gmail.com</div>
-            <div className="td">-</div>
-            <div className="td pending">Pendiente</div>
-            <div className="td">$ 30.00</div>
-          </div>
+          </div> */}
         </div>
-      </Table>
-    </Payments>
+      </div>
+    </PaymentsTable>
   );
 };
 
-export default PaymentsPage;
+export default Table;
